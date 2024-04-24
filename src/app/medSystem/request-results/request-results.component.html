@@ -1,0 +1,18 @@
+<div>
+  <h1>Request Results</h1>
+  <form>
+    <mat-radio-group [(ngModel)]="searchOptions">
+      <mat-radio-button value="name">Name of the patient</mat-radio-button>
+      <mat-radio-button value="examType">Type of exam</mat-radio-button>
+      <mat-radio-button value="date">Date</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="searchParams.name" placeholder="Name of the patient" *ngIf="searchOptions === 'name'">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="searchParams.type" placeholder="Type of exam" *ngIf="searchOptions === 'type'">
+    </mat-form-field>
+
+  </form>
+</div>

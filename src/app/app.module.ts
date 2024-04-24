@@ -10,11 +10,16 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
+import {FormsModule} from "@angular/forms";
+import { RequestResultsComponent } from './medSystem/request-results/request-results.component';
+import {MatRadioModule} from "@angular/material/radio";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
+    RequestResultsComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,10 @@ import {MatListModule} from "@angular/material/list";
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    MatRadioModule,
+    MatInputModule
   ],
   providers: [
     provideAnimationsAsync()
