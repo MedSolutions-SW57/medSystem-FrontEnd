@@ -15,6 +15,7 @@ import { RequestResultsComponent } from './medSystem/components/request-results/
 import {MatRadioModule} from "@angular/material/radio";
 import {MatInputModule} from "@angular/material/input";
 import { TreatmentsComponent } from './medSystem/components/treatments/treatments.component';
+import { AppointmentsComponent } from './medSystem/components/appointments/appointments.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TreatmentsComponent } from './medSystem/components/treatments/treatment
     SideNavComponent,
     RequestResultsComponent,
     TreatmentsComponent,
+    AppointmentsComponent,
   ],
   imports: [
     BrowserModule,
