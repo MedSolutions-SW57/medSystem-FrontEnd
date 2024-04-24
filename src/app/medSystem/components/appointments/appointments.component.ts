@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Appointment} from "../../model/appointment.entity";
 
 @Component({
   selector: 'app-appointments',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './appointments.component.css'
 })
 export class AppointmentsComponent {
-
+  appointments: Array<Appointment> = [];
+  displayedColumns: string[] = ['id', 'patientName', 'day', 'hour', 'moreInfo']
+  constructor() {}
 }

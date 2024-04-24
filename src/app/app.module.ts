@@ -16,6 +16,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatInputModule} from "@angular/material/input";
 import { TreatmentsComponent } from './medSystem/components/treatments/treatments.component';
 import { AppointmentsComponent } from './medSystem/components/appointments/appointments.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AppointmentsComponent } from './medSystem/components/appointments/appoi
     MatListModule,
     FormsModule,
     MatRadioModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
   ],
   providers: [
     provideAnimationsAsync()
