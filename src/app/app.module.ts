@@ -11,10 +11,9 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {FormsModule} from "@angular/forms";
-import { RequestResultsComponent } from './medSystem/components/request-results/request-results.component';
+import { RequestResultsComponent } from './medSystem/request-results/request-results.component';
 import {MatRadioModule} from "@angular/material/radio";
 import {MatInputModule} from "@angular/material/input";
-import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -32,8 +31,7 @@ import {MatTableModule} from "@angular/material/table";
     MatListModule,
     FormsModule,
     MatRadioModule,
-    MatInputModule,
-    MatTableModule
+    MatInputModule
   ],
   providers: [
     provideAnimationsAsync()
