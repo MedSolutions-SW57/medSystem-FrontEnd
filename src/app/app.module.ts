@@ -14,12 +14,14 @@ import {FormsModule} from "@angular/forms";
 import { RequestResultsComponent } from './medSystem/components/request-results/request-results.component';
 import {MatRadioModule} from "@angular/material/radio";
 import {MatInputModule} from "@angular/material/input";
+import { TreatmentsComponent } from './medSystem/components/treatments/treatments.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
     RequestResultsComponent,
+    TreatmentsComponent,
   ],
   imports: [
     BrowserModule,
