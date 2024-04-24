@@ -14,6 +14,8 @@ import {FormsModule} from "@angular/forms";
 import { RequestResultsComponent } from './medSystem/request-results/request-results.component';
 import {MatRadioModule} from "@angular/material/radio";
 import {MatInputModule} from "@angular/material/input";
+import {MatTableModule} from "@angular/material/table";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {MatInputModule} from "@angular/material/input";
     MatListModule,
     FormsModule,
     MatRadioModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    BrowserAnimationsModule
   ],
   providers: [
     provideAnimationsAsync()

@@ -1,18 +1,35 @@
 <div>
   <h1>Request Results</h1>
-  <form>
-    <mat-radio-group [(ngModel)]="searchOptions">
-      <mat-radio-button value="name">Name of the patient</mat-radio-button>
-      <mat-radio-button value="examType">Type of exam</mat-radio-button>
-      <mat-radio-button value="date">Date</mat-radio-button>
-    </mat-radio-group>
+  <mat-form-field>
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="filtrar($event)" placeholder="search">
+  </mat-form-field>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <mat-form-field>
-      <input matInput [(ngModel)]="searchParams.name" placeholder="Name of the patient" *ngIf="searchOptions === 'name'">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput [(ngModel)]="searchParams.type" placeholder="Type of exam" *ngIf="searchOptions === 'type'">
-    </mat-form-field>
+      <ng-container matColumnDef="patient">
+        <th mat-header-cell *matHeaderCellDef> Patient </th>
+        <td mat-cell *matCellDef="let article">{{ article.patient }}</td>
+      </ng-container>
 
-  </form>
+      <ng-container matColumnDef="examType">
+        <th mat-header-cell *matHeaderCellDef> Type of exam </th>
+        <td mat-cell *matCellDef="let article">{{ article.examType}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="fetch">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let article">{{ article.fetch }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="results">
+        <th mat-header-cell *matHeaderCellDef> Results </th>
+        <td mat-cell *matCellDef="let article">{{ article.results }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+    </table>
+  </div>
+
 </div>
