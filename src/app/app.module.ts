@@ -18,6 +18,7 @@ import {RequestResultsComponent} from "./medSystem/components/request-results/re
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {MatSortModule} from "@angular/material/sort";
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()
