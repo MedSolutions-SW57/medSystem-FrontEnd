@@ -24,12 +24,8 @@ export class AppointmentsComponent {
       this.dataSource.sort = this.sort;
     });
   }
-
   Filterchange(data:any){
     const value=(data.target as HTMLInputElement).value;
     this.dataSource.filter=value;
-  }
-  isResultAvailable(result: string): boolean {
-    return result.toLowerCase() === 'available';
   }
 }

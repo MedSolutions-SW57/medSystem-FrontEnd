@@ -3,8 +3,21 @@
   <mat-card-title>Appointment Search</mat-card-title>
   <mat-card-header>
     <mat-form-field>
-      <input matInput (keyup)="Filterchange($event)" placeholder="Search"/>
-      <input matInput (keyup)="Filterchange($event)" placeholder="Search"/>
+      <div>
+        <label>ID</label>
+        <input matInput (keyup)="Filterchange($event)"/>
+      </div>
+      <div>
+        <label>Name of Patient</label>
+        <input matInput (keyup)="Filterchange($event)"/>
+      </div>
+      <div>
+        <label>Day</label>
+        <input matInput (keyup)="Filterchange($event)"/>
+      </div>
+      <div>
+        <input matInput (keyup)="Filterchange($event)" placeholder="Search"/>
+      </div>
     </mat-form-field>
   </mat-card-header>
   <mat-card-content>
@@ -32,8 +45,10 @@
       </ng-container>
 
       <ng-container matColumnDef="moreInfo">
-        <th mat-sort-header mat-header-cell *matHeaderCellDef>MORE</th>
-        <td mat-cell *matCellDef="let element">{{ element.moreInfo}}</td>
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>More</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="primary">MORE</button>
+        </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
