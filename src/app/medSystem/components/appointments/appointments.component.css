@@ -22,4 +22,12 @@ mat-paginator {
   display: flex;
   justify-content: center;
 }
+mat-label{
+  color: white;
+  margin: 1rem;
+  font-size: 0.85rem;
+}
+.info-inputs{
+  display: flex; flex-direction: column; align-items: flex-start; padding-right: 50px
+}
 
