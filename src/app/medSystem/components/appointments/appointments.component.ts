@@ -13,7 +13,7 @@ import {MatTableDataSource} from "@angular/material/table";
 export class AppointmentsComponent {
   appointmentList !:Appointment[];
   dataSource:any;
-  displayedColumns = ["code","name","date","examType","result", "action"];
+  displayedColumns = ["appointmentId","patientName","appointmentDay","appointmentHour","moreInfo"];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
   constructor(private service:BaseService) {
