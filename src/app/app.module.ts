@@ -19,6 +19,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import {HttpClientModule} from "@angular/common/http";
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import {HttpClientModule} from "@angular/common/http";
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatCardModule,
     HttpClientModule
   ],
   providers: [

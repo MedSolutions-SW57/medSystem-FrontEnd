@@ -1,5 +1,12 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild, viewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
+import {BaseService} from "../../../shared/services/base.service";
+import {Results} from "../../model/results.entity";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSort} from "@angular/material/sort";
+
+
+
 
 @Component({
   selector: 'app-request-results',
@@ -7,27 +14,26 @@ import {MatTableDataSource} from "@angular/material/table";
   styleUrl: './request-results.component.css'
 })
 export class RequestResultsComponent {
-  columns = ['patient', 'examType', 'fetch', 'results'];
-
-  dates = [new Article('Jose Sanchez', 'Rheumatology', '25-03-24', 'probed'),
-    new Article('Carlos Ramirez', 'Rheumatology', '25-03-24', 'probed'),
-    new Article('Pablo Escobar', 'Rheumatology', '25-03-24', 'probed'),
-  ];
-
+  resultsList !:Results[];
   dataSource:any;
-
-  ngOnInit(){
-    this.dataSource =new MatTableDataSource(this.dates);
+  displayedColumns = ["code","name","date","examType","result", "action"];
+  @ViewChild(MatPaginator) paginator !: MatPaginator;
+  @ViewChild(MatSort) sort !: MatSort;
+  constructor(private service:BaseService) {
+    this.service.getResults().subscribe(res=>{
+      this.resultsList = res;
+      this.dataSource= new MatTableDataSource<Results>(this.resultsList);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
 
-  filtrar(event: Event){
-    const filtro = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filtro.trim().toLowerCase();
+
+  Filterchange(data:any){
+    const value=(data.target as HTMLInputElement).value;
+    this.dataSource.filter=value;
   }
-}
-
-
-export class Article {
-  constructor(public patient: string, examType: string, fetch: string, results: string) {
+  isResultAvailable(result: string): boolean {
+    return result.toLowerCase() === 'available';
   }
 }
