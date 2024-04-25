@@ -1,0 +1,88 @@
+{
+  "results": [
+    {
+      "code": 1,
+      "name": "John Doe",
+      "date": "2024-01-01",
+      "examType": "Rheumatology",
+      "result": "Available"
+    },
+    {
+      "code": 2,
+      "name": "Jane Doe",
+      "date": "2024-01-10",
+      "examType": "Rheumatology",
+      "result": "In Progress"
+    },
+    {
+      "code": 3,
+      "name": "Cindy Lou",
+      "date": "2024-02-11",
+      "examType": "Rheumatology",
+      "result": "In Progress"
+    },
+    {
+      "code": 4,
+      "name": "Katie Smith",
+      "date": "2024-02-20",
+      "examType": "Rheumatology",
+      "result": "Available"
+    },
+    {
+      "code": 5,
+      "name": "Celia Vegas",
+      "date": "2024-01-01",
+      "examType": "Rheumatology",
+      "result": "Available"
+    },
+    {
+      "code": 6,
+      "name": "Angela Acevedo",
+      "date": "2024-01-10",
+      "examType": "Rheumatology",
+      "result": "In Progress"
+    },
+    {
+      "code": 7,
+      "name": "Jacobo Anton",
+      "date": "2024-02-11",
+      "examType": "Rheumatology",
+      "result": "In Progress"
+    },
+    {
+      "code": 8,
+      "name": "Jose Manuel Bejarano",
+      "date": "2024-02-20",
+      "examType": "Rheumatology",
+      "result": "Available"
+    },
+    {
+      "code": 9,
+      "name": "Francisco Luis Castellano",
+      "date": "2024-01-01",
+      "examType": "Rheumatology",
+      "result": "Available"
+    },
+    {
+      "code": 10,
+      "name": "Violeta Salmeron",
+      "date": "2024-01-10",
+      "examType": "Rheumatology",
+      "result": "In Progress"
+    },
+    {
+      "code": 11,
+      "name": "Olga Hidalgo",
+      "date": "2024-02-11",
+      "examType": "Rheumatology",
+      "result": "Available"
+    },
+    {
+      "code": 12,
+      "name": "Luz Marina Maya",
+      "date": "2024-02-20",
+      "examType": "Rheumatology",
+      "result": "Available"
+    }
+  ]
+}
