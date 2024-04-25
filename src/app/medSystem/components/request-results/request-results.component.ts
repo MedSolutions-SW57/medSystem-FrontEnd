@@ -1,4 +1,4 @@
-import {Component, ViewChild, viewChild} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {BaseService} from "../../../shared/services/base.service";
 import {Results} from "../../model/results.entity";
