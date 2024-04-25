@@ -20,13 +20,15 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
+import {AppointmentsComponent} from "./medSystem/components/appointments/appointments.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
-    RequestResultsComponent
+    RequestResultsComponent,
+    AppointmentsComponent
   ],
   imports: [
     BrowserModule,

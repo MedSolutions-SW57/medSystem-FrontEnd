@@ -1,15 +1,7 @@
-export class Appointment{
-  id: number;
+export interface Appointment{
+  appointmentId: string;
   patientName: string;
-  day: Date;
-  hour: string;
+  appointmentDay: string;
+  appointmentHour: string;
   moreInfo: string;
-
-  constructor() {
-    this.id = -1;
-    this.patientName = '';
-    this.day = new Date();
-    this.hour = '';
-    this.moreInfo = '';
-  }
 }
