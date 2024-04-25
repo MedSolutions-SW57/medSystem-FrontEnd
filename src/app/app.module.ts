@@ -16,6 +16,8 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatInputModule} from "@angular/material/input";
 import {RequestResultsComponent} from "./medSystem/components/request-results/request-results.component";
 import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatSortModule} from "@angular/material/sort";
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import {MatTableModule} from "@angular/material/table";
     FormsModule,
     MatRadioModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [
     provideAnimationsAsync()
