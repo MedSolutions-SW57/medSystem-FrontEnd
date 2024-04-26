@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { SideNavComponent } from './public/components/side-nav/side-nav.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
@@ -14,21 +13,23 @@ import {FormsModule} from "@angular/forms";
 
 import {MatRadioModule} from "@angular/material/radio";
 import {MatInputModule} from "@angular/material/input";
-import {RequestResultsComponent} from "./medSystem/components/request-results/request-results.component";
+import {RequestResultsComponent} from "./medSystem/pages/request-results/request-results.component";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
-import {AppointmentsComponent} from "./medSystem/components/appointments/appointments.component";
+import {AppointmentsComponent} from "./medSystem/pages/appointments/appointments.component";
+import {BaseService} from "./shared/services/base.service";
+import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent,
     RequestResultsComponent,
-    AppointmentsComponent
+    AppointmentsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +49,7 @@ import {AppointmentsComponent} from "./medSystem/components/appointments/appoint
     HttpClientModule
   ],
   providers: [
-    provideAnimationsAsync()
+    BaseService,provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
