@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import {AppointmentsComponent} from "./medSystem/pages/appointments/appointments.component";
 import {RequestResultsComponent} from "./medSystem/pages/request-results/request-results.component";
 import {TreatmentsComponent} from "./medSystem/pages/treatments/treatments.component";
+import {RequestHistoryComponent} from "./medSystem/pages/request-history/request-history.component";
 
 const routes: Routes = [
   {path: 'appointments',component: AppointmentsComponent},
   {path: 'treatments-patient',component: TreatmentsComponent},
+  {path: 'request-history', component: RequestHistoryComponent},
   {path: 'request-results',component: RequestResultsComponent},
 ];
 

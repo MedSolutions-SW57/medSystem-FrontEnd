@@ -142,5 +142,37 @@
       "examType": "Rheumatology",
       "result": "Available"
     }
+  ],
+  "histories": [
+    {
+      "historyId": "RH001",
+      "doctorName": "Dr. Smith",
+      "historyReason": "Check-up appointment",
+      "historyDate": "2024-01-05"
+    },
+    {
+      "historyId": "RH002",
+      "doctorName": "Dr. Johnson",
+      "historyReason": "Follow-up appointment",
+      "historyDate": "2024-01-10"
+    },
+    {
+      "historyId": "RH003",
+      "doctorName": "Dr. Martinez",
+      "historyReason": "Treatment consultation",
+      "historyDate": "2024-01-15"
+    },
+    {
+      "historyId": "RH004",
+      "doctorName": "Dr. Lopez",
+      "historyReason": "Physical therapy session",
+      "historyDate": "2024-01-20"
+    },
+    {
+      "historyId": "RH005",
+      "doctorName": "Dr. Garcia",
+      "historyReason": "Pre-surgery assessment",
+      "historyDate": "2024-01-25"
+    }
   ]
 }

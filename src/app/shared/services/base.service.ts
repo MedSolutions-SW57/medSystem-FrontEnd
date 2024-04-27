@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {Results} from "../../medSystem/model/results.entity";
 import {Appointment} from "../../medSystem/model/appointment.entity";
 import {environment} from "../../../environments/environment";
+import {History} from "../../medSystem/model/history.entity";
 
 @Injectable({
   providedIn: 'root'
@@ -27,4 +28,8 @@ export class BaseService {
   getAppointments():Observable<Appointment[]>{
     return this.http.get<Appointment[]>('http://localhost:3000/appointments');
   }
+  getHistory():Observable<History[]>{
+    return this.http.get<History[]>('http://localhost:3000/histories');
+  }
+
 }

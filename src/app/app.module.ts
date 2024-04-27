@@ -25,6 +25,7 @@ import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-fo
 import {TreatmentsComponent} from "./medSystem/pages/treatments/treatments.component";
 import {CdkDragPlaceholder} from "@angular/cdk/drag-drop";
 import {MatOption, MatSelect} from "@angular/material/select";
+import { RequestHistoryComponent } from './medSystem/pages/request-history/request-history.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {MatOption, MatSelect} from "@angular/material/select";
     RequestResultsComponent,
     AppointmentsComponent,
     PageNotFoundComponent,
-    TreatmentsComponent
+    TreatmentsComponent,
+    RequestHistoryComponent
   ],
   imports: [
     BrowserModule,
