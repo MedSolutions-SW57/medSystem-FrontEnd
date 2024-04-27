@@ -8,5 +8,9 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrl: './review-appointment.component.css'
 })
 export class ReviewAppointmentComponent{
-
+  constructor(private router: Router) {
+  }
+  navigateToReviewAppointment() {
+    this.router.navigate(['/appointments']);
+  }
 }

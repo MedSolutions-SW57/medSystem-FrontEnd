@@ -14,6 +14,5 @@ export class AppComponent {
     { path: '/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
     { path: '/request-history', title: 'Request History', icon:'history'},
     { path: '/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
-    { path:'/review-appointment'}
   ]
 }
