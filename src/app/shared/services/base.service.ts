@@ -28,8 +28,7 @@ export class BaseService {
   getAppointments():Observable<Appointment[]>{
     return this.http.get<Appointment[]>('http://localhost:3000/appointments');
   }
-  getHistory():Observable<History[]>{
-    return this.http.get<History[]>('http://localhost:3000/histories');
-  }
-
+  getAppointmentsWithHistory():Observable<Appointment[]>{
+    return this.http.get<Appointment[]>('http://localhost:3000/appointments');
+}
 }

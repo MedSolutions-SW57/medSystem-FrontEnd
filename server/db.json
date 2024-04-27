@@ -5,56 +5,186 @@
       "patientName": "John Doe",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
-      "moreInfo": "https://link.com"
+      "moreInfo": "https://link.com",
+      "requestHistory": [
+        {
+          "historyId": "RH01",
+          "doctorName": "Dr. Smith",
+          "historyReason": "Check-up appointment",
+          "historyDate": "2024-01-05"
+        },
+        {
+          "historyId": "RH02",
+          "doctorName": "Dr. Johnson",
+          "historyReason": "Follow-up appointment",
+          "historyDate": "2024-01-10"
+        },
+        {
+          "historyId": "RH03",
+          "doctorName": "Dr. Martinez",
+          "historyReason": "Physical therapy session",
+          "historyDate": "2024-01-15"
+        }
+      ]
     },
     {
       "appointmentId": 2,
       "patientName": "Michael Phelps",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
-      "moreInfo": "https://link.com"
+      "moreInfo": "https://link.com",
+      "requestHistory": [
+        {
+          "historyId": "RH01",
+          "doctorName": "Dr. Garcia",
+          "historyReason": "Pre-surgery assessment",
+          "historyDate": "2024-01-20"
+        },
+        {
+          "historyId": "RH02",
+          "doctorName": "Dr. Perez",
+          "historyReason": "Treatment consultation",
+          "historyDate": "2024-01-25"
+        },
+        {
+          "historyId": "RH03",
+          "doctorName": "Dr. Rodriguez",
+          "historyReason": "X-ray examination",
+          "historyDate": "2024-01-30"
+        }
+      ]
     },
     {
       "appointmentId": 3,
       "patientName": "Marc Down",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
-      "moreInfo": "https://link.com"
+      "moreInfo": "https://link.com",
+      "requestHistory": [
+        {
+          "historyId": "RH01",
+          "doctorName": "Dr. Morales",
+          "historyReason": "Ultrasound scan",
+          "historyDate": "2024-02-05"
+        },
+        {
+          "historyId": "RH02",
+          "doctorName": "Dr. Fernandez",
+          "historyReason": "Blood test",
+          "historyDate": "2024-02-10"
+        }
+      ]
     },
     {
       "appointmentId": 4,
       "patientName": "Peter Parker",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
-      "moreInfo": "https://link.com"
+      "moreInfo": "https://link.com",
+      "requestHistory": [
+        {
+          "historyId": "RH01",
+          "doctorName": "Dr. Sanchez",
+          "historyReason": "Medication review",
+          "historyDate": "2024-02-15"
+        }
+      ]
     },
     {
       "appointmentId": 5,
       "patientName": "Simon Stag",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
-      "moreInfo": "https://link.com"
+      "moreInfo": "https://link.com",
+      "requestHistory": [
+        {
+          "historyId": "RH01",
+          "doctorName": "Dr. Ramirez",
+          "historyReason": "Dental check-up",
+          "historyDate": "2024-02-20"
+        },
+        {
+          "historyId": "RH02",
+          "doctorName": "Dr. Cruz",
+          "historyReason": "Eye examination",
+          "historyDate": "2024-02-25"
+        }
+      ]
     },
     {
       "appointmentId": 6,
       "patientName": "Oliver Twist",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
-      "moreInfo": "https://link.com"
+      "moreInfo": "https://link.com",
+      "requestHistory": [
+        {
+          "historyId": "RH01",
+          "doctorName": "Dr. Lee",
+          "historyReason": "Dermatology consultation",
+          "historyDate": "2024-03-01"
+        },
+        {
+          "historyId": "RH02",
+          "doctorName": "Dr. Gonzalez",
+          "historyReason": "Allergy test",
+          "historyDate": "2024-03-05"
+        },
+        {
+          "historyId": "RH03",
+          "doctorName": "Dr. Perez",
+          "historyReason": "MRI scan",
+          "historyDate": "2024-03-10"
+        }
+      ]
     },
     {
       "appointmentId": 7,
       "patientName": "Dan Doe",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
-      "moreInfo": "https://link.com"
+      "moreInfo": "https://link.com",
+      "requestHistory": [
+        {
+          "historyId": "RH01",
+          "doctorName": "Dr. Gomez",
+          "historyReason": "Physical examination",
+          "historyDate": "2024-03-15"
+        },
+        {
+          "historyId": "RH02",
+          "doctorName": "Dr. Morales",
+          "historyReason": "Vaccination",
+          "historyDate": "2024-03-20"
+        }
+      ]
     },
     {
       "appointmentId": 8,
       "patientName": "Jaime Bailey",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
-      "moreInfo": "https://link.com"
+      "moreInfo": "https://link.com",
+      "requestHistory": [
+        {
+          "historyId": "RH01",
+          "doctorName": "Dr. Fernandez",
+          "historyReason": "Heart check-up",
+          "historyDate": "2024-03-25"
+        },
+        {
+          "historyId": "RH02",
+          "doctorName": "Dr. Ramirez",
+          "historyReason": "Diabetes screening",
+          "historyDate": "2024-03-30"
+        },
+        {
+          "historyId": "RH03",
+          "doctorName": "Dr. Cruz",
+          "historyReason": "Nutrition consultation",
+          "historyDate": "2024-04-05"
+        }
+      ]
     }
   ],
   "results": [
@@ -141,38 +271,6 @@
       "date": "2024-02-20",
       "examType": "Rheumatology",
       "result": "Available"
-    }
-  ],
-  "histories": [
-    {
-      "historyId": "RH001",
-      "doctorName": "Dr. Smith",
-      "historyReason": "Check-up appointment",
-      "historyDate": "2024-01-05"
-    },
-    {
-      "historyId": "RH002",
-      "doctorName": "Dr. Johnson",
-      "historyReason": "Follow-up appointment",
-      "historyDate": "2024-01-10"
-    },
-    {
-      "historyId": "RH003",
-      "doctorName": "Dr. Martinez",
-      "historyReason": "Treatment consultation",
-      "historyDate": "2024-01-15"
-    },
-    {
-      "historyId": "RH004",
-      "doctorName": "Dr. Lopez",
-      "historyReason": "Physical therapy session",
-      "historyDate": "2024-01-20"
-    },
-    {
-      "historyId": "RH005",
-      "doctorName": "Dr. Garcia",
-      "historyReason": "Pre-surgery assessment",
-      "historyDate": "2024-01-25"
     }
   ]
 }

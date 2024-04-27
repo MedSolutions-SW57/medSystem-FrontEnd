@@ -4,4 +4,5 @@ export interface Appointment{
   appointmentDay: string;
   appointmentHour: string;
   moreInfo: string;
+  requestHistory: Array<any>;
 }

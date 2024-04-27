@@ -18,8 +18,8 @@ export class RequestHistoryComponent {
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   constructor(private service:BaseService) {
-    this.service.getHistory().subscribe(res => {
-      this.historyList = res;
+    this.service.getAppointmentsWithHistory().subscribe(res => {
+      this.historyList = res.flatMap(appointment => appointment.requestHistory);
       this.dataSource = new MatTableDataSource<History>(this.historyList);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
