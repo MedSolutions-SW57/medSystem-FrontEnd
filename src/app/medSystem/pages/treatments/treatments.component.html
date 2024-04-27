@@ -7,7 +7,7 @@
       <div class="slider">
         <mat-card-content >
           <div class="card-container-horizontal"  >
-            <mat-card *ngFor="let treatment of treatments" class="e">
+            <mat-card *ngFor="let treatment of treatments">
               <mat-card-title class="titles">{{treatment.name}}</mat-card-title>
               <mat-card-content>
                 <p><b>Patient's name: </b> {{treatment.patientName}}</p>
@@ -31,15 +31,15 @@
         <mat-card-title>Add treatments</mat-card-title>
         <mat-card-content>
           <mat-label>Name of patient:
-            <select>
-              <option  value="" disabled selected hidden>Select an option</option>
+            <select class="select-to-add-treatment">
+              <option value="" disabled selected hidden>Select an option</option>
               <option value="opcion1">Opción 1</option>
             </select>
           </mat-label>
 
           <mat-label>Name of treatment:
-            <select>
-              <option  value="" disabled selected hidden>Select an option</option>
+            <select class="select-to-add-treatment">
+              <option value="" disabled selected hidden>Select an option</option>
               <option value="opcion1">Opción 1</option>
             </select>
           </mat-label>
@@ -71,6 +71,18 @@
         <mat-card class="remove_treatment">
           <mat-card-title>
             Remove treatment
+            <mat-card-content>
+              <mat-label>
+                Treatment list:
+              </mat-label>
+              <select class="select-to-remove-treatment">
+                <option  value="" disabled selected hidden>Select an option</option>
+                <option value="opcion1">Opción 1</option>
+              </select>
+              <div class="button_remove">
+                <button mat-raised-button color="warn">Remove</button>
+              </div>
+            </mat-card-content>
           </mat-card-title>
         </mat-card>
       </div>
@@ -80,6 +92,18 @@
           <mat-card-title>
             Treatment history
           </mat-card-title>
+          <div class="slider">
+            <mat-card-content class="card-container-vertical">
+              <mat-card *ngFor="let treatment of treatments">
+                <mat-card-content>
+                  <p><b>Patient's name: </b> {{treatment.patientName}}</p>
+                  <p><b>Dose: </b> {{treatment.dose}}</p>
+                  <p><b>Duration: </b> {{treatment.duration}}</p>
+                  <p><b>Frequency: </b> {{treatment.frequency}}</p>
+                </mat-card-content>
+              </mat-card>
+            </mat-card-content>
+          </div>
         </mat-card>
       </div>
 

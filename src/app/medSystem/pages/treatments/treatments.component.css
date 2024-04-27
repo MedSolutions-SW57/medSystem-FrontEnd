@@ -59,12 +59,6 @@
   display: flex;
 }
 
-.card-container-vertical{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 mat-card-title{
   text-align: center;
 }
@@ -108,7 +102,7 @@ mat-form-field{
   height: 70px;
 }
 
-select{
+.select-to-add-treatment{
   width: 205px;
   height: 30px;
 }
@@ -137,6 +131,22 @@ p{
   overflow-x: hidden;
   scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
   scrollbar-width: thin;
+}
+
+.select-to-remove-treatment{
+  width: 430px;
+  height: 30px;
+}
+
+.button_remove{
+  text-align: center;
+  padding-top: 25px;
+}
+
+.card-container-vertical{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
 }
 /*
 
