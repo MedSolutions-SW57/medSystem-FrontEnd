@@ -174,5 +174,55 @@
       "historyReason": "Pre-surgery assessment",
       "historyDate": "2024-01-25"
     }
+  ],
+  "treatments": [
+    {
+      "name": "Physiotherapy",
+      "patientName": "Pepito Suarez",
+      "dose": "2 sessions per week",
+      "duration": "5 weeks",
+      "frequency": "2 hours per session",
+      "notes": "si"
+    },
+    {
+      "name": "Immobilization",
+      "patientName": "Pedro Vertiz",
+      "dose": "4 sessions per week",
+      "duration": "2 weeks",
+      "frequency": "1 hours per session",
+      "notes": "si"
+    },
+    {
+      "name": "Traction",
+      "patientName": "Jorge Guimaraes",
+      "dose": "3 sessions per week",
+      "duration": "6 weeks",
+      "frequency": "3 hours per session",
+      "notes": "si"
+    },
+    {
+      "name": "Occupational Therapy",
+      "patientName": "Carlos Altamirano",
+      "dose": "1 sessions per week",
+      "duration": "2 weeks",
+      "frequency": "1 hour per session",
+      "notes": "si"
+    },
+    {
+      "name": "Ultrasound",
+      "patientName": "Michael Jackson",
+      "dose": "3 sessions per week",
+      "duration": "5 weeks",
+      "frequency": "2 hour per session",
+      "notes": "si"
+    },
+    {
+      "name": "Laser Therapy",
+      "patientName": "Michael Jordan",
+      "dose": "5 sessions per week",
+      "duration": "3 weeks",
+      "frequency": "3 hour per session",
+      "notes": "si"
+    }
   ]
 }

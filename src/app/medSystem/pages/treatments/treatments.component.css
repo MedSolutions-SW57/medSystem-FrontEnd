@@ -59,7 +59,7 @@
   display: flex;
 }
 
-.card-container-horizontal{
+.card-container-vertical{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,7 +112,29 @@ select{
   width: 205px;
   height: 30px;
 }
+
+.titles{
+  color: black;
+}
+
+.card-container-horizontal{
+  display: grid;
+  width: 85%;
+  height: 150%;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin: auto;
+}
+
+p{
+  color: black;
+}
+
+e{
+
+}
 /*
+
 
 */
 

@@ -3,7 +3,22 @@
   <div class="divisor_ct">
     <mat-card class="current_treatments">
       <mat-card-title>Current treatments</mat-card-title>
+      <br>
+        <mat-card-content >
+          <div class="card-container-horizontal"  >
+            <mat-card *ngFor="let treatment of treatments" class="e">
+              <mat-card-title class="titles">{{treatment.name}}</mat-card-title>
+              <mat-card-content>
+                <p>{{treatment.patientName}}</p>
+                <p>{{treatment.dose}}</p>
+                <p>{{treatment.duration}}</p>
+                <p>{{treatment.frequency}}</p>
+                <p>{{treatment.notes}}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
 
+        </mat-card-content>
     </mat-card>
   </div>
 
@@ -11,42 +26,44 @@
 
   <div class="divisor_at">
     <mat-card class="add_treatments">
-
       <mat-card-title>Add treatments</mat-card-title>
-      <mat-label>Name of patient:
-        <select>
-          <option  value="" disabled selected hidden>Select an option</option>
-          <option value="opcion1">Opción 1</option>
-        </select>
-      </mat-label>
+      <mat-card-content>
+        <mat-label>Name of patient:
+          <select>
+            <option  value="" disabled selected hidden>Select an option</option>
+            <option value="opcion1">Opción 1</option>
+          </select>
+        </mat-label>
 
-      <mat-label>Name of treatment:
-        <select>
-          <option  value="" disabled selected hidden>Select an option</option>
-          <option value="opcion1">Opción 1</option>
-        </select>
-      </mat-label>
-      <mat-label>Dose:
-        <input type="text">
-      </mat-label>
-      <mat-label>Frequency:
-        <input type="text">
-      </mat-label>
-      <mat-label>Duration:
-        <input type="text">
-      </mat-label>
+        <mat-label>Name of treatment:
+          <select>
+            <option  value="" disabled selected hidden>Select an option</option>
+            <option value="opcion1">Opción 1</option>
+          </select>
+        </mat-label>
+        <mat-label>Dose:
+          <input type="text">
+        </mat-label>
+        <mat-label>Frequency:
+          <input type="text">
+        </mat-label>
+        <mat-label>Duration:
+          <input type="text">
+        </mat-label>
 
-      <mat-label>Notes: </mat-label>
-      <input class="notes" type="text">
-      <div class="button_add">
-        <button mat-raised-button color="warn">Add</button>
-      </div>
+        <mat-label>Notes: </mat-label>
+        <input class="notes" type="text">
+        <div class="button_add">
+          <button mat-raised-button color="warn">Add</button>
+        </div>
+      </mat-card-content>
+
 
 
     </mat-card>
   </div>
 
-    <div class="card-container-horizontal">
+    <div class="card-container-vertical">
 
   <div class="divisor_rt">
     <mat-card class="remove_treatment">
