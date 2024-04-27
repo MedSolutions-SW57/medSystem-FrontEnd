@@ -10,6 +10,15 @@ import {Treatment} from "../../medSystem/model/treatment.entity";
   providedIn: 'root'
 })
 export class BaseService {
+  basePath: string =`${environment.serverBasePath}`;
+  resourceEndpoint: string ='/resources';
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-type': 'application/json'
+    })
+  }
+
   constructor(private http: HttpClient){
   }
 
