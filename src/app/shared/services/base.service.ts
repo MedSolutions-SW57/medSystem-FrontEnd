@@ -4,7 +4,6 @@ import {Observable} from "rxjs";
 import {Results} from "../../medSystem/model/results.entity";
 import {Appointment} from "../../medSystem/model/appointment.entity";
 import {environment} from "../../../environments/environment";
-import {History} from "../../medSystem/model/history.entity";
 
 @Injectable({
   providedIn: 'root'
