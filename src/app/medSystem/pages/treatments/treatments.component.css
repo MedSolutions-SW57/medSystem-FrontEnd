@@ -134,7 +134,7 @@ p{
   overflow: scroll;
   scroll-snap-type: x mandatory;
   scroll-margin-block: initial;
-  overflow-x: hidden;
+
   scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
   scrollbar-width: thin;
 }
