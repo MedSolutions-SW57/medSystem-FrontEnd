@@ -6,11 +6,8 @@ import {TreatmentsComponent} from "./medSystem/pages/treatments/treatments.compo
 
 const routes: Routes = [
   {path: 'appointments',component: AppointmentsComponent},
-  {path: 'chat',redirectTo:'appointments', pathMatch: "full"},
   {path: 'treatments-patient',component: TreatmentsComponent},
   {path: 'request-results',component: RequestResultsComponent},
-  {path: 'request-history',redirectTo:'appointments', pathMatch: "full"},
-  {path: '',redirectTo:'appointments', pathMatch: "full"}
 ];
 
 @NgModule({
