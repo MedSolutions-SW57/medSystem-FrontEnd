@@ -5,3 +5,6 @@ export interface Results {
   examType : string;
   result: string;
 }
+
+
+
