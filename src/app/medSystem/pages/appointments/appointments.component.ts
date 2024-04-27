@@ -14,7 +14,7 @@ import {Router} from "@angular/router";
 export class AppointmentsComponent {
   appointmentList !:Appointment[];
   dataSource:any;
-  displayedColumns = ["appointmentId","patientName","appointmentDay","appointmentHour","moreInfo"];
+  displayedColumns = ["appointmentId","patientName","appointmentDay","appointmentHour"];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
   constructor(private service:BaseService, private router:Router) {
