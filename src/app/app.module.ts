@@ -27,6 +27,7 @@ import {CdkDragPlaceholder} from "@angular/cdk/drag-drop";
 import {MatOption, MatSelect} from "@angular/material/select";
 import { RequestHistoryComponent } from './medSystem/pages/request-history/request-history.component';
 import { ReviewAppointmentComponent } from './medSystem/pages/appointments/review-appointment/review-appointment.component';
+import {MatSlider} from "@angular/material/slider";
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { ReviewAppointmentComponent } from './medSystem/pages/appointments/revie
     HttpClientModule,
     CdkDragPlaceholder,
     MatSelect,
-    MatOption
+    MatOption,
+    MatSlider
   ],
   providers: [
     BaseService,provideAnimationsAsync()
