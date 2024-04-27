@@ -22,6 +22,9 @@ import {MatCardModule} from "@angular/material/card";
 import {AppointmentsComponent} from "./medSystem/pages/appointments/appointments.component";
 import {BaseService} from "./shared/services/base.service";
 import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
+import {TreatmentsComponent} from "./medSystem/pages/treatments/treatments.component";
+import {CdkDragPlaceholder} from "@angular/cdk/drag-drop";
+import {MatOption, MatSelect} from "@angular/material/select";
 
 
 @NgModule({
@@ -29,7 +32,8 @@ import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-fo
     AppComponent,
     RequestResultsComponent,
     AppointmentsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TreatmentsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,10 @@ import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-fo
     MatPaginatorModule,
     MatSortModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    CdkDragPlaceholder,
+    MatSelect,
+    MatOption
   ],
   providers: [
     BaseService,provideAnimationsAsync()

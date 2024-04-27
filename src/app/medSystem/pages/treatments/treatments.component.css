@@ -1,0 +1,120 @@
+.principal_card{
+  position: marker;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #16213E;
+  width: 1000px;
+  height: 1000px;
+  margin: 2%;
+}
+.current_treatments{
+  color: white;
+  width: 950px;
+  height: 400px;
+  background-color: #2E3F6E;
+}
+
+.add_treatments{
+  color: white;
+  width: 450px;
+  height: 520px;
+  background-color: #2E3F6E;
+}
+
+.remove_treatment{
+  color: white;
+  width: 475px;
+  height: 255px;
+  background-color: #2E3F6E;
+}
+
+.treatment_history{
+  color: white;
+  width: 475px;
+  height: 255px;
+  background-color: #2E3F6E;
+}
+
+.divisor_ct{
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+}
+
+.divisor_at{
+  padding-left: 25px;
+}
+
+.divisor_rt{
+  padding-left: 25px;
+  margin-bottom: 10px
+}
+
+.divisor_th{
+  padding-left: 25px;
+}
+
+.card-container{
+  display: flex;
+}
+
+.card-container-horizontal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-card-title{
+  text-align: center;
+}
+
+.notes{
+  width: 400px;
+  height: 120px;
+  margin: 0 auto
+}
+
+mat-label{
+  text-align: justify;
+  color: white;
+  margin: 7px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add_treatments{
+  text-align: right;
+}
+
+.button_add{
+  text-align: center;
+  padding-top: 25px;
+}
+
+input{
+  width: 200px;
+  height: 25px;
+}
+
+mat-card-title{
+  padding-top: 10px;
+  font-size: 1.4rem;
+}
+
+mat-form-field{
+  width: 180px;
+  height: 70px;
+}
+
+select{
+  width: 205px;
+  height: 30px;
+}
+/*
+
+*/
+
+
+
