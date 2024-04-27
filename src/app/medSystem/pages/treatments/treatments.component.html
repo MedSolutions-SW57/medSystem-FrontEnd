@@ -93,21 +93,30 @@
             Treatment history
           </mat-card-title>
           <div class="slider">
-            <mat-card-content class="card-container-vertical">
-              <mat-card *ngFor="let treatment of treatments">
+            <mat-card-content *ngFor="let treatment of treatments" >
+              <mat-card class="card-container-lower-container">
                 <mat-card-content>
                   <p><b>Patient's name: </b> {{treatment.patientName}}</p>
                   <p><b>Dose: </b> {{treatment.dose}}</p>
                   <p><b>Duration: </b> {{treatment.duration}}</p>
                   <p><b>Frequency: </b> {{treatment.frequency}}</p>
+
                 </mat-card-content>
+
               </mat-card>
+              <div class="arrow-button">
+                <span class="material-symbols-outlined">arrow_drop_down</span>
+              </div>
+
             </mat-card-content>
+
           </div>
+
         </mat-card>
       </div>
 
     </div>
 
   </div>
+
 </mat-card>
