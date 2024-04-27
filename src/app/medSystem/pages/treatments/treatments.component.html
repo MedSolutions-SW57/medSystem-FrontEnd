@@ -3,66 +3,85 @@
   <div class="divisor_ct">
     <mat-card class="current_treatments">
       <mat-card-title>Current treatments</mat-card-title>
+      <br>
+      <div class="slider">
+        <mat-card-content >
+          <div class="card-container-horizontal"  >
+            <mat-card *ngFor="let treatment of treatments" class="e">
+              <mat-card-title class="titles">{{treatment.name}}</mat-card-title>
+              <mat-card-content>
+                <p><b>Patient's name: </b> {{treatment.patientName}}</p>
+                <p><b>Dose: </b> {{treatment.dose}}</p>
+                <p><b>Duration: </b> {{treatment.duration}}</p>
+                <p><b>Frequency: </b> {{treatment.frequency}}</p>
+                <p><b>Notes: </b> {{treatment.notes}}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </mat-card-content>
+      </div>
 
     </mat-card>
   </div>
 
   <div class="card-container">
 
-  <div class="divisor_at">
-    <mat-card class="add_treatments">
+    <div class="divisor_at">
+      <mat-card class="add_treatments">
+        <mat-card-title>Add treatments</mat-card-title>
+        <mat-card-content>
+          <mat-label>Name of patient:
+            <select>
+              <option  value="" disabled selected hidden>Select an option</option>
+              <option value="opcion1">Opción 1</option>
+            </select>
+          </mat-label>
 
-      <mat-card-title>Add treatments</mat-card-title>
-      <mat-label>Name of patient:
-        <select>
-          <option  value="" disabled selected hidden>Select an option</option>
-          <option value="opcion1">Opción 1</option>
-        </select>
-      </mat-label>
+          <mat-label>Name of treatment:
+            <select>
+              <option  value="" disabled selected hidden>Select an option</option>
+              <option value="opcion1">Opción 1</option>
+            </select>
+          </mat-label>
+          <mat-label>Dose:
+            <input type="text">
+          </mat-label>
+          <mat-label>Frequency:
+            <input type="text">
+          </mat-label>
+          <mat-label>Duration:
+            <input type="text">
+          </mat-label>
 
-      <mat-label>Name of treatment:
-        <select>
-          <option  value="" disabled selected hidden>Select an option</option>
-          <option value="opcion1">Opción 1</option>
-        </select>
-      </mat-label>
-      <mat-label>Dose:
-        <input type="text">
-      </mat-label>
-      <mat-label>Frequency:
-        <input type="text">
-      </mat-label>
-      <mat-label>Duration:
-        <input type="text">
-      </mat-label>
+          <mat-label>Notes: </mat-label>
+          <input class="notes" type="text">
+          <div class="button_add">
+            <button mat-raised-button color="warn">Add</button>
+          </div>
+        </mat-card-content>
 
-      <mat-label>Notes: </mat-label>
-      <input class="notes" type="text">
-      <div class="button_add">
-        <button mat-raised-button color="warn">Add</button>
+
+
+      </mat-card>
+    </div>
+
+    <div class="card-container-vertical">
+
+      <div class="divisor_rt">
+        <mat-card class="remove_treatment">
+          <mat-card-title>
+            Remove treatment
+          </mat-card-title>
+        </mat-card>
       </div>
 
-
-    </mat-card>
-  </div>
-
-    <div class="card-container-horizontal">
-
-  <div class="divisor_rt">
-    <mat-card class="remove_treatment">
-      <mat-card-title>
-        Remove treatment
-      </mat-card-title>
-    </mat-card>
-  </div>
-
-  <div class="divisor_th">
-    <mat-card class="treatment_history" >
-      <mat-card-title>
-        Treatment history
-      </mat-card-title>
-    </mat-card>
-  </div>
+      <div class="divisor_th">
+        <mat-card class="treatment_history" >
+          <mat-card-title>
+            Treatment history
+          </mat-card-title>
+        </mat-card>
+      </div>
 
     </div>
 
