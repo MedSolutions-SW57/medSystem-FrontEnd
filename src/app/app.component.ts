@@ -13,6 +13,7 @@ export class AppComponent {
     { path: '/chat', title: 'Chat', icon:'chat'},
     { path: '/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
     { path: '/request-history', title: 'Request History', icon:'history'},
-    { path: '/request-results', title: 'Request Results', icon: 'swap_vertical_circle'}
+    { path: '/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
+    { path:'/review-appointment'}
   ]
 }

@@ -52,7 +52,7 @@
       <ng-container matColumnDef="moreInfo">
         <th mat-sort-header mat-header-cell *matHeaderCellDef>More</th>
         <td mat-cell *matCellDef="let element">
-          <button mat-raised-button color="primary">MORE</button>
+          <button mat-raised-button color="primary" (click)="navigateToReviewAppointment()">MORE</button>
         </td>
       </ng-container>
 
