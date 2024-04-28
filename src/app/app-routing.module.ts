@@ -9,7 +9,7 @@ import {
 } from "./appointments/components/review-appointment/review-appointment.component";
 
 const routes: Routes = [
-  {path: 'appointments',component: DoctorAppointmentsComponent},
+  {path: 'doctor/2/appointments',component: DoctorAppointmentsComponent},
   {path: 'treatments-patient',component: TreatmentsComponent},
   {path: 'request-history', component: RequestHistoryComponent},
   {path: 'request-results',component: RequestResultsComponent},
