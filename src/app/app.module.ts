@@ -23,9 +23,10 @@ import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-fo
 import {TreatmentsComponent} from "./medSystem/pages/treatments/treatments.component";
 import {CdkDragPlaceholder} from "@angular/cdk/drag-drop";
 import {MatOption, MatSelect} from "@angular/material/select";
-import { RequestHistoryComponent } from './medSystem/pages/request-history/request-history.component';
+import { DoctorRequestHistoryComponent } from './request-history/pages/doctor/doctor-request-history.component';
 import { ReviewAppointmentComponent } from './appointments/components/review-appointment/review-appointment.component';
 import {MatSlider} from "@angular/material/slider";
+import { ComponentsComponent } from './request-history/components/components.component';
 
 
 @NgModule({
@@ -35,8 +36,9 @@ import {MatSlider} from "@angular/material/slider";
     DoctorAppointmentsComponent,
     PageNotFoundComponent,
     TreatmentsComponent,
-    RequestHistoryComponent,
-    ReviewAppointmentComponent
+    DoctorRequestHistoryComponent,
+    ReviewAppointmentComponent,
+    ComponentsComponent
   ],
   imports: [
     BrowserModule,
