@@ -20,7 +20,7 @@ import {MatCardModule} from "@angular/material/card";
 import {DoctorAppointmentsComponent} from "./appointments/pages/doctor/doctor-appointments.component";
 import {BaseService} from "./shared/services/base.service";
 import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
-import {TreatmentsComponent} from "./medSystem/pages/treatments/treatments.component";
+import {DoctorTreatmentsComponent} from "./treatments/pages/doctor/doctor-treatments.component";
 import {CdkDragPlaceholder} from "@angular/cdk/drag-drop";
 import {MatOption, MatSelect} from "@angular/material/select";
 import { DoctorRequestHistoryComponent } from './request-history/pages/doctor/doctor-request-history.component';
@@ -34,7 +34,7 @@ import {MatSlider} from "@angular/material/slider";
     DoctorRequestResultsComponent,
     DoctorAppointmentsComponent,
     PageNotFoundComponent,
-    TreatmentsComponent,
+    DoctorTreatmentsComponent,
     DoctorRequestHistoryComponent,
     ReviewAppointmentComponent,
   ],
