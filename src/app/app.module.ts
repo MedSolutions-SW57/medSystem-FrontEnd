@@ -26,7 +26,6 @@ import {MatOption, MatSelect} from "@angular/material/select";
 import { DoctorRequestHistoryComponent } from './request-history/pages/doctor/doctor-request-history.component';
 import { ReviewAppointmentComponent } from './appointments/components/review-appointment/review-appointment.component';
 import {MatSlider} from "@angular/material/slider";
-import { ComponentsComponent } from './request-history/components/components.component';
 
 
 @NgModule({
@@ -38,7 +37,6 @@ import { ComponentsComponent } from './request-history/components/components.com
     TreatmentsComponent,
     DoctorRequestHistoryComponent,
     ReviewAppointmentComponent,
-    ComponentsComponent
   ],
   imports: [
     BrowserModule,
