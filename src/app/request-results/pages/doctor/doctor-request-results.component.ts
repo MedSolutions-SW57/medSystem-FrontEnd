@@ -1,7 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {BaseService} from "../../../shared/services/base.service";
-import {Results} from "../../model/results.entity";
+import {Results} from "../../../medSystem/model/results.entity";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 
@@ -10,10 +10,10 @@ import {MatSort} from "@angular/material/sort";
 
 @Component({
   selector: 'app-request-results',
-  templateUrl: './request-results.component.html',
-  styleUrl: './request-results.component.css'
+  templateUrl: './doctor-request-results.component.html',
+  styleUrl: './doctor-request-results.component.css'
 })
-export class RequestResultsComponent {
+export class DoctorRequestResultsComponent {
   resultsList !:Results[];
   dataSource:any;
   displayedColumns = ["code","name","date","examType","result", "action"];

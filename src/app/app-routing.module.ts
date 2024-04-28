@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {DoctorAppointmentsComponent} from "./appointments/pages/doctor/doctor-appointments.component";
-import {RequestResultsComponent} from "./medSystem/pages/request-results/request-results.component";
+import {DoctorRequestResultsComponent} from "./request-results/pages/doctor/doctor-request-results.component";
 import {TreatmentsComponent} from "./medSystem/pages/treatments/treatments.component";
 import {RequestHistoryComponent} from "./medSystem/pages/request-history/request-history.component";
 import {
@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'doctor/2/appointments',component: DoctorAppointmentsComponent},
   {path: 'treatments-patient',component: TreatmentsComponent},
   {path: 'request-history', component: RequestHistoryComponent},
-  {path: 'request-results',component: RequestResultsComponent},
+  {path: 'request-results',component: DoctorRequestResultsComponent},
   {path:'review-appointment', component: ReviewAppointmentComponent}
 ];
 

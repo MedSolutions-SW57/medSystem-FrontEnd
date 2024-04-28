@@ -11,7 +11,7 @@ import {MatListModule} from "@angular/material/list";
 import {FormsModule} from "@angular/forms";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatInputModule} from "@angular/material/input";
-import {RequestResultsComponent} from "./medSystem/pages/request-results/request-results.component";
+import {DoctorRequestResultsComponent} from "./request-results/pages/doctor/doctor-request-results.component";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
@@ -31,7 +31,7 @@ import {MatSlider} from "@angular/material/slider";
 @NgModule({
   declarations: [
     AppComponent,
-    RequestResultsComponent,
+    DoctorRequestResultsComponent,
     DoctorAppointmentsComponent,
     PageNotFoundComponent,
     TreatmentsComponent,
