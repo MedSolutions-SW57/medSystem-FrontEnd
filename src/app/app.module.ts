@@ -17,14 +17,14 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
-import {AppointmentsComponent} from "./medSystem/pages/appointments/appointments.component";
+import {DoctorAppointmentsComponent} from "./appointments/pages/doctor/doctor-appointments.component";
 import {BaseService} from "./shared/services/base.service";
 import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
 import {TreatmentsComponent} from "./medSystem/pages/treatments/treatments.component";
 import {CdkDragPlaceholder} from "@angular/cdk/drag-drop";
 import {MatOption, MatSelect} from "@angular/material/select";
 import { RequestHistoryComponent } from './medSystem/pages/request-history/request-history.component';
-import { ReviewAppointmentComponent } from './medSystem/pages/appointments/review-appointment/review-appointment.component';
+import { ReviewAppointmentComponent } from './appointments/components/review-appointment/review-appointment.component';
 import {MatSlider} from "@angular/material/slider";
 
 
@@ -32,7 +32,7 @@ import {MatSlider} from "@angular/material/slider";
   declarations: [
     AppComponent,
     RequestResultsComponent,
-    AppointmentsComponent,
+    DoctorAppointmentsComponent,
     PageNotFoundComponent,
     TreatmentsComponent,
     RequestHistoryComponent,

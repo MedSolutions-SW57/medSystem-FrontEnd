@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Appointment} from "../../model/appointment.entity";
+import {Appointment} from "../../../medSystem/model/appointment.entity";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {BaseService} from "../../../shared/services/base.service";
@@ -8,13 +8,13 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-appointments',
-  templateUrl: './appointments.component.html',
-  styleUrl: './appointments.component.css'
+  templateUrl: './doctor-appointments.component.html',
+  styleUrl: './doctor-appointments.component.css'
 })
-export class AppointmentsComponent {
+export class DoctorAppointmentsComponent {
   appointmentList !:Appointment[];
   dataSource:any;
-  displayedColumns = ["appointmentId","patientName","appointmentDay","appointmentHour"];
+  displayedColumns = ["appointmentId","patientName","appointmentDay","appointmentHour","moreInfo"];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
   constructor(private service:BaseService, private router:Router) {
