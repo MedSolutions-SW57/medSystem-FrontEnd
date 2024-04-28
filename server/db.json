@@ -28,6 +28,7 @@
           "appointmentHour": "12:00",
           "moreInfo": "https://link.com"
         }
+
       ]
     },
     {
@@ -58,6 +59,37 @@
           "appointmentHour": "12:00",
           "moreInfo": "https://link.com"
         }
+      ]
+    },
+    {
+      "id": 3,
+      "firstName": "Dasdsd",
+      "lastName": "Smsdseith",
+      "dni": "12345678",
+      "email": "example@gmail.com",
+      "appointments": [
+        {
+          "id": 1,
+          "patientName": "John Doe",
+          "appointmentDay": "2024-01-01",
+          "appointmentHour": "12:00",
+          "moreInfo": "https://link.com"
+        },
+        {
+          "id": 2,
+          "patientName": "Michael Phelps",
+          "appointmentDay": "2024-01-01",
+          "appointmentHour": "12:00",
+          "moreInfo": "https://link.com"
+        },
+        {
+          "id": 3,
+          "patientName": "Marc Down",
+          "appointmentDay": "2024-01-01",
+          "appointmentHour": "12:00",
+          "moreInfo": "https://link.com"
+        }
+
       ]
     }
   ],

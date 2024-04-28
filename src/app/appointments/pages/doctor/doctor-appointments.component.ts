@@ -23,7 +23,7 @@ export class DoctorAppointmentsComponent {
   }
 
   fetchAppointments(): void {
-    this.doctorService.getAllDoctorPerId(2).subscribe({
+    this.doctorService.getAllDoctorPerId(1).subscribe({
       next: (response) => {
         console.log('Doctor appointments:', response.appointments);
         this.dataSource = new MatTableDataSource<Appointment>(response.appointments);
