@@ -1,4 +1,26 @@
 {
+  "patients": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "dni": "12345678",
+      "email": "sasas@gmail.com",
+      "password": "123456",
+      "appointments": [
+        {}
+      ]
+    },
+    {
+      "firstName": "ola",
+      "lastName": "asdasd",
+      "dni": "1213",
+      "email": "ola@emxas.com",
+      "password": "ola",
+      "appointments": [],
+      "id": 2
+    }
+  ],
   "doctor": [
     {
       "id": 1,
