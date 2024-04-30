@@ -8,7 +8,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatInputModule} from "@angular/material/input";
 import {DoctorRequestResultsComponent} from "./request-results/pages/doctor/doctor-request-results.component";
@@ -27,6 +27,12 @@ import { DoctorRequestHistoryComponent } from './request-history/pages/doctor/do
 import { ReviewAppointmentComponent } from './appointments/components/review-appointment/review-appointment.component';
 import {MatSlider} from "@angular/material/slider";
 import { PatientRequestHistoryComponent } from './request-history/pages/patient/patient-request-history.component';
+import {Register} from "./public/pages/register-page/register";
+import {PatientRegisterFormComponent} from "./public/components/patient-register-form/patient-register-form.component";
+import {DoctorRegisterFormComponent} from "./public/components/doctor-register-form/doctor-register-form.component";
+import {
+  ConsultancyRegisterFormComponent
+} from "./public/components/consultancy-register-form/consultancy-register-form.component";
 
 
 @NgModule({
@@ -39,6 +45,10 @@ import { PatientRequestHistoryComponent } from './request-history/pages/patient/
     DoctorRequestHistoryComponent,
     ReviewAppointmentComponent,
     PatientRequestHistoryComponent,
+    Register,
+    PatientRegisterFormComponent,
+    DoctorRegisterFormComponent,
+    ConsultancyRegisterFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +69,8 @@ import { PatientRequestHistoryComponent } from './request-history/pages/patient/
     CdkDragPlaceholder,
     MatSelect,
     MatOption,
-    MatSlider
+    MatSlider,
+    ReactiveFormsModule
   ],
   providers: [
     BaseService,provideAnimationsAsync()
