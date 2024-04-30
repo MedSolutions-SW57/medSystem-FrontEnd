@@ -17,7 +17,7 @@ export class DoctorRequestHistoryComponent {
   displayedColumns = ['historyId','doctorName', 'historyReason', 'historyDate'];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(private service:BaseService) {
+  constructor(private service:BaseService<History>) {
     this.service.getAppointmentsWithHistory().subscribe(res => {
       this.historyList = res.flatMap(appointment => appointment.requestHistory);
       this.dataSource = new MatTableDataSource<History>(this.historyList);

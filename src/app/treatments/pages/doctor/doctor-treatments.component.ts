@@ -9,7 +9,7 @@ import {BaseService} from "../../../shared/services/base.service";
 })
 export class DoctorTreatmentsComponent {
   treatments !:Treatment[];
-  constructor(private service:BaseService) {
+  constructor(private service:BaseService<Treatment>) {
     this.service.getTreatments().subscribe(res=>{
       this.treatments = res;
     });
