@@ -5,9 +5,6 @@ import {Results} from "../../../medSystem/model/results.entity";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 
-
-
-
 @Component({
   selector: 'app-request-results',
   templateUrl: './doctor-request-results.component.html',
