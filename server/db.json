@@ -1,4 +1,35 @@
 {
+  "patients": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "dni": "12345678",
+      "email": "sasas@gmail.com",
+      "password": "123456",
+      "appointments": [
+        {}
+      ]
+    },
+    {
+      "firstName": "ola",
+      "lastName": "asdasd",
+      "dni": "1213",
+      "email": "ola@emxas.com",
+      "password": "ola",
+      "appointments": [],
+      "id": 2
+    },
+    {
+      "firstName": "Carlos",
+      "lastName": "Guimaraes",
+      "dni": "71220280",
+      "email": "HOLA123@gmail.com",
+      "password": "hola1234",
+      "appointments": [],
+      "id": 3
+    }
+  ],
   "doctor": [
     {
       "id": 1,
