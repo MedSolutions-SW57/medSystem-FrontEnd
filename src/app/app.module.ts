@@ -26,6 +26,9 @@ import {MatOption, MatSelect} from "@angular/material/select";
 import { RequestHistoryComponent } from './medSystem/pages/request-history/request-history.component';
 import { ReviewAppointmentComponent } from './appointments/components/review-appointment/review-appointment.component';
 import {MatSlider} from "@angular/material/slider";
+import { PatientExamResultsComponent } from './request-results/pages/patient/patient-request-results/patient-exam-results.component';
+import {MatMenuModule} from "@angular/material/menu";
+
 
 
 @NgModule({
@@ -36,7 +39,8 @@ import {MatSlider} from "@angular/material/slider";
     PageNotFoundComponent,
     TreatmentsComponent,
     RequestHistoryComponent,
-    ReviewAppointmentComponent
+    ReviewAppointmentComponent,
+    PatientExamResultsComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,8 @@ import {MatSlider} from "@angular/material/slider";
     CdkDragPlaceholder,
     MatSelect,
     MatOption,
-    MatSlider
+    MatSlider,
+    MatMenuModule
   ],
   providers: [
     BaseService,provideAnimationsAsync()

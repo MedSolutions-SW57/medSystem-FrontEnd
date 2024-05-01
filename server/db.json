@@ -251,85 +251,97 @@
   ],
   "results": [
     {
-      "code": 1,
-      "name": "John Doe",
+      "id": 1,
+      "patientName": "John Doe",
+      "doctorName": "Smith",
       "date": "2024-01-01",
       "examType": "Rheumatology",
       "result": "Available"
     },
     {
-      "code": 2,
-      "name": "Jane Doe",
+      "id": 2,
+      "patientName": "Jane Doe",
+      "doctorName": "Lee",
       "date": "2024-01-10",
       "examType": "Rheumatology",
       "result": "In Progress"
     },
     {
-      "code": 3,
-      "name": "Cindy Lou",
+      "id": 3,
+      "patientName": "Cindy Lou",
+      "doctorName": "Garcia",
       "date": "2024-02-11",
       "examType": "Rheumatology",
       "result": "In Progress"
     },
     {
-      "code": 4,
-      "name": "Katie Smith",
+      "id": 4,
+      "patientName": "Katie Smith",
+      "doctorName": "Perez",
       "date": "2024-02-20",
       "examType": "Rheumatology",
       "result": "Available"
     },
     {
-      "code": 5,
-      "name": "Celia Vegas",
+      "id": 5,
+      "patientName": "Celia Vegas",
+      "doctorName": "Rodriguez",
       "date": "2024-01-01",
       "examType": "Rheumatology",
       "result": "Available"
     },
     {
-      "code": 6,
-      "name": "Angela Acevedo",
+      "id": 6,
+      "patientName": "Angela Acevedo",
+      "doctorName": "Morales",
       "date": "2024-01-10",
       "examType": "Rheumatology",
       "result": "In Progress"
     },
     {
-      "code": 7,
-      "name": "Jacobo Anton",
+      "id": 7,
+      "patientName": "Jacobo Anton",
+      "doctorName": "Sanchez",
       "date": "2024-02-11",
       "examType": "Rheumatology",
       "result": "In Progress"
     },
     {
-      "code": 8,
-      "name": "Jose Manuel Bejarano",
+      "id": 8,
+      "patientName": "Jose Manuel Bejarano",
+      "doctorName": "Ramirez",
       "date": "2024-02-20",
       "examType": "Rheumatology",
       "result": "Available"
     },
     {
-      "code": 9,
-      "name": "Francisco Luis Castellano",
+      "id": 9,
+      "patientName": "Francisco Luis Castellano",
+      "doctorName": "Cruz",
       "date": "2024-01-01",
       "examType": "Rheumatology",
       "result": "Available"
     },
     {
-      "code": 10,
-      "name": "Violeta Salmeron",
+      "id": 10,
+      "patientName": "Violeta Salmeron",
+      "doctorName": "Fernandez",
       "date": "2024-01-10",
       "examType": "Rheumatology",
       "result": "In Progress"
     },
     {
-      "code": 11,
-      "name": "Olga Hidalgo",
+      "id": 11,
+      "patientName": "Olga Hidalgo",
+      "doctorName": "Gomez",
       "date": "2024-02-11",
       "examType": "Rheumatology",
       "result": "Available"
     },
     {
-      "code": 12,
-      "name": "Luz Marina Maya",
+      "id": 12,
+      "patientName": "Luz Marina Maya",
+      "doctorName": "Morales",
       "date": "2024-02-20",
       "examType": "Rheumatology",
       "result": "Available"
