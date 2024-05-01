@@ -16,7 +16,7 @@ import {MatSort} from "@angular/material/sort";
 export class DoctorRequestResultsComponent {
   resultsList !:Results[];
   dataSource:any;
-  displayedColumns = ["code","name","date","examType","result", "action"];
+  displayedColumns = ["id","patientName","date","examType","result", "action"];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
   constructor(private service:BaseService<Results>) {
