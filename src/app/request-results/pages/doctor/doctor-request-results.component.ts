@@ -19,7 +19,7 @@ export class DoctorRequestResultsComponent {
   displayedColumns = ["id","patientName","date","examType","result", "action"];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
-  constructor(private service:BaseService) {
+  constructor(private service:BaseService<Results>) {
     this.service.getResults().subscribe(res=>{
       this.resultsList = res;
       this.dataSource= new MatTableDataSource<Results>(this.resultsList);

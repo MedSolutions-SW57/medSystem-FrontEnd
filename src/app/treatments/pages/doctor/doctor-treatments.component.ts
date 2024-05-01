@@ -1,15 +1,15 @@
 import {Component} from '@angular/core';
-import {Treatment} from "../../model/treatment.entity";
+import {Treatment} from "../../../medSystem/model/treatment.entity";
 import {BaseService} from "../../../shared/services/base.service";
 
 @Component({
   selector: 'app-treatments',
-  templateUrl: './treatments.component.html',
-  styleUrl: './treatments.component.css'
+  templateUrl: './doctor-treatments.component.html',
+  styleUrl: './doctor-treatments.component.css'
 })
-export class TreatmentsComponent {
+export class DoctorTreatmentsComponent {
   treatments !:Treatment[];
-  constructor(private service:BaseService) {
+  constructor(private service:BaseService<Treatment>) {
     this.service.getTreatments().subscribe(res=>{
       this.treatments = res;
     });
