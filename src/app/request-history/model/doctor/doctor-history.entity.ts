@@ -1,4 +1,4 @@
-export interface History {
+export interface DoctorHistory {
   historyId: string;
   doctorName: string;
   historyReason: string;

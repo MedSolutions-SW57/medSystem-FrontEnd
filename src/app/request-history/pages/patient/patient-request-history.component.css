@@ -1,0 +1,123 @@
+.mat-card-container {
+  background-color: #16213E;
+  padding: 24px;
+  width: 100%;
+  color: white;
+  font-family: Inter, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card-content {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.header-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.profile-button{
+  display: flex;
+  padding: 5px;
+  border: none;
+  overflow: hidden;
+  border-radius: 10px;
+  outline: none;
+  background-color: #EDF2FA;
+  cursor: pointer;
+  align-items: center;
+}
+
+.profile-image:hover {
+  border: none;
+  outline: none;
+  background-color: #f6f2f2;
+}
+
+.profile-image {
+  background-color: #EDF2FA;
+  max-width: 40px;
+  height: auto;
+}
+
+.appointment-button{
+  padding: 17px 20px;
+  height: auto;
+  display: flex;
+  margin-left: 40px;
+  gap: 20px;
+  align-items: center;
+  background-color: #0033A0;
+  border: none;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.appointment-button p{
+  color: #FFFFFF;
+  font-family: Inter;
+  margin: 0;
+}
+
+.appointment-image {
+  max-width: 20px;
+  height: auto;
+}
+
+h1{
+  font-weight: bold;
+}
+
+.mat-card-filters {
+  background-color: #EDF2FA;
+  color: black;
+  padding: 20px 30px;
+  align-content: space-around;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.label {
+  margin-bottom: 5px;
+  color: black;
+}
+
+.select-bar{
+  width: 300px;
+  height: 30px;
+}
+
+th{
+  background-color: #0033A0 !important;
+  color: white;
+}
+
+td{
+  background-color: #EDF2FA !important;
+}
+
+
+mat-paginator {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+
+
+
+
+
