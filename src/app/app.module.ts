@@ -43,32 +43,6 @@ import {NgOptimizedImage} from "@angular/common";
     DoctorRequestResultsComponent,
     DoctorAppointmentsComponent,
     PageNotFoundComponent,
-    TreatmentsComponent,
-    RequestHistoryComponent,
-    ReviewAppointmentComponent,
-    PatientExamResultsComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatListModule,
-    FormsModule,
-    MatRadioModule,
-    MatInputModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatCardModule,
-    HttpClientModule,
-    CdkDragPlaceholder,
-    MatSelect,
-    MatOption,
-    MatSlider,
-    MatMenuModule
     DoctorTreatmentsComponent,
     DoctorRequestHistoryComponent,
     ReviewAppointmentComponent,
@@ -76,6 +50,7 @@ import {NgOptimizedImage} from "@angular/common";
     PatientRegisterFormComponent,
     DoctorRegisterFormComponent,
     ConsultancyRegisterFormComponent,
+    PatientExamResultsComponent,
   ],
     imports: [
         BrowserModule,
@@ -98,7 +73,8 @@ import {NgOptimizedImage} from "@angular/common";
         MatOption,
         MatSlider,
         ReactiveFormsModule,
-        NgOptimizedImage
+        NgOptimizedImage,
+        MatMenuModule
     ],
   providers: [
     BaseService,provideAnimationsAsync()

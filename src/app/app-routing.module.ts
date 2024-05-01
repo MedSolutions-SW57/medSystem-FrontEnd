@@ -5,9 +5,6 @@ import {DoctorTreatmentsComponent} from "./treatments/pages/doctor/doctor-treatm
 import {ReviewAppointmentComponent} from "./appointments/components/review-appointment/review-appointment.component";
 import {DoctorRequestHistoryComponent} from "./request-history/pages/doctor/doctor-request-history.component";
 import {DoctorRequestResultsComponent} from "./request-results/pages/doctor/doctor-request-results.component";
-import {TreatmentsComponent} from "./medSystem/pages/treatments/treatments.component";
-import {RequestHistoryComponent} from "./medSystem/pages/request-history/request-history.component";
-import {ReviewAppointmentComponent} from "./appointments/components/review-appointment/review-appointment.component";
 import {PatientExamResultsComponent} from "./request-results/pages/patient/patient-request-results/patient-exam-results.component";
 
 
