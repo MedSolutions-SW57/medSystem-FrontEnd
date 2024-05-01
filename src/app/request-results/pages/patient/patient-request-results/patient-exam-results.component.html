@@ -1,0 +1,73 @@
+
+
+<mat-card>
+
+  <mat-card-title>
+    <mat-toolbar color="primary">
+      <span>Exam results</span>
+      <span class="example-spacer"></span>
+      <button [matMenuTriggerFor]="lvl1profile" mat-icon-button><mat-icon>person</mat-icon></button>
+      <mat-menu #lvl1profile="matMenu">
+        <button mat-menu-item routerLink="">My profile</button>
+        <button mat-menu-item routerLink="">Logout</button>
+      </mat-menu>
+      <button class="button-appointment" routerLink="" mat-raised-button>
+        <mat-icon>calendar_month</mat-icon>
+        Schedule an appointment
+      </button>
+    </mat-toolbar>
+  </mat-card-title>
+  <mat-card-header>
+    <mat-form-field>
+      <input matInput (keyup)="Filterchange($event)" placeholder="Search"/>
+    </mat-form-field>
+  </mat-card-header>
+  <mat-card-content>
+
+    <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="id">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let element">{{ element.id}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="doctorName">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Doctor</th>
+        <td mat-cell *matCellDef="let element">{{ element.doctorName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let element">{{ element.date}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="examType">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Type of exam</th>
+        <td mat-cell *matCellDef="let element">{{ element.examType}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="result">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Result</th>
+        <td mat-cell *matCellDef="let element">{{ element.result}}</td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="primary" [disabled]="!isResultAvailable(element.result)">Show more</button>
+        </td>
+      </ng-container>
+
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+
+  </mat-card-content>
+  <br>
+  <mat-card-footer>
+    <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+  </mat-card-footer>
+</mat-card>
