@@ -23,8 +23,9 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Notes of the appointment</mat-label>
-    <textarea matInput placeholder="Notes of the appointment"></textarea>
+    <textarea matInput placeholder="{{appointment?.moreInfo}}" [(ngModel)]="note"></textarea>
   </mat-form-field>
 
   <button mat-raised-button color="primary" (click)="navigateBack()">Back</button>
+  <button mat-raised-button color="primary" (click)="addNote()">Add Note</button>
 </div>

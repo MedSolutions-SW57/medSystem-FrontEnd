@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Appointment} from "../../../medSystem/model/appointment.entity";
+import {Appointment} from "../../model/appointment.entity";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DoctorService} from "../../services/doctor.service";
 
@@ -10,6 +10,7 @@ import {DoctorService} from "../../services/doctor.service";
 })
 export class ReviewAppointmentComponent implements OnInit{
   appointment: Appointment | undefined;
+  note: string = '';
 
   constructor(private router: Router, private  route: ActivatedRoute, private doctorService: DoctorService) {
   }
@@ -35,4 +36,18 @@ export class ReviewAppointmentComponent implements OnInit{
       }
     });
   }
-}
+
+  addNote():void {
+    if(this.appointment && this.note) {
+      this.appointment.moreInfo = this.note;
+      this.doctorService.updateAppointment(this.appointment).subscribe({
+        next: (response) => {
+          console.log('Appointment updated:', response);
+        },
+        error: (error) => {
+          console.error('Error updating appointment:', error);
+        }
+      });
+      }
+    }
+  }

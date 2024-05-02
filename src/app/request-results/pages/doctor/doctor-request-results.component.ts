@@ -1,7 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {BaseService} from "../../../shared/services/base.service";
-import {Results} from "../../../medSystem/model/results.entity";
+import {Results} from "../../model/results.entity";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 

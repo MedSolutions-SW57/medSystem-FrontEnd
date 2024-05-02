@@ -1,4 +1,4 @@
-import {Appointment} from "../../medSystem/model/appointment.entity";
+import {Appointment} from "./appointment.entity";
 
 export interface Doctor{
   id: number;
@@ -6,5 +6,6 @@ export interface Doctor{
   lastName: string;
   dni: string;
   email: string;
+  password: string;
   appointment: Array<Appointment>
 }
