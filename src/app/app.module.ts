@@ -35,6 +35,9 @@ import {
   ConsultancyRegisterFormComponent
 } from "./public/components/consultancy-register-form/consultancy-register-form.component";
 import {NgOptimizedImage} from "@angular/common";
+import { NewAppointmentComponent } from './appointments/components/new-appointment/new-appointment.component';
+import {MatCalendar, MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
+import {MatStep, MatStepLabel, MatStepper, MatStepperNext, MatStepperPrevious} from "@angular/material/stepper";
 
 
 @NgModule({
@@ -51,31 +54,41 @@ import {NgOptimizedImage} from "@angular/common";
     DoctorRegisterFormComponent,
     ConsultancyRegisterFormComponent,
     PatientExamResultsComponent,
+    NewAppointmentComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        MatToolbarModule,
-        MatButtonModule,
-        MatIconModule,
-        MatSidenavModule,
-        MatListModule,
-        FormsModule,
-        MatRadioModule,
-        MatInputModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatCardModule,
-        HttpClientModule,
-        CdkDragPlaceholder,
-        MatSelect,
-        MatOption,
-        MatSlider,
-        ReactiveFormsModule,
-        NgOptimizedImage,
-        MatMenuModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    FormsModule,
+    MatRadioModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatCardModule,
+    HttpClientModule,
+    CdkDragPlaceholder,
+    MatSelect,
+    MatOption,
+    MatSlider,
+    ReactiveFormsModule,
+    NgOptimizedImage,
+    MatMenuModule,
+    MatCalendar,
+    MatDatepickerToggle,
+    MatDatepicker,
+    MatDatepickerInput,
+    MatStepper,
+    MatStep,
+    MatStepperNext,
+    MatStepLabel,
+    MatStepperPrevious
+  ],
   providers: [
     BaseService,provideAnimationsAsync()
   ],

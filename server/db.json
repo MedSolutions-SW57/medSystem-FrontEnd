@@ -8,7 +8,15 @@
       "email": "sasas@gmail.com",
       "password": "123456",
       "appointments": [
-        {}
+        {},
+        {
+          "patientName": "John Doe",
+          "appointmentDay": "2024-10-23",
+          "appointmentHour": "12:12",
+          "inTreatment": false,
+          "moreInfo": "se partio la pierna",
+          "requestHistory": []
+        }
       ]
     },
     {
@@ -310,6 +318,24 @@
           "historyDate": "2024-04-05"
         }
       ]
+    },
+    {
+      "patientName": "enrique garcia",
+      "appointmentDay": "2024-09-11",
+      "appointmentHour": "11:22",
+      "inTreatment": false,
+      "moreInfo": "sadasdasd",
+      "requestHistory": [],
+      "id": 9
+    },
+    {
+      "patientName": "John Doe",
+      "appointmentDay": "2024-10-23",
+      "appointmentHour": "12:12",
+      "inTreatment": false,
+      "moreInfo": "se partio la pierna",
+      "requestHistory": [],
+      "id": 10
     }
   ],
   "results": [
