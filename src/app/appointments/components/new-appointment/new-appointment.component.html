@@ -1,0 +1,62 @@
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>PATIENT INFORMATION</ng-template>
+      <mat-form-field>
+        <mat-label>First name</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="firstName" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Last name</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="lastName" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="APPOINTMENT DATAILS">
+    <form [formGroup]="secondFormGroup">
+      <mat-form-field>
+        <mat-label>Reason</mat-label>
+        <input matInput formControlName="moreInfo" placeholder=""
+               required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Doctor</mat-label>
+        <mat-select formControlName="doctor">
+          <mat-option *ngFor="let doctor of doctors" [value]="doctor.lastName">
+            {{ doctor.lastName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input matInput formControlName="date" placeholder="YYYY-MM-DD"
+               required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Hour</mat-label>
+        <input matInput formControlName="hour" placeholder="HH:MM"
+               required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>CONFIRM APPOINTMENT</ng-template>
+    <p>PAY FOR THE APPOINTMENT</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button (click)="submitAppointment()">PAY</button>
+    </div>
+  </mat-step>
+</mat-stepper>

@@ -6,6 +6,7 @@ import {ReviewAppointmentComponent} from "./appointments/components/review-appoi
 import {DoctorRequestHistoryComponent} from "./request-history/pages/doctor/doctor-request-history.component";
 import {DoctorRequestResultsComponent} from "./request-results/pages/doctor/doctor-request-results.component";
 import {PatientExamResultsComponent} from "./request-results/pages/patient/patient-request-results/patient-exam-results.component";
+import {NewAppointmentComponent} from "./appointments/components/new-appointment/new-appointment.component";
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'request-history', component: DoctorRequestHistoryComponent},
   {path: 'request-results',component: DoctorRequestResultsComponent},
   {path:'appointments/:id', component: ReviewAppointmentComponent},
-  {path: 'exam-results',component: PatientExamResultsComponent}
+  {path: 'exam-results',component: PatientExamResultsComponent},
+  {path: 'new-appointments', component:NewAppointmentComponent},
 ];
 
 @NgModule({
