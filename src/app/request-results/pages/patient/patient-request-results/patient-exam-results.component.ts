@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Results} from "../../../../medSystem/model/results.entity";
+import {Results} from "../../../model/results.entity";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {BaseService} from "../../../../shared/services/base.service";

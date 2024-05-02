@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Treatment} from "../../../medSystem/model/treatment.entity";
+import {Treatment} from "../../model/treatment.entity";
 import {BaseService} from "../../../shared/services/base.service";
 
 @Component({

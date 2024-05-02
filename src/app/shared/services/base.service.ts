@@ -1,10 +1,10 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
-import {Results} from "../../medSystem/model/results.entity";
-import {Appointment} from "../../medSystem/model/appointment.entity";
+import {Results} from "../../request-results/model/results.entity";
+import {Appointment} from "../../appointments/model/appointment.entity";
 import {environment} from "../../../environments/environment";
-import {Treatment} from "../../medSystem/model/treatment.entity";
+import {Treatment} from "../../treatments/model/treatment.entity";
 
 @Injectable({
   providedIn: 'root'
