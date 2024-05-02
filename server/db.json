@@ -41,22 +41,33 @@
         {
           "id": 1,
           "patientName": "John Doe",
-          "appointmentDay": "2024-01-01",
-          "appointmentHour": "12:00",
+          "appointmentDay": "2024-01-02",
+          "appointmentHour": "09:00",
+          "inTreatment": "true",
           "moreInfo": "https://link.com"
         },
         {
           "id": 2,
           "patientName": "Michael Phelps",
-          "appointmentDay": "2024-01-01",
-          "appointmentHour": "12:00",
+          "appointmentDay": "2024-01-02",
+          "appointmentHour": "10:30",
+          "inTreatment": "true",
           "moreInfo": "https://link.com"
         },
         {
           "id": 3,
           "patientName": "Marc Down",
-          "appointmentDay": "2024-01-01",
-          "appointmentHour": "12:00",
+          "appointmentDay": "2024-01-02",
+          "appointmentHour": "14:00",
+          "inTreatment": "true",
+          "moreInfo": "https://link.com"
+        },
+        {
+          "id": 7,
+          "patientName": "Dan Doe",
+          "appointmentDay": "2024-01-02",
+          "appointmentHour": "15:30",
+          "inTreatment": "true",
           "moreInfo": "https://link.com"
         }
       ]
@@ -71,22 +82,33 @@
         {
           "id": 4,
           "patientName": "Peter Parker",
-          "appointmentDay": "2024-01-01",
-          "appointmentHour": "12:00",
+          "appointmentDay": "2024-01-03",
+          "appointmentHour": "09:00",
+          "inTreatment": "true",
           "moreInfo": "https://link.com"
         },
         {
           "id": 5,
           "patientName": "Simon Stag",
-          "appointmentDay": "2024-01-01",
-          "appointmentHour": "12:00",
+          "appointmentDay": "2024-01-03",
+          "appointmentHour": "11:00",
+          "inTreatment": "true",
           "moreInfo": "https://link.com"
         },
         {
           "id": 6,
           "patientName": "Oliver Twist",
-          "appointmentDay": "2024-01-01",
-          "appointmentHour": "12:00",
+          "appointmentDay": "2024-01-03",
+          "appointmentHour": "13:00",
+          "inTreatment": "true",
+          "moreInfo": "https://link.com"
+        },
+        {
+          "id": 8,
+          "patientName": "Jaime Bailey",
+          "appointmentDay": "2024-01-03",
+          "appointmentHour": "14:30",
+          "inTreatment": "true",
           "moreInfo": "https://link.com"
         }
       ]
@@ -98,6 +120,7 @@
       "patientName": "John Doe",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
+      "inTreatment": "false",
       "moreInfo": "https://link.com",
       "requestHistory": [
         {
@@ -125,6 +148,7 @@
       "patientName": "Michael Phelps",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
+      "inTreatment": "true",
       "moreInfo": "https://link.com",
       "requestHistory": [
         {
@@ -152,6 +176,7 @@
       "patientName": "Marc Down",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
+      "inTreatment": "true",
       "moreInfo": "https://link.com",
       "requestHistory": [
         {
@@ -173,6 +198,7 @@
       "patientName": "Peter Parker",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
+      "inTreatment": "false",
       "moreInfo": "https://link.com",
       "requestHistory": [
         {
@@ -188,6 +214,7 @@
       "patientName": "Simon Stag",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
+      "inTreatment": "true",
       "moreInfo": "https://link.com",
       "requestHistory": [
         {
@@ -209,6 +236,7 @@
       "patientName": "Oliver Twist",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
+      "inTreatment": "false",
       "moreInfo": "https://link.com",
       "requestHistory": [
         {
@@ -236,6 +264,7 @@
       "patientName": "Dan Doe",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
+      "inTreatment": "true",
       "moreInfo": "https://link.com",
       "requestHistory": [
         {
@@ -257,6 +286,7 @@
       "patientName": "Jaime Bailey",
       "appointmentDay": "2024-01-01",
       "appointmentHour": "12:00",
+      "inTreatment": "false",
       "moreInfo": "https://link.com",
       "requestHistory": [
         {

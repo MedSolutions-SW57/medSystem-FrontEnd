@@ -12,4 +12,7 @@ export class DoctorService {
   getAllDoctorPerId(id: any): Observable<any>{
     return this.http.get(`http://localhost:3000/doctor/${id}`);
   }
+  getAppointmentById(id:any): Observable<any>{
+    return this.http.get(`http://localhost:3000/appointments/${id}`);
+  }
 }
