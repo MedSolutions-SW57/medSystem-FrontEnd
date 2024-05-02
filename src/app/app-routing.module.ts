@@ -9,11 +9,11 @@ import {PatientExamResultsComponent} from "./request-results/pages/patient/patie
 
 
 const routes: Routes = [
-  {path: 'doctor/2/appointments',component: DoctorAppointmentsComponent},
+  {path: 'doctor/:id/appointments',component: DoctorAppointmentsComponent},
   {path: 'treatments-patient',component: DoctorTreatmentsComponent},
   {path: 'request-history', component: DoctorRequestHistoryComponent},
   {path: 'request-results',component: DoctorRequestResultsComponent},
-  {path:'review-appointment', component: ReviewAppointmentComponent},
+  {path:'appointments/:id', component: ReviewAppointmentComponent},
   {path: 'exam-results',component: PatientExamResultsComponent}
 ];
 

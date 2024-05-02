@@ -3,5 +3,6 @@ export interface Appointment{
   patientName: string;
   appointmentDay: string;
   appointmentHour: string;
+  inTreatment: boolean;
   requestHistory: Array<any>;
 }

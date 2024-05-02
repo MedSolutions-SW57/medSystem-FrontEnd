@@ -1,9 +1,9 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Appointment} from "../../../medSystem/model/appointment.entity";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {MatTableDataSource} from "@angular/material/table";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {DoctorService} from "../../services/doctor.service";
 
 @Component({
@@ -11,19 +11,22 @@ import {DoctorService} from "../../services/doctor.service";
   templateUrl: './doctor-appointments.component.html',
   styleUrl: './doctor-appointments.component.css'
 })
-export class DoctorAppointmentsComponent {
+export class DoctorAppointmentsComponent implements OnInit{
   displayedColumns = ["appointmentId", "patientName", "appointmentDay", "appointmentHour", "moreInfo"];
   dataSource!: MatTableDataSource<Appointment>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private doctorService: DoctorService, private router: Router) {
-    this.fetchAppointments();
+  constructor(private doctorService: DoctorService, private router: Router, private route: ActivatedRoute) {
+  }
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.fetchAppointments(id);
   }
 
-  fetchAppointments(): void {
-    this.doctorService.getAllDoctorPerId(2).subscribe({
+  fetchAppointments(id: any): void {
+    this.doctorService.getAllDoctorPerId(id).subscribe({
       next: (response) => {
         console.log('Doctor appointments:', response.appointments);
         this.dataSource = new MatTableDataSource<Appointment>(response.appointments);
@@ -41,7 +44,7 @@ export class DoctorAppointmentsComponent {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  navigateToReviewAppointment(): void {
-    this.router.navigate(['/review-appointment']);
+  navigateToReviewAppointment(id: any): void {
+    this.router.navigate(['/appointments', id]);
   }
 }
