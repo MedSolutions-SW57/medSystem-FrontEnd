@@ -16,6 +16,22 @@
           "inTreatment": false,
           "moreInfo": "se partio la pierna",
           "requestHistory": []
+        },
+        {
+          "patientName": "John Doe",
+          "appointmentDay": "2022-22-22",
+          "appointmentHour": "59:00",
+          "inTreatment": false,
+          "moreInfo": "aaaa",
+          "requestHistory": []
+        },
+        {
+          "patientName": "asasa Doe",
+          "appointmentDay": "2020-20-20",
+          "appointmentHour": "09:00",
+          "inTreatment": false,
+          "moreInfo": "www",
+          "requestHistory": []
         }
       ]
     },
@@ -34,7 +50,24 @@
       "dni": "71220280",
       "email": "HOLA123@gmail.com",
       "password": "hola1234",
-      "appointments": [],
+      "appointments": [
+        {
+          "patientName": "Carlos Guimaraes",
+          "appointmentDay": "2023-10-10",
+          "appointmentHour": "99:99",
+          "inTreatment": false,
+          "moreInfo": "se partio la cabeza",
+          "requestHistory": []
+        },
+        {
+          "patientName": "Carlos Guimaraes",
+          "appointmentDay": "2023-11-11",
+          "appointmentHour": "99:22",
+          "inTreatment": false,
+          "moreInfo": "no c",
+          "requestHistory": []
+        }
+      ],
       "id": 3
     }
   ],
@@ -120,6 +153,14 @@
           "appointmentHour": "14:30",
           "inTreatment": "true",
           "moreInfo": ""
+        },
+        {
+          "patientName": "asasa Doe",
+          "appointmentDay": "2020-20-20",
+          "appointmentHour": "09:00",
+          "inTreatment": false,
+          "moreInfo": "www",
+          "requestHistory": []
         }
       ]
     }
@@ -336,6 +377,42 @@
       "moreInfo": "se partio la pierna",
       "requestHistory": [],
       "id": 10
+    },
+    {
+      "patientName": "Carlos Guimaraes",
+      "appointmentDay": "2023-10-10",
+      "appointmentHour": "99:99",
+      "inTreatment": false,
+      "moreInfo": "se partio la cabeza",
+      "requestHistory": [],
+      "id": 11
+    },
+    {
+      "patientName": "Carlos Guimaraes",
+      "appointmentDay": "2023-11-11",
+      "appointmentHour": "99:22",
+      "inTreatment": false,
+      "moreInfo": "no c",
+      "requestHistory": [],
+      "id": 12
+    },
+    {
+      "patientName": "John Doe",
+      "appointmentDay": "2022-22-22",
+      "appointmentHour": "59:00",
+      "inTreatment": false,
+      "moreInfo": "aaaa",
+      "requestHistory": [],
+      "id": 13
+    },
+    {
+      "patientName": "asasa Doe",
+      "appointmentDay": "2020-20-20",
+      "appointmentHour": "09:00",
+      "inTreatment": false,
+      "moreInfo": "www",
+      "requestHistory": [],
+      "id": 14
     }
   ],
   "results": [

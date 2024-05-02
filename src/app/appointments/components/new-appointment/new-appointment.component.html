@@ -28,8 +28,10 @@
       </mat-form-field>
       <mat-form-field>
         <mat-label>Doctor</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let doctor of doctors">{{ doctor.lastName }}</mat-option>
+        <mat-select formControlName="doctor">
+          <mat-option *ngFor="let doctor of doctors" [value]="doctor.lastName">
+            {{ doctor.lastName }}
+          </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field>

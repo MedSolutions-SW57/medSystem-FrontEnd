@@ -66,6 +66,24 @@ export class NewAppointmentComponent implements OnInit {
     }, error => {
       console.error(error);
     });
+    // Buscar el doctor por apellido
+    this.http.get(`http://localhost:3000/doctor?lastName=${this.secondFormGroup.value.doctor}`).subscribe((data: any) => {
+      if (data.length > 0) {
+        const doctor = data[0];
+        // Agregar la cita al array de citas del doctor
+        doctor.appointments.push(appointment);
+        // Actualizar el doctor con la nueva cita
+        this.http.put(`http://localhost:3000/doctor/${doctor.id}`, doctor).subscribe(response => {
+          console.log(response);
+        }, error => {
+          console.error(error);
+        });
+      } else {
+        console.log('No se encontró el doctor');
+      }
+    }, error => {
+      console.error(error);
+    });
 
   }
 }
