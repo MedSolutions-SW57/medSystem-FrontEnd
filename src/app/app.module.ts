@@ -26,13 +26,15 @@ import {MatOption, MatSelect} from "@angular/material/select";
 import { DoctorRequestHistoryComponent } from './request-history/pages/doctor/doctor-request-history.component';
 import { ReviewAppointmentComponent } from './appointments/components/review-appointment/review-appointment.component';
 import {MatSlider} from "@angular/material/slider";
-import { PatientRequestHistoryComponent } from './request-history/pages/patient/patient-request-history.component';
+import { PatientExamResultsComponent } from './request-results/pages/patient/patient-request-results/patient-exam-results.component';
+import {MatMenuModule} from "@angular/material/menu";
 import {Register} from "./public/pages/register-page/register";
 import {PatientRegisterFormComponent} from "./public/components/patient-register-form/patient-register-form.component";
 import {DoctorRegisterFormComponent} from "./public/components/doctor-register-form/doctor-register-form.component";
 import {
   ConsultancyRegisterFormComponent
 } from "./public/components/consultancy-register-form/consultancy-register-form.component";
+import {NgOptimizedImage} from "@angular/common";
 
 
 @NgModule({
@@ -44,34 +46,36 @@ import {
     DoctorTreatmentsComponent,
     DoctorRequestHistoryComponent,
     ReviewAppointmentComponent,
-    PatientRequestHistoryComponent,
     Register,
     PatientRegisterFormComponent,
     DoctorRegisterFormComponent,
     ConsultancyRegisterFormComponent,
+    PatientExamResultsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatListModule,
-    FormsModule,
-    MatRadioModule,
-    MatInputModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatCardModule,
-    HttpClientModule,
-    CdkDragPlaceholder,
-    MatSelect,
-    MatOption,
-    MatSlider,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatListModule,
+        FormsModule,
+        MatRadioModule,
+        MatInputModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatCardModule,
+        HttpClientModule,
+        CdkDragPlaceholder,
+        MatSelect,
+        MatOption,
+        MatSlider,
+        ReactiveFormsModule,
+        NgOptimizedImage,
+        MatMenuModule
+    ],
   providers: [
     BaseService,provideAnimationsAsync()
   ],

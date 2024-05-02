@@ -22,11 +22,14 @@ mat-paginator {
   display: flex;
   justify-content: center;
 }
-mat-label{
-  color: white;
-  margin: 1rem;
-  font-size: 0.85rem;
+.example-spacer{
+  flex: 1 1 auto;
 }
-.info-inputs{
-  flex-direction: row; align-items: flex-start; padding-right: 50px
+mat-toolbar{
+  background-color: #16213E;
+  font-size: 2rem;
+}
+.button-appointment {
+  color:white !important;
+  background-color: #0033A0 !important;
 }

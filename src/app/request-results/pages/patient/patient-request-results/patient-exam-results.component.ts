@@ -1,22 +1,19 @@
 import {Component, ViewChild} from '@angular/core';
-import {MatTableDataSource} from "@angular/material/table";
-import {BaseService} from "../../../shared/services/base.service";
-import {Results} from "../../../medSystem/model/results.entity";
+import {Results} from "../../../../medSystem/model/results.entity";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
-
-
-
+import {BaseService} from "../../../../shared/services/base.service";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
-  selector: 'app-request-results',
-  templateUrl: './doctor-request-results.component.html',
-  styleUrl: './doctor-request-results.component.css'
+  selector: 'app-patient-request-results',
+  templateUrl: './patient-exam-results.component.html',
+  styleUrl: './patient-exam-results.component.css'
 })
-export class DoctorRequestResultsComponent {
+export class PatientExamResultsComponent {
   resultsList !:Results[];
   dataSource:any;
-  displayedColumns = ["id","patientName","date","examType","result", "action"];
+  displayedColumns = ["id","doctorName","date","examType","result", "action"];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
   constructor(private service:BaseService<Results>) {
