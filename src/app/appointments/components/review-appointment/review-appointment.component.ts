@@ -10,7 +10,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class ReviewAppointmentComponent{
   constructor(private router: Router) {
   }
-  navigateToReviewAppointment() {
-    this.router.navigate(['/appointments']);
+  navigateBack() {
+    this.router.navigate(['/doctor/2/appointments']);
   }
 }
