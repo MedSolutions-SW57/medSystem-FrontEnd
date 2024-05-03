@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {PatientService} from "../../services/patient.service";
+import {DoctorService} from "../../../appointments/services/doctor.service";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-doctor-register-form',
@@ -12,7 +14,8 @@ export class DoctorRegisterFormComponent implements OnInit{
 
   constructor(
     private formBuilder: FormBuilder,
-    private patientService: PatientService // Inyectar el servicio
+    private doctorService: DoctorService,
+    private route: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,18 +30,19 @@ export class DoctorRegisterFormComponent implements OnInit{
 
   onSubmit() {
     if (this.formGroup.valid) {
-      const patientData = {
+      const doctorData = {
         ...this.formGroup.value,
         appointments: []
       }
-      this.patientService.create(patientData).subscribe({
+      this.doctorService.create(doctorData).subscribe({
         next: (response) => {
           console.log('Patient registered:', response);
-
+          alert('Doctor registered successfully');
+          this.route.navigate(['/login']);
         },
         error: (error) => {
           console.error('Failed to register patient:', error);
-
+          alert('ERROR: Doctor not registered. Please try again.');
         }
       });
     }

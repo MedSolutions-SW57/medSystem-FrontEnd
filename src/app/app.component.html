@@ -1,4 +1,6 @@
-<mat-sidenav-container>
+<div *ngIf="!userService.isLoggedIn()"><router-outlet/></div>
+
+<mat-sidenav-container *ngIf="userService.isLoggedIn()">
   <mat-sidenav opened mode="side" >
     <div class="sidenav-header">
       <img width="100" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
@@ -8,7 +10,7 @@
       </div>
     </div>
     <mat-nav-list>
-      <a mat-list-item *ngFor="let option of options" [routerLink]="option.path">
+      <a mat-list-item *ngFor="let option of getOptions()" [routerLink]="option.path">
         <mat-icon matListItemIcon>{{ option.icon }}</mat-icon>
         <span>{{ option.title }}</span>
       </a>

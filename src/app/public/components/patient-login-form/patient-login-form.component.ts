@@ -1,20 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {PatientService} from "../../services/patient.service";
-import {Router} from "@angular/router";
+import {DoctorService} from "../../../appointments/services/doctor.service";
 
 @Component({
-  selector: 'app-patient-register-form',
-  templateUrl: './patient-register-form.component.html',
-  styleUrl: './patient-register-form.component.css'
+  selector: 'app-patient-login-form',
+  templateUrl: './patient-login-form.component.html',
+  styleUrl: './patient-login-form.component.css'
 })
-export class PatientRegisterFormComponent implements OnInit{
+export class PatientLoginFormComponent {
   formGroup!: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private patientService: PatientService, // Inyectar el servicio
-    private route: Router
+    private doctorService: DoctorService// Inyectar el servicio
   ) { }
 
   ngOnInit(): void {
@@ -29,16 +27,14 @@ export class PatientRegisterFormComponent implements OnInit{
 
   onSubmit() {
     if (this.formGroup.valid) {
-      const patientData = {
+      const doctorData = {
         ...this.formGroup.value,
-        appointments: [],
-        treatments:[]
+        appointments: []
       }
-      this.patientService.create(patientData).subscribe({
+      this.doctorService.create(doctorData).subscribe({
         next: (response) => {
           console.log('Patient registered:', response);
-          alert('Patient registered successfully');
-          this.route.navigate(['/login']);
+
         },
         error: (error) => {
           console.error('Failed to register patient:', error);

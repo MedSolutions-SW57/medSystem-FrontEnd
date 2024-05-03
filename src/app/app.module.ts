@@ -38,6 +38,9 @@ import {NgOptimizedImage} from "@angular/common";
 import { PatientAppointmentsComponent } from './appointments/pages/patient/patient-appointments.component';
 import {NewAppointmentComponent} from "./appointments/components/new-appointment/new-appointment.component";
 import {MatStep, MatStepLabel, MatStepper, MatStepperNext, MatStepperPrevious} from "@angular/material/stepper";
+import { LoginPageComponent } from './public/pages/login-page/login-page.component';
+import { PatientLoginFormComponent } from './public/components/patient-login-form/patient-login-form.component';
+import { DoctorLoginFormComponent } from './public/components/doctor-login-form/doctor-login-form.component';
 
 
 @NgModule({
@@ -55,7 +58,10 @@ import {MatStep, MatStepLabel, MatStepper, MatStepperNext, MatStepperPrevious} f
     ConsultancyRegisterFormComponent,
     PatientExamResultsComponent,
     PatientAppointmentsComponent,
-    NewAppointmentComponent
+    NewAppointmentComponent,
+    LoginPageComponent,
+    PatientLoginFormComponent,
+    DoctorLoginFormComponent
   ],
   imports: [
     BrowserModule,

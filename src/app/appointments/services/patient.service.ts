@@ -11,9 +11,11 @@ export class PatientService {
   getAlPatientsPerId(id: any): Observable<any>{
     return this.http.get(`https://663440e79bb0df2359a10772.mockapi.io/patients/${id}`);
   }
+
   getAppointmentById(id:any): Observable<any>{
     return this.http.get(`https://663440e79bb0df2359a10772.mockapi.io/appointments/${id}`);
   }
+
   updateAppointment(appointment: Appointment): Observable<any> {
     return this.http.put(`https://663440e79bb0df2359a10772.mockapi.io/appointments${appointment.id}`, appointment);
   }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserService } from './public/services/user.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,12 +9,36 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'medSystem-FrontEnd';
 
-  options = [
-    { path: '/doctor/1/appointments', title: 'Appointments', icon:'calendar_today'},
-    { path: '/chat', title: 'Chat', icon:'chat'},
-    { path: '/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
-    { path: '/request-history', title: 'Request History', icon:'history'},
-    { path: '/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
-    { path: '/patients/2/appointments', title: 'New Appointment', icon:'new_appointment'},
-  ]
+  constructor(protected userService: UserService) { }
+
+  getOptions() {
+    const id = this.userService.getUserId();
+    console.log('id', id);
+    const userType = this.userService.getUserType();
+    const options = userType === 'doctor' ? this.getPatientOptions() : this.getPatientOptions();
+    return options.map(option => ({
+      ...option,
+      path: option.path.replace(':id', "2")
+    }));
+  }
+
+  getDoctorOptions() {
+    return [
+      { path: '/doctor/:id/appointments', title: 'Appointments', icon:'calendar_today'},
+      { path: '/chat', title: 'Chat', icon:'chat'},
+      { path: '/doctor/:id/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
+      { path: '/doctor/:id/request-history', title: 'Request History', icon:'history'},
+      { path: '/doctor/:id/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
+    ];
+  }
+
+  getPatientOptions() {
+    return [
+      { path: '/patients/:id/appointments', title: 'Appointments', icon:'calendar_today'},
+      { path: '/chat', title: 'Chat', icon:'chat'},
+      { path: '/patients/:id/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
+      { path: '/patients/:id/request-history', title: 'Request History', icon:'history'},
+      { path: '/patients/:id/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
+    ];
+  }
 }

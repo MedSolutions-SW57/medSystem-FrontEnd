@@ -6,4 +6,5 @@ export interface Patient{
   email: string;
   password: string;
   appointments: Array<any>;
+  treatments: Array<any>;
 }
