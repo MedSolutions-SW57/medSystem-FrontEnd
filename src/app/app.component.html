@@ -1,5 +1,15 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="sidenav.toggle();">
+      <mat-icon >menu</mat-icon>
+    </button>
+    <img class="img-logo" width="30"  src="favicon.ico">
+    <h1>MedSystem</h1>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <mat-sidenav-container>
-  <mat-sidenav opened mode="side" >
+  <mat-sidenav #sidenav mode="side" opened="true">
     <div class="sidenav-header">
       <img width="100" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
       <div class="header-text">
@@ -15,7 +25,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="content">
-    <router-outlet/>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container>>
 
