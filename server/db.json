@@ -8,7 +8,34 @@
       "email": "sasas@gmail.com",
       "password": "123456",
       "appointments": [
-        {}
+        {
+          "id": 1,
+          "appointmentDay": "2024-01-02",
+          "appointmentHour": "09:00",
+          "inTreatment": "true",
+          "moreInfo": ""
+        },
+        {
+          "id": 2,
+          "appointmentDay": "2024-01-02",
+          "appointmentHour": "10:00",
+          "inTreatment": "true",
+          "moreInfo": ""
+        },
+        {
+          "id": 3,
+          "appointmentDay": "2024-01-02",
+          "appointmentHour": "11:00",
+          "inTreatment": "true",
+          "moreInfo": ""
+        },
+        {
+          "id": 4,
+          "appointmentDay": "2024-01-02",
+          "appointmentHour": "09:00",
+          "inTreatment": "true",
+          "moreInfo": ""
+        }
       ]
     },
     {
@@ -17,7 +44,36 @@
       "dni": "1213",
       "email": "ola@emxas.com",
       "password": "ola",
-      "appointments": [],
+      "appointments": [
+        {
+          "id": 1,
+          "appointmentDay": "2024-01-02",
+          "appointmentHour": "09:00",
+          "inTreatment": "true",
+          "moreInfo": ""
+        },
+        {
+          "id": 2,
+          "appointmentDay": "2024-01-02",
+          "appointmentHour": "10:00",
+          "inTreatment": "true",
+          "moreInfo": ""
+        },
+        {
+          "id": 3,
+          "appointmentDay": "2024-01-02",
+          "appointmentHour": "11:00",
+          "inTreatment": "true",
+          "moreInfo": ""
+        },
+        {
+          "id": 4,
+          "appointmentDay": "2024-01-02",
+          "appointmentHour": "09:00",
+          "inTreatment": "true",
+          "moreInfo": ""
+        }
+      ],
       "id": 2
     },
     {

@@ -35,6 +35,7 @@ import {
   ConsultancyRegisterFormComponent
 } from "./public/components/consultancy-register-form/consultancy-register-form.component";
 import {NgOptimizedImage} from "@angular/common";
+import { PatientAppointmentsComponent } from './appointments/pages/patient/patient-appointments.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import {NgOptimizedImage} from "@angular/common";
     DoctorRegisterFormComponent,
     ConsultancyRegisterFormComponent,
     PatientExamResultsComponent,
+    PatientAppointmentsComponent,
   ],
     imports: [
         BrowserModule,

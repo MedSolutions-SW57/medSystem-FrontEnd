@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,5 +13,6 @@ export class AppComponent {
     { path: '/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
     { path: '/request-history', title: 'Request History', icon:'history'},
     { path: '/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
+    { path: '/patients/2/appointments', title: 'New Appointment', icon:'new_appointment'},
   ]
 }
