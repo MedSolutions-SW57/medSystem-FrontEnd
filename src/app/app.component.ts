@@ -15,10 +15,10 @@ export class AppComponent {
     const id = this.userService.getUserId();
     console.log('id', id);
     const userType = this.userService.getUserType();
-    const options = userType === 'doctor' ? this.getPatientOptions() : this.getPatientOptions();
+    const options = userType === 'doctor' ? this.getDoctorOptions() : this.getPatientOptions();
     return options.map(option => ({
       ...option,
-      path: option.path.replace(':id', "2")
+      path: option.path.replace(':id', id)
     }));
   }
 

@@ -8,8 +8,6 @@ import {DoctorRequestResultsComponent} from "./request-results/pages/doctor/doct
 import {PatientExamResultsComponent} from "./request-results/pages/patient/patient-request-results/patient-exam-results.component";
 import {PatientAppointmentsComponent} from "./appointments/pages/patient/patient-appointments.component";
 import {NewAppointmentComponent} from "./appointments/components/new-appointment/new-appointment.component";
-import {PatientRegisterFormComponent} from "./public/components/patient-register-form/patient-register-form.component";
-import {DoctorRegisterFormComponent} from "./public/components/doctor-register-form/doctor-register-form.component";
 import {Register} from "./public/pages/register-page/register";
 import {LoginPageComponent} from "./public/pages/login-page/login-page.component";
 import {PatientRequestHistoryComponent} from "./request-history/pages/patient/patient-request-history.component";
@@ -25,6 +23,7 @@ const routes: Routes = [
   {path: 'patients/:id/appointments', component: PatientAppointmentsComponent},
   {path: 'patients/:id/new-appointment', component: NewAppointmentComponent},
   {path: 'patients/:id/request-history', component: PatientRequestHistoryComponent},
+  {path: 'patients/:id/treatments-patient', redirectTo:'patients/:id/appointments'},
   {path: 'register', component: Register},
   {path: 'login', component: LoginPageComponent},
   {path: '', redirectTo: '/login',pathMatch: 'full'},

@@ -1,17 +1,44 @@
 import {Component, ViewChild, viewChild} from '@angular/core';
 import {BaseService} from "../../../shared/services/base.service";
-import {MatTableDataSource} from "@angular/material/table";
+import {
+  MatCell,
+  MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef, MatHeaderRowDef, MatRowDef,
+  MatTable,
+  MatTableDataSource
+} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {PatientHistory} from "../../model/patient/patient-history";
 import {DoctorHistory} from "../../model/doctor/doctor-history.entity";
+import {MatCard, MatCardContent, MatCardFooter, MatCardHeader} from "@angular/material/card";
+import {MatLabel} from "@angular/material/form-field";
 
 
 @Component({
   selector: 'app-request-history',
-  templateUrl: './doctor-request-history.component.html',
+  templateUrl: './patient-request-history.component.html',
   standalone: true,
-  styleUrl: './doctor-request-history.component.css'
+  imports: [
+    MatCard,
+    MatCardContent,
+    MatLabel,
+    MatCellDef,
+    MatCell,
+    MatHeaderCell,
+    MatSort,
+    MatTable,
+    MatColumnDef,
+    MatHeaderCellDef,
+    MatHeaderRowDef,
+    MatRowDef,
+    MatCardFooter,
+    MatPaginator,
+    MatCardHeader
+  ],
+  styleUrl: './patient-request-history.component.css'
 })
 export class PatientRequestHistoryComponent {
   historyList !: DoctorHistory[];
