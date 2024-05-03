@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {DoctorService} from "../../../appointments/services/doctor.service";
+import {Router} from "@angular/router";
+import {UserService} from "../../services/user.service";
+import {PatientService} from "../../../appointments/services/patient.service";
+
+
 
 @Component({
   selector: 'app-patient-login-form',
@@ -12,33 +16,33 @@ export class PatientLoginFormComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private doctorService: DoctorService// Inyectar el servicio
+    private patientService:PatientService, // Inyectar el servicio
+    private router:Router,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
       dni: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
 
   onSubmit() {
     if (this.formGroup.valid) {
-      const doctorData = {
-        ...this.formGroup.value,
-        appointments: []
-      }
-      this.doctorService.create(doctorData).subscribe({
-        next: (response) => {
-          console.log('Patient registered:', response);
-
+      const { dni, password } = this.formGroup.value;
+      this.patientService.login(dni, password).subscribe({
+        next: (patient) => {
+          if (patient) {
+            console.log('Patient logged in:', patient.id);
+            this.userService.setUserType('patient');
+            this.userService.setUserId(patient.id); // Asegúrate de que patient.id no es undefined
+          } else {
+            alert('Invalid credentials');
+          }
         },
         error: (error) => {
-          console.error('Failed to register patient:', error);
-
+          console.error('Failed to login:', error);
         }
       });
     }

@@ -42,7 +42,7 @@ export class PatientRegisterFormComponent implements OnInit{
         },
         error: (error) => {
           console.error('Failed to register patient:', error);
-
+          alert('ERROR: Patient not registered. Please try again.');
         }
       });
     }

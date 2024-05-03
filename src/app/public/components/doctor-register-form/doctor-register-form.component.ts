@@ -36,12 +36,12 @@ export class DoctorRegisterFormComponent implements OnInit{
       }
       this.doctorService.create(doctorData).subscribe({
         next: (response) => {
-          console.log('Patient registered:', response);
+          console.log('Doctor registered:', response);
           alert('Doctor registered successfully');
           this.route.navigate(['/login']);
         },
         error: (error) => {
-          console.error('Failed to register patient:', error);
+          console.error('Failed to register doctor:', error);
           alert('ERROR: Doctor not registered. Please try again.');
         }
       });

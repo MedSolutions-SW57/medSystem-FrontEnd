@@ -2,6 +2,14 @@
   padding: 0;
 }
 
+mat-sidenav{
+  background-color: #EDF2FA;
+
+}
+.menu-item{
+  border-left: 5px solid;
+  border-left-color: rgba(0,0,0,0);
+}
 mat-sidenav-container {
   height: 100vh;
 }
@@ -37,4 +45,3 @@ mat-toolbar {
 .img-logo{
   padding: 0 14px;
 }
-

@@ -21,7 +21,7 @@
       </div>
     </div>
     <mat-nav-list>
-      <a mat-list-item *ngFor="let option of getOptions()" [routerLink]="option.path">
+      <a mat-list-item class="menu-item" *ngFor="let option of getOptions()" [routerLink]="option.path">
         <mat-icon matListItemIcon>{{ option.icon }}</mat-icon>
         <span>{{ option.title }}</span>
       </a>
