@@ -40,4 +40,8 @@ export class PatientAppointmentsComponent {
   navigateToReviewAppointment(id: any): void {
     this.router.navigate(['/appointments', id]);
   }
+
+  navigateToNew(): void {
+    this.router.navigate(['/new-appointment']);
+  }
 }

@@ -36,6 +36,8 @@ import {
 } from "./public/components/consultancy-register-form/consultancy-register-form.component";
 import {NgOptimizedImage} from "@angular/common";
 import { PatientAppointmentsComponent } from './appointments/pages/patient/patient-appointments.component';
+import {NewAppointmentComponent} from "./appointments/components/new-appointment/new-appointment.component";
+import {MatStep, MatStepLabel, MatStepper, MatStepperNext, MatStepperPrevious} from "@angular/material/stepper";
 
 
 @NgModule({
@@ -53,31 +55,37 @@ import { PatientAppointmentsComponent } from './appointments/pages/patient/patie
     ConsultancyRegisterFormComponent,
     PatientExamResultsComponent,
     PatientAppointmentsComponent,
+    NewAppointmentComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        MatToolbarModule,
-        MatButtonModule,
-        MatIconModule,
-        MatSidenavModule,
-        MatListModule,
-        FormsModule,
-        MatRadioModule,
-        MatInputModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatCardModule,
-        HttpClientModule,
-        CdkDragPlaceholder,
-        MatSelect,
-        MatOption,
-        MatSlider,
-        ReactiveFormsModule,
-        NgOptimizedImage,
-        MatMenuModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    FormsModule,
+    MatRadioModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatCardModule,
+    HttpClientModule,
+    CdkDragPlaceholder,
+    MatSelect,
+    MatOption,
+    MatSlider,
+    ReactiveFormsModule,
+    NgOptimizedImage,
+    MatMenuModule,
+    MatStepper,
+    MatStep,
+    MatStepLabel,
+    MatStepperPrevious,
+    MatStepperNext
+  ],
   providers: [
     BaseService,provideAnimationsAsync()
   ],

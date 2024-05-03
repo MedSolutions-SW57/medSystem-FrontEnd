@@ -11,12 +11,12 @@ export class DoctorService {
   constructor(private http:HttpClient) { }
 
   getAllDoctorPerId(id: any): Observable<any>{
-    return this.http.get(`http://localhost:3000/doctor/${id}`);
+    return this.http.get(`https://663440e79bb0df2359a10772.mockapi.io/doctors/${id}`);
   }
   getAppointmentById(id:any): Observable<any>{
-    return this.http.get(`http://localhost:3000/appointments/${id}`);
+    return this.http.get(`https://663440e79bb0df2359a10772.mockapi.io/appointments/${id}`);
   }
   updateAppointment(appointment: Appointment): Observable<any> {
-  return this.http.put(`http://localhost:3000/appointments/${appointment.id}`, appointment);
+  return this.http.put(`https://663440e79bb0df2359a10772.mockapi.io/appointments/${appointment.id}`, appointment);
   }
 }

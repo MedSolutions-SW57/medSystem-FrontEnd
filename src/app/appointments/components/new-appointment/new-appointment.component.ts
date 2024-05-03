@@ -28,7 +28,7 @@ export class NewAppointmentComponent implements OnInit {
   }
 
   getDoctors() {
-    this.http.get('http://localhost:3000/doctor').subscribe((data: any) => {
+    this.http.get('https://663440e79bb0df2359a10772.mockapi.io/doctors').subscribe((data: any) => {
       this.doctors = data;
     }, error => {
       console.error(error);
@@ -44,18 +44,18 @@ export class NewAppointmentComponent implements OnInit {
       moreInfo: this.secondFormGroup.value.moreInfo,
       requestHistory:[],
     };
-    this.http.post('http://localhost:3000/appointments', appointment).subscribe(response =>{
+    this.http.post('https://663440e79bb0df2359a10772.mockapi.io/appointments', appointment).subscribe(response =>{
       console.log(response);
     },error => {
       console.error(error);
     });
-    this.http.get(`http://localhost:3000/patients?lastName=${this.firstFormGroup.value.lastName}`).subscribe((data: any) => {
+    this.http.get(`https://663440e79bb0df2359a10772.mockapi.io/patients?lastName=${this.firstFormGroup.value.lastName}`).subscribe((data: any) => {
       if (data.length > 0) {
         const patient = data[0];
         // Agregar la cita al array de citas del paciente
         patient.appointments.push(appointment);
         // Actualizar el paciente con la nueva cita
-        this.http.put(`http://localhost:3000/patients/${patient.id}`, patient).subscribe(response => {
+        this.http.put(`https://663440e79bb0df2359a10772.mockapi.io/patients/${patient.id}`, patient).subscribe(response => {
           console.log(response);
         }, error => {
           console.error(error);
@@ -67,13 +67,13 @@ export class NewAppointmentComponent implements OnInit {
       console.error(error);
     });
     // Buscar el doctor por apellido
-    this.http.get(`http://localhost:3000/doctor?lastName=${this.secondFormGroup.value.doctor}`).subscribe((data: any) => {
+    this.http.get(`https://663440e79bb0df2359a10772.mockapi.io/doctors?lastName=${this.secondFormGroup.value.doctor}`).subscribe((data: any) => {
       if (data.length > 0) {
         const doctor = data[0];
         // Agregar la cita al array de citas del doctor
         doctor.appointments.push(appointment);
         // Actualizar el doctor con la nueva cita
-        this.http.put(`http://localhost:3000/doctor/${doctor.id}`, doctor).subscribe(response => {
+        this.http.put(`https://663440e79bb0df2359a10772.mockapi.io/doctors/${doctor.id}`, doctor).subscribe(response => {
           console.log(response);
         }, error => {
           console.error(error);

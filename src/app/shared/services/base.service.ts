@@ -31,7 +31,7 @@ export class BaseService<T> {
   }
 
   private resourcePath() {
-    return `http://localhost:3000${this.resourceEndpoint}`;
+    return `https://663440e79bb0df2359a10772.mockapi.io${this.resourceEndpoint}`;
   }
 
   create(item: any): Observable<T> {
@@ -44,14 +44,19 @@ export class BaseService<T> {
       .pipe(retry(2), catchError(this.handleError));
   }
 
+  delete(id: any):Observable<T> {
+    return this.http.delete<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
 
   getResults():Observable<Results[]>{
-    return this.http.get<Results[]>('http://localhost:3000/results');
+    return this.http.get<Results[]>('https://663440e79bb0df2359a10772.mockapi.io/results');
   }
   getAppointmentsWithHistory():Observable<Appointment[]>{
-    return this.http.get<Appointment[]>('http://localhost:3000/appointments');
+    return this.http.get<Appointment[]>('https://663440e79bb0df2359a10772.mockapi.io/appointments');
   }
   getTreatments():Observable<Treatment[]>{
-    return this.http.get<Treatment[]>('http://localhost:3000/treatments');
+    return this.http.get<Treatment[]>('https://663440e79bb0df2359a10772.mockapi.io/treatements');
   }
 }
