@@ -34,9 +34,9 @@ export class PatientLoginFormComponent {
       this.patientService.login(dni, password).subscribe({
         next: (patient) => {
           if (patient) {
-            console.log('Patient logged in:', patient.id);
+            console.log('Patient logged in:', patient["id"]);
             this.userService.setUserType('patient');
-            this.userService.setUserId(patient.id); // Asegúrate de que patient.id no es undefined
+            this.userService.setUserId(`${patient.id}`); // Asegúrate de que patient.id no es undefined
           } else {
             alert('Invalid credentials');
           }

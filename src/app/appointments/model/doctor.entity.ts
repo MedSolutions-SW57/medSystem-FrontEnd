@@ -1,7 +1,7 @@
 import {Appointment} from "./appointment.entity";
 
 export interface Doctor{
-  id: number;
+  id: Object;
   firstName: string;
   lastName: string;
   dni: string;

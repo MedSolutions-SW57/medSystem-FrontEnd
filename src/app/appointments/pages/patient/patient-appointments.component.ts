@@ -42,6 +42,6 @@ export class PatientAppointmentsComponent {
   }
 
   navigateToNew(): void {
-    this.router.navigate(['/new-appointment']);
+    this.router.navigate(['patients/:id/new-appointment']);
   }
 }
