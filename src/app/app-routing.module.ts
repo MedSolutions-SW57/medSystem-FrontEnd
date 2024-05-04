@@ -24,6 +24,7 @@ const routes: Routes = [
   {path: 'patients/:id/new-appointment', component: NewAppointmentComponent},
   {path: 'patients/:id/request-history', component: PatientRequestHistoryComponent},
   {path: 'patients/:id/treatments-patient', redirectTo:'patients/:id/appointments'},
+  {path: 'patients/:id/new-appointment', component: NewAppointmentComponent},
   {path: 'register', component: Register},
   {path: 'login', component: LoginPageComponent},
   {path: '', redirectTo: '/login',pathMatch: 'full'},

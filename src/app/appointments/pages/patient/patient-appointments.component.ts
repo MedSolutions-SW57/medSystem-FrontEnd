@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component,} from '@angular/core';
 import {Appointment} from "../../model/appointment.entity";
 import {MatTableDataSource} from "@angular/material/table";
 import {ActivatedRoute, Router} from "@angular/router";
