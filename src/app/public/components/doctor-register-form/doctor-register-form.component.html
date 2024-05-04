@@ -1,29 +1,45 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-  <mat-form-field>
-    <mat-label>First Name</mat-label>
-    <input matInput formControlName="firstName" required>
-  </mat-form-field>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <div class="title">Register as a doctor in MedSystem  </div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="mat-50">
+        <mat-label>First Name</mat-label>
+        <input  matInput formControlName="firstName" required>
+      </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Last Name</mat-label>
-    <input matInput formControlName="lastName" required>
-  </mat-form-field>
+      <mat-form-field class="mat-50">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" required>
+      </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>DNI</mat-label>
-    <input matInput formControlName="dni" required>
-  </mat-form-field>
+      <mat-form-field class="mat-50">
+        <mat-label>DNI</mat-label>
+        <input matInput formControlName="dni" required>
+      </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Email</mat-label>
-    <input matInput type="email" formControlName="email" required>
-  </mat-form-field>
+      <mat-form-field class="mat-50">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" required>
+      </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Password</mat-label>
-    <input matInput type="password" formControlName="password" required>
-  </mat-form-field>
+      <mat-form-field class="mat-50">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" required>
+      </mat-form-field>
 
-  <button mat-raised-button color="primary">Submit</button>
+
+    </mat-card-content>
+    <mat-card-footer>
+      <div style="margin:2%;text-align: center">
+        <button mat-raised-button color="primary">Register</button>
+      </div>
+      <div style="margin:2%;text-align: center">
+        <p>Already have an account?<a routerLink="/login">Log in for MedSystem</a></p>
+      </div>
+    </mat-card-footer>
+  </mat-card>
 </form>
-
