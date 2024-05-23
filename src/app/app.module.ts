@@ -41,6 +41,8 @@ import {MatStep, MatStepLabel, MatStepper, MatStepperNext, MatStepperPrevious} f
 import { LoginPageComponent } from './public/pages/login-page/login-page.component';
 import { PatientLoginFormComponent } from './public/components/patient-login-form/patient-login-form.component';
 import { DoctorLoginFormComponent } from './public/components/doctor-login-form/doctor-login-form.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { DetailResultComponent } from './request-results/components/detail-result/detail-result.component';
 
 
 @NgModule({
@@ -61,7 +63,8 @@ import { DoctorLoginFormComponent } from './public/components/doctor-login-form/
     NewAppointmentComponent,
     LoginPageComponent,
     PatientLoginFormComponent,
-    DoctorLoginFormComponent
+    DoctorLoginFormComponent,
+    DetailResultComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +94,8 @@ import { DoctorLoginFormComponent } from './public/components/doctor-login-form/
     MatStepLabel,
     MatStepperPrevious,
     MatStepperNext,
-    MatToolbar
+    MatToolbar,
+    MatDialogModule
   ],
   providers: [
     BaseService,provideAnimationsAsync()

@@ -4,6 +4,8 @@ import {BaseService} from "../../../shared/services/base.service";
 import {Results} from "../../model/results.entity";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
+import {MatDialog} from "@angular/material/dialog";
+import {DetailResultComponent} from "../../components/detail-result/detail-result.component";
 
 
 
@@ -19,7 +21,7 @@ export class DoctorRequestResultsComponent {
   displayedColumns = ["id","patientName","date","examType","result", "action"];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
-  constructor(private service:BaseService<Results>) {
+  constructor(private service:BaseService<Results>, private dialog: MatDialog) {
     this.service.getResults().subscribe(res=>{
       this.resultsList = res;
       this.dataSource= new MatTableDataSource<Results>(this.resultsList);
@@ -35,5 +37,11 @@ export class DoctorRequestResultsComponent {
   }
   isResultAvailable(result: string): boolean {
     return result.toLowerCase() === 'available';
+  }
+
+  openDetailsDialog(result: Results): void {
+    this.dialog.open(DetailResultComponent, {
+      data: result,
+    });
   }
 }
