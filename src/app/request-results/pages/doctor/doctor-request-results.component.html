@@ -10,14 +10,14 @@
 
     <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-      <ng-container matColumnDef="code">
-        <th mat-sort-header mat-header-cell *matHeaderCellDef>Code</th>
-        <td mat-cell *matCellDef="let element">{{ element.code}}</td>
+      <ng-container matColumnDef="id">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let element">{{ element.id}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="name">
+      <ng-container matColumnDef="patientName">
         <th mat-sort-header mat-header-cell *matHeaderCellDef>Patient</th>
-        <td mat-cell *matCellDef="let element">{{ element.name}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.patientName}}</td>
       </ng-container>
 
       <ng-container matColumnDef="date">
@@ -37,7 +37,7 @@
       <ng-container matColumnDef="action">
         <th mat-sort-header mat-header-cell *matHeaderCellDef>Action</th>
         <td mat-cell *matCellDef="let element">
-          <button mat-raised-button color="primary" [disabled]="!isResultAvailable(element.result)">Request</button>
+          <button mat-raised-button color="primary" [disabled]="!isResultAvailable(element.result)" (click)="openDetailsDialog(element)">Details</button>
         </td>
       </ng-container>
 

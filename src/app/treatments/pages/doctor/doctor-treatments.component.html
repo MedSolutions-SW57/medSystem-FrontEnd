@@ -25,43 +25,36 @@
   </div>
 
   <div class="card-container">
-
     <div class="divisor_at">
       <mat-card class="add_treatments">
         <mat-card-title>Add treatments</mat-card-title>
         <mat-card-content>
-          <mat-label>Name of patient:
-            <select class="select-to-add-treatment">
-              <option value="" disabled selected hidden>Select an option</option>
-              <option value="opcion1">Opción 1</option>
-            </select>
+          <mat-label>DNI of patient:
+            <input type="text" [(ngModel)]="newTreatment.patientName">
           </mat-label>
 
           <mat-label>Name of treatment:
-            <select class="select-to-add-treatment">
-              <option value="" disabled selected hidden>Select an option</option>
-              <option value="opcion1">Opción 1</option>
-            </select>
+            <input type="text" [(ngModel)]="newTreatment.name">
           </mat-label>
           <mat-label>Dose:
-            <input type="text">
+            <input type="text" [(ngModel)]="newTreatment.dose">
           </mat-label>
           <mat-label>Frequency:
-            <input type="text">
+            <input type="text" [(ngModel)]="newTreatment.frequency">
           </mat-label>
           <mat-label>Duration:
-            <input type="text">
+            <input type="text" [(ngModel)]="newTreatment.duration">
           </mat-label>
 
           <mat-label>Notes: </mat-label>
-          <input class="notes" type="text">
+          <input class="notes" type="text" [(ngModel)]="newTreatment.notes">
           <div class="button_add">
-            <button mat-raised-button color="warn">Add</button>
+            <button mat-raised-button color="warn" (click)="addTreatment()">Add</button>
           </div>
         </mat-card-content>
-
       </mat-card>
     </div>
+
 
     <div class="card-container-vertical">
 
@@ -73,12 +66,13 @@
               <mat-label>
                 Treatment list:
               </mat-label>
-              <select class="select-to-remove-treatment">
-                <option  value="" disabled selected hidden>Select an option</option>
-                <option value="opcion1">Opción 1</option>
+              <select class="select-to-remove-treatment" [(ngModel)]="selectedTreatment">
+                <option value="" disabled selected hidden>Select an option</option>
+                <option *ngFor="let treatment of treatments" [value]="treatment.name">{{treatment.name}}</option>
               </select>
               <div class="button_remove">
-                <button mat-raised-button color="warn">Remove</button>
+                <button mat-raised-button color="warn" (click)="removeTreatment()">Remove</button>
+                <button mat-raised-button color="warn" (click)="finishTreatment()">Finish Treatment</button>
               </div>
             </mat-card-content>
           </mat-card-title>
