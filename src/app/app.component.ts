@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+
+import {PacientTreatmentsComponent} from "./treatments/pages/pacient/pacient-treatments.component";
 import { UserService } from './public/services/user.service';
 
 @Component({
@@ -8,6 +10,8 @@ import { UserService } from './public/services/user.service';
 })
 export class AppComponent {
   title = 'medSystem-FrontEnd';
+
+
 
   constructor(protected userService: UserService) { }
 

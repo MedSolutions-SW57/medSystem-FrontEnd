@@ -7,9 +7,6 @@ import {MatSort} from "@angular/material/sort";
 import {MatDialog} from "@angular/material/dialog";
 import {DetailResultComponent} from "../../components/detail-result/detail-result.component";
 
-
-
-
 @Component({
   selector: 'app-request-results',
   templateUrl: './doctor-request-results.component.html',

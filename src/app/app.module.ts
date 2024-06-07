@@ -26,6 +26,7 @@ import {MatOption, MatSelect} from "@angular/material/select";
 import { DoctorRequestHistoryComponent } from './request-history/pages/doctor/doctor-request-history.component';
 import { ReviewAppointmentComponent } from './appointments/components/review-appointment/review-appointment.component';
 import {MatSlider} from "@angular/material/slider";
+import { PacientTreatmentsComponent } from './treatments/pages/pacient/pacient-treatments.component';
 import { PatientExamResultsComponent } from './request-results/pages/patient/patient-request-results/patient-exam-results.component';
 import {MatMenuModule} from "@angular/material/menu";
 import {Register} from "./public/pages/register-page/register";
@@ -54,6 +55,7 @@ import { DetailResultComponent } from './request-results/components/detail-resul
     DoctorTreatmentsComponent,
     DoctorRequestHistoryComponent,
     ReviewAppointmentComponent,
+    PacientTreatmentsComponent,
     Register,
     PatientRegisterFormComponent,
     DoctorRegisterFormComponent,

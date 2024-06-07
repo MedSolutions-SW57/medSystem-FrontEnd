@@ -5,6 +5,8 @@ import {DoctorTreatmentsComponent} from "./treatments/pages/doctor/doctor-treatm
 import {ReviewAppointmentComponent} from "./appointments/components/review-appointment/review-appointment.component";
 import {DoctorRequestHistoryComponent} from "./request-history/pages/doctor/doctor-request-history.component";
 import {DoctorRequestResultsComponent} from "./request-results/pages/doctor/doctor-request-results.component";
+
+import {PacientTreatmentsComponent} from "./treatments/pages/pacient/pacient-treatments.component";
 import {PatientExamResultsComponent} from "./request-results/pages/patient/patient-request-results/patient-exam-results.component";
 import {PatientAppointmentsComponent} from "./appointments/pages/patient/patient-appointments.component";
 import {NewAppointmentComponent} from "./appointments/components/new-appointment/new-appointment.component";
@@ -23,7 +25,7 @@ const routes: Routes = [
   {path: 'patients/:id/appointments', component: PatientAppointmentsComponent},
   {path: 'patients/:id/new-appointment', component: NewAppointmentComponent},
   {path: 'patients/:id/request-history', component: PatientRequestHistoryComponent},
-  {path: 'patients/:id/treatments-patient', redirectTo:'patients/:id/appointments'},
+  {path: 'patients/:id/treatments-patient', component: PacientTreatmentsComponent},
   {path: 'patients/:id/new-appointment', component: NewAppointmentComponent},
   {path: 'register', component: Register},
   {path: 'login', component: LoginPageComponent},
