@@ -10,13 +10,14 @@ import {PacientTreatmentsComponent} from "./treatments/pages/pacient/pacient-tre
 import {PatientExamResultsComponent} from "./request-results/pages/patient/patient-request-results/patient-exam-results.component";
 import {PatientAppointmentsComponent} from "./appointments/pages/patient/patient-appointments.component";
 import {NewAppointmentComponent} from "./appointments/components/new-appointment/new-appointment.component";
-import {Register} from "./public/pages/register-page/register";
-import {LoginPageComponent} from "./public/pages/login-page/login-page.component";
 import {PatientRequestHistoryComponent} from "./request-history/pages/patient/patient-request-history.component";
+import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
+import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
+import {authenticationGuard} from "./iam/services/authentication.guard";
 
 
 const routes: Routes = [
-  {path: 'doctor/:id/appointments',component: DoctorAppointmentsComponent},
+  {path: 'doctor/:id/appointments',component: DoctorAppointmentsComponent , canActivate: [authenticationGuard]},
   {path: 'doctor/:id/treatments-patient',component: DoctorTreatmentsComponent},
   {path: 'doctor/:id/request-history', component: DoctorRequestHistoryComponent},
   {path: 'doctor/:id/request-results',component: DoctorRequestResultsComponent},
@@ -27,9 +28,9 @@ const routes: Routes = [
   {path: 'patients/:id/request-history', component: PatientRequestHistoryComponent},
   {path: 'patients/:id/treatments-patient', component: PacientTreatmentsComponent},
   {path: 'patients/:id/new-appointment', component: NewAppointmentComponent},
-  {path: 'register', component: Register},
-  {path: 'login', component: LoginPageComponent},
-  {path: '', redirectTo: '/login',pathMatch: 'full'},
+  {path: 'sign-up', component: SignUpComponent},
+  {path: 'sign-in', component: SignInComponent},
+  {path: '', redirectTo: 'doctor/:id/appointments',pathMatch: 'full'},
 ];
 
 @NgModule({
