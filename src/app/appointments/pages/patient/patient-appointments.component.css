@@ -1,0 +1,33 @@
+
+mat-card{
+  margin: 2%;
+  background-color: #16213E;
+}
+button{
+  margin: 2px;
+}
+mat-card-title{
+  color: white;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+th{
+  background-color: #BDBDBD !important;
+}
+td{
+  background-color: #E0E0E0 !important;
+}
+mat-paginator {
+  display: flex;
+  justify-content: center;
+}
+mat-label{
+  color: white;
+  margin: 1rem;
+  font-size: 0.85rem;
+}
+.info-inputs{
+  display: flex; flex-direction: column; align-items: flex-start; padding-right: 50px
+}
+

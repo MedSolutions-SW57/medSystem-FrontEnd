@@ -1,0 +1,31 @@
+<div class="appointment-review">
+  <h2>APPOINTMENT REVIEW</h2>
+  <mat-form-field appearance="fill">
+    <mat-label>Name of the patient</mat-label>
+    <input matInput placeholder="Name of the patient" readonly value="{{appointment?.patientName}}">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Date of the appointment</mat-label>
+    <input matInput type="date" placeholder="Date of the appointment" readonly value="{{appointment?.appointmentDay}}">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Hour</mat-label>
+    <input matInput type="time" placeholder="Hour" readonly value="{{appointment?.appointmentHour}}">
+  </mat-form-field>
+
+  <mat-radio-group aria-labelledby="in-a-treatment-label" [ngModel]="appointment?.inTreatment">
+    <mat-label id="in-a-treatment-label">In a treatment?</mat-label>
+    <mat-radio-button value="true" disabled="true">Yes</mat-radio-button>
+    <mat-radio-button value="false" disabled="true">No</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Notes of the appointment</mat-label>
+    <textarea matInput placeholder="{{appointment?.moreInfo}}" [(ngModel)]="note"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="navigateBack()">Back</button>
+  <button mat-raised-button color="primary" (click)="addNote()">Add Note</button>
+</div>

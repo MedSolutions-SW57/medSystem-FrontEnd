@@ -1,41 +1,72 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatToolbar, MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
-import {FormsModule} from "@angular/forms";
-
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatInputModule} from "@angular/material/input";
-import {RequestResultsComponent} from "./medSystem/pages/request-results/request-results.component";
+import {DoctorRequestResultsComponent} from "./request-results/pages/doctor/doctor-request-results.component";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
-import {AppointmentsComponent} from "./medSystem/pages/appointments/appointments.component";
+import {DoctorAppointmentsComponent} from "./appointments/pages/doctor/doctor-appointments.component";
 import {BaseService} from "./shared/services/base.service";
 import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
-import {TreatmentsComponent} from "./medSystem/pages/treatments/treatments.component";
+import {DoctorTreatmentsComponent} from "./treatments/pages/doctor/doctor-treatments.component";
 import {CdkDragPlaceholder} from "@angular/cdk/drag-drop";
 import {MatOption, MatSelect} from "@angular/material/select";
-import { RequestHistoryComponent } from './medSystem/pages/request-history/request-history.component';
+import { DoctorRequestHistoryComponent } from './request-history/pages/doctor/doctor-request-history.component';
+import { ReviewAppointmentComponent } from './appointments/components/review-appointment/review-appointment.component';
+import {MatSlider} from "@angular/material/slider";
+import { PacientTreatmentsComponent } from './treatments/pages/pacient/pacient-treatments.component';
+import { PatientExamResultsComponent } from './request-results/pages/patient/patient-request-results/patient-exam-results.component';
+import {MatMenuModule} from "@angular/material/menu";
+import {Register} from "./public/pages/register-page/register";
+import {PatientRegisterFormComponent} from "./public/components/patient-register-form/patient-register-form.component";
+import {DoctorRegisterFormComponent} from "./public/components/doctor-register-form/doctor-register-form.component";
+import {
+  ConsultancyRegisterFormComponent
+} from "./public/components/consultancy-register-form/consultancy-register-form.component";
+import {NgOptimizedImage} from "@angular/common";
+import { PatientAppointmentsComponent } from './appointments/pages/patient/patient-appointments.component';
+import {NewAppointmentComponent} from "./appointments/components/new-appointment/new-appointment.component";
+import {MatStep, MatStepLabel, MatStepper, MatStepperNext, MatStepperPrevious} from "@angular/material/stepper";
+import { LoginPageComponent } from './public/pages/login-page/login-page.component';
+import { PatientLoginFormComponent } from './public/components/patient-login-form/patient-login-form.component';
+import { DoctorLoginFormComponent } from './public/components/doctor-login-form/doctor-login-form.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { DetailResultComponent } from './request-results/components/detail-result/detail-result.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RequestResultsComponent,
-    AppointmentsComponent,
+    DoctorRequestResultsComponent,
+    DoctorAppointmentsComponent,
     PageNotFoundComponent,
-    TreatmentsComponent,
-    RequestHistoryComponent
+    DoctorTreatmentsComponent,
+    DoctorRequestHistoryComponent,
+    ReviewAppointmentComponent,
+    PacientTreatmentsComponent,
+    Register,
+    PatientRegisterFormComponent,
+    DoctorRegisterFormComponent,
+    ConsultancyRegisterFormComponent,
+    PatientExamResultsComponent,
+    PatientAppointmentsComponent,
+    NewAppointmentComponent,
+    LoginPageComponent,
+    PatientLoginFormComponent,
+    DoctorLoginFormComponent,
+    DetailResultComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +86,18 @@ import { RequestHistoryComponent } from './medSystem/pages/request-history/reque
     HttpClientModule,
     CdkDragPlaceholder,
     MatSelect,
-    MatOption
+    MatOption,
+    MatSlider,
+    ReactiveFormsModule,
+    NgOptimizedImage,
+    MatMenuModule,
+    MatStepper,
+    MatStep,
+    MatStepLabel,
+    MatStepperPrevious,
+    MatStepperNext,
+    MatToolbar,
+    MatDialogModule
   ],
   providers: [
     BaseService,provideAnimationsAsync()

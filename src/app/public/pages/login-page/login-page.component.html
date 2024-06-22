@@ -1,0 +1,8 @@
+<div>
+  <button mat-button (click)="selectComponent('patient')">Patient</button>
+  <button mat-button (click)="selectComponent('doctor')">Doctor</button>
+  <button mat-button (click)="selectComponent('consultancy')">Consultancy</button>
+</div>
+
+<app-patient-login-form *ngIf="selectedComponent === 'patient'"></app-patient-login-form>
+<app-doctor-login-form *ngIf="selectedComponent === 'doctor'"></app-doctor-login-form>

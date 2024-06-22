@@ -1,0 +1,28 @@
+mat-card{
+  margin: 2%;
+  text-align: left;
+  background-color: #2E3F6E;
+  color: #FFFFFF;
+}
+.title{
+  color: #FFFFFF;
+  padding: 5rem 0 5rem 1rem;
+  font-size: 3rem;
+
+}
+.mat-mdc-form-field {
+  width: 98%;
+  margin: 1%;
+}
+.mat-50 {
+  width: 48%;
+  margin: 1%;
+}
+button {
+  padding:1rem 3rem 1rem 3rem;
+  font-size: 1.2rem;
+}
+a{
+  color: #FFFFFF;
+
+}
