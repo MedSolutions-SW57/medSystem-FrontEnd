@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Appointment} from "../../model/appointment.entity";
 import {ActivatedRoute, Router} from "@angular/router";
-import {DoctorService} from "../../services/doctor.service";
+import {AppointmentsService} from "../../services/appointments.service";
 
 @Component({
   selector: 'app-review-appointment',
@@ -12,7 +12,7 @@ export class ReviewAppointmentComponent implements OnInit{
   appointment: Appointment | undefined;
   note: string = '';
 
-  constructor(private router: Router, private  route: ActivatedRoute, private doctorService: DoctorService) {
+  constructor(private router: Router, private  route: ActivatedRoute, private appointmentsService: AppointmentsService) {
   }
   navigateBack() {
     this.router.navigate(['/doctor/2/appointments']);
