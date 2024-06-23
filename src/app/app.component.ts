@@ -10,16 +10,17 @@ import {MatSidenav} from "@angular/material/sidenav";
 export class AppComponent {
   title = 'medSystem-FrontEnd';
   options = [
-    { path: '/doctor/appointments', title: 'Appointments', icon:'calendar_today'},
+    { path: '/home', title: 'Home', icon: 'home'},
+    { path: '/doctor/:id/appointments', title: 'Appointments', icon:'calendar_today'},
     { path: '/chat', title: 'Chat', icon:'chat'},
-    { path: '/doctor/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
-    { path: '/doctor/request-history', title: 'Request History', icon:'history'},
-    { path: '/doctor/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
-    { path: '/patients/appointments', title: 'Appointments', icon:'calendar_today'},
+    { path: '/doctor/:id/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
+    { path: '/doctor/:id/request-history', title: 'Request History', icon:'history'},
+    { path: '/doctor/:id/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
+    { path: '/patients/:id/appointments', title: 'Appointments', icon:'calendar_today'},
     { path: '/chat', title: 'Chat', icon:'chat'},
-    { path: '/patients/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
-    { path: '/patients/request-history', title: 'Request History', icon:'history'},
-    { path: '/patients/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
+    { path: '/patients/:id/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
+    { path: '/patients/:id/request-history', title: 'Request History', icon:'history'},
+    { path: '/patients/:id/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
   ]
   isSignedIn: boolean = false;
   username: string = "";

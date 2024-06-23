@@ -39,6 +39,8 @@ import { SignUpComponent } from './iam/pages/sign-up/sign-up.component';
 import { AuthenticationSectionComponent } from './iam/components/authentication-section/authentication-section.component';
 import {authenticationInterceptor} from "./iam/services/authentication.interceptor";
 import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found.component";
+import {MatButtonToggle, MatButtonToggleGroup} from "@angular/material/button-toggle";
+import {HomeComponent} from "./public/pages/home/home.component";
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-foun
     SignInComponent,
     SignUpComponent,
     AuthenticationSectionComponent,
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +91,9 @@ import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-foun
     MatStepperPrevious,
     MatStepperNext,
     MatToolbar,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonToggleGroup,
+    MatButtonToggle
   ],
   providers: [
     BaseService,provideAnimationsAsync(), provideHttpClient(withInterceptors([authenticationInterceptor]))

@@ -1,8 +1,8 @@
 <div><router-outlet/></div>
 <div>
 <app-authentication-section></app-authentication-section>
-  <button mat-icon-button (click)="getName()"></button>
-  <button mat-icon-button (click)="getId()"></button>
+  <button mat-icon-button (click)="getName()"><mat-icon>home</mat-icon></button>
+  <button mat-icon-button (click)="getId()"><mat-icon>home</mat-icon></button>
 <mat-toolbar color="primary" >
   <mat-toolbar-row>
     <button mat-icon-button *ngIf="isSignedIn" (click)="sidenav.toggle();">
