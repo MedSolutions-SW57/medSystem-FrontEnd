@@ -14,6 +14,7 @@ import {DoctorService} from "../../services/doctor.service";
 export class DoctorAppointmentsComponent implements OnInit{
   displayedColumns = ["appointmentId", "patientName", "appointmentDay", "appointmentHour", "moreInfo"];
   dataSource!: MatTableDataSource<Appointment>;
+  appointments!: Appointment[];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -22,20 +23,15 @@ export class DoctorAppointmentsComponent implements OnInit{
   }
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.fetchAppointments(id);
+    this.getAppointmentsByDoctorId(Number(id));
   }
-
-  fetchAppointments(id: any): void {
-    this.doctorService.getAllDoctorPerId(id).subscribe({
-      next: (response) => {
-        console.log('Doctor appointments:', response.appointments);
-        this.dataSource = new MatTableDataSource<Appointment>(response.appointments);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-      },
-      error: (error) => {
-        console.error('Error fetching doctor appointments:', error);
-      }
+  getAppointmentsByDoctorId(id: number) {
+    this.doctorService.getAllById(id, "doctor").subscribe((response: any) => {
+      this.appointments = response.results.find((appointment: any) => appointment.id === id);
+      console.log(response);
+      this.dataSource = new MatTableDataSource<Appointment>(response.appointments);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     });
   }
 

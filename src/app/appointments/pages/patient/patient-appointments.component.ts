@@ -12,25 +12,22 @@ import {PatientService} from "../../services/patient.service";
 export class PatientAppointmentsComponent {
   displayedColumns = ["appointmentId", "appointmentDay", "appointmentHour", "moreInfo"];
   dataSource!: MatTableDataSource<Appointment>;
+  appointments!: Appointment[];
 
   constructor(private patientService: PatientService, private router: Router, private route: ActivatedRoute) {
   }
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.fetchAppointments(id);
+    this.getAppointmentsByPatientId(Number(id));
   }
 
-  fetchAppointments(id: any): void {
-    this.patientService.getAlPatientsPerId(id).subscribe({
-      next: (response) => {
-        console.log('Patient appointments:', response.appointments);
-        this.dataSource = new MatTableDataSource<Appointment>(response.appointments);
-      },
-      error: (error) => {
-        console.error('Error fetching doctor appointments:', error);
-      }
+  getAppointmentsByPatientId(id: number) {
+    this.patientService.getAllById(id, "patient").subscribe((response: any) => {
+      this.appointments = response.results.find((appointment: any) => appointment.id === id);
+      this.dataSource = new MatTableDataSource<Appointment>(response.appointments);
     });
   }
+
 
   Filterchange(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;

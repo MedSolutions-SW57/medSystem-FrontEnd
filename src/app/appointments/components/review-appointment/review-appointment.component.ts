@@ -19,35 +19,9 @@ export class ReviewAppointmentComponent implements OnInit{
   }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.fetchAppointmentById(id);
-    }
+
   }
 
-  fetchAppointmentById(id: string): void {
-    this.doctorService.getAppointmentById(id).subscribe({
-      next: (response) => {
-        console.log('Appointment:', response);
-        this.appointment = response;
-      },
-      error: (error) => {
-        console.error('Error fetching appointment:', error);
-      }
-    });
-  }
 
-  addNote():void {
-    if(this.appointment && this.note) {
-      this.appointment.moreInfo = this.note;
-      this.doctorService.updateAppointment(this.appointment).subscribe({
-        next: (response) => {
-          console.log('Appointment updated:', response);
-        },
-        error: (error) => {
-          console.error('Error updating appointment:', error);
-        }
-      });
-      }
-    }
+
   }
