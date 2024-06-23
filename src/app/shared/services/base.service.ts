@@ -3,7 +3,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
 import {Results} from "../../request-results/model/results.entity";
 import {Appointment} from "../../appointments/model/appointment.entity";
-import {environment} from "../../../environments/environment";
+import {environment} from "../../../environments/environment.developement";
 import {Treatment} from "../../treatments/model/treatment.entity";
 
 @Injectable({
@@ -31,7 +31,7 @@ export class BaseService<T> {
   }
 
   private resourcePath() {
-    return `https://663440e79bb0df2359a10772.mockapi.io${this.resourceEndpoint}`;
+    return `${this.basePath}${this.resourceEndpoint}`;
   }
 
   create(item: any): Observable<T> {
@@ -43,11 +43,24 @@ export class BaseService<T> {
     return this.http.get<T>(`${this.resourcePath()}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+  getAllById(id: number, idType: string): Observable<T[]> {
+    return this.http.get<T[]>(`${this.resourcePath()}/${idType}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 
   delete(id: any):Observable<T> {
     return this.http.delete<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+
+  update(id: any, item: any) {
+    return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+
+
+
 
 
   getResults():Observable<Results[]>{
