@@ -15,11 +15,10 @@ import {DoctorRequestResultsComponent} from "./request-results/pages/doctor/doct
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule, provideHttpClient, withInterceptors} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {DoctorAppointmentsComponent} from "./appointments/pages/doctor/doctor-appointments.component";
 import {BaseService} from "./shared/services/base.service";
-import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
 import {DoctorTreatmentsComponent} from "./treatments/pages/doctor/doctor-treatments.component";
 import {CdkDragPlaceholder} from "@angular/cdk/drag-drop";
 import {MatOption, MatSelect} from "@angular/material/select";
@@ -29,22 +28,17 @@ import {MatSlider} from "@angular/material/slider";
 import { PacientTreatmentsComponent } from './treatments/pages/pacient/pacient-treatments.component';
 import { PatientExamResultsComponent } from './request-results/pages/patient/patient-request-results/patient-exam-results.component';
 import {MatMenuModule} from "@angular/material/menu";
-import {Register} from "./public/pages/register-page/register";
-import {PatientRegisterFormComponent} from "./public/components/patient-register-form/patient-register-form.component";
-import {DoctorRegisterFormComponent} from "./public/components/doctor-register-form/doctor-register-form.component";
-import {
-  ConsultancyRegisterFormComponent
-} from "./public/components/consultancy-register-form/consultancy-register-form.component";
 import {NgOptimizedImage} from "@angular/common";
 import { PatientAppointmentsComponent } from './appointments/pages/patient/patient-appointments.component';
 import {NewAppointmentComponent} from "./appointments/components/new-appointment/new-appointment.component";
 import {MatStep, MatStepLabel, MatStepper, MatStepperNext, MatStepperPrevious} from "@angular/material/stepper";
-import { LoginPageComponent } from './public/pages/login-page/login-page.component';
-import { PatientLoginFormComponent } from './public/components/patient-login-form/patient-login-form.component';
-import { DoctorLoginFormComponent } from './public/components/doctor-login-form/doctor-login-form.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { DetailResultComponent } from './request-results/components/detail-result/detail-result.component';
-
+import { SignInComponent } from './iam/pages/sign-in/sign-in.component';
+import { SignUpComponent } from './iam/pages/sign-up/sign-up.component';
+import { AuthenticationSectionComponent } from './iam/components/authentication-section/authentication-section.component';
+import {authenticationInterceptor} from "./iam/services/authentication.interceptor";
+import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found.component";
 
 @NgModule({
   declarations: [
@@ -56,17 +50,13 @@ import { DetailResultComponent } from './request-results/components/detail-resul
     DoctorRequestHistoryComponent,
     ReviewAppointmentComponent,
     PacientTreatmentsComponent,
-    Register,
-    PatientRegisterFormComponent,
-    DoctorRegisterFormComponent,
-    ConsultancyRegisterFormComponent,
     PatientExamResultsComponent,
     PatientAppointmentsComponent,
     NewAppointmentComponent,
-    LoginPageComponent,
-    PatientLoginFormComponent,
-    DoctorLoginFormComponent,
-    DetailResultComponent
+    DetailResultComponent,
+    SignInComponent,
+    SignUpComponent,
+    AuthenticationSectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,7 +90,7 @@ import { DetailResultComponent } from './request-results/components/detail-resul
     MatDialogModule
   ],
   providers: [
-    BaseService,provideAnimationsAsync()
+    BaseService,provideAnimationsAsync(), provideHttpClient(withInterceptors([authenticationInterceptor]))
   ],
   bootstrap: [AppComponent]
 })
