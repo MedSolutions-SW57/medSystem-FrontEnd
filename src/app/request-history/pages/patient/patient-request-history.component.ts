@@ -48,7 +48,7 @@ export class PatientRequestHistoryComponent {
   @ViewChild(MatSort) sort!: MatSort;
   constructor(private service:BaseService<DoctorHistory>) {
     this.service.getAppointmentsWithHistory().subscribe(res => {
-      this.historyList = res.flatMap(appointment => appointment.requestHistory);
+      //this.historyList = res.flatMap(appointment => appointment.id);
       this.dataSource = new MatTableDataSource<DoctorHistory>(this.historyList);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
