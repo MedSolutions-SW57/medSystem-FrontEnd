@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {environment} from "../../../environments/environment.developement";
+import {environment} from "../../../environments/environment";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {BehaviorSubject} from "rxjs";
 import {Router} from "@angular/router";
@@ -36,7 +36,6 @@ export class AuthenticationService {
   get currentUserId() {
     return this.signedInUserId.asObservable();
   }
-
   get currentUsername() {
     return this.signedInUsername.asObservable();
   }
@@ -47,19 +46,23 @@ export class AuthenticationService {
    * This method sends a POST request to the server to sign up the user.
    * @param signUpRequest - Sign Up Request containing the username and password
    */
-  signUp(signUpRequest: SignUpRequest) {
-    return this.http.post<SignUpResponse>(`${this.basePath}/authentication/sign-up`, signUpRequest, this.httpOptions)
-      .subscribe({
-        next: (response) => {
-          console.log(`Signed Up as ${response.username} with ID: ${response.id} and role ${response.role}`);
-          this.router.navigate(['/sign-in']).then();
-        },
-        error: (error) => {
-          console.error(`Error while signing up: ${error.message}`);
-          this.router.navigate(['/sign-up']).then();
-        }
-      });
+  signUp(signUpRequest: SignUpRequest): Promise<void> {
+    return new Promise((resolve, reject) => {
+      this.http.post<SignUpResponse>(`${this.basePath}/authentication/sign-up`, signUpRequest, this.httpOptions)
+        .subscribe({
+          next: (response) => {
+            this.signedInUserId.next(response.id);
+            console.log(`Signed Up as ${response.username} with ID: ${response.id} and role ${response.role}`);
+            this.router.navigate(['/sign-in']).then(() => resolve());
+          },
+          error: (error) => {
+            console.error(`Error while signing up: ${error.message}`);
+            this.router.navigate(['/sign-up']).then(() => reject(error));
+          }
+        });
+    });
   }
+
 
   /**
    * Sign In
