@@ -2,7 +2,7 @@ import {Component,} from '@angular/core';
 import {Appointment} from "../../model/appointment.entity";
 import {MatTableDataSource} from "@angular/material/table";
 import {ActivatedRoute, Router} from "@angular/router";
-import {PatientService} from "../../services/patient.service";
+import {AppointmentsService} from "../../services/appointments.service";
 
 @Component({
   selector: 'app-patient',
@@ -14,7 +14,7 @@ export class PatientAppointmentsComponent {
   dataSource!: MatTableDataSource<Appointment>;
   appointments!: Appointment[];
 
-  constructor(private patientService: PatientService, private router: Router, private route: ActivatedRoute) {
+  constructor(private appointmentsService: AppointmentsService, private router: Router, private route: ActivatedRoute) {
   }
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -22,7 +22,7 @@ export class PatientAppointmentsComponent {
   }
 
   getAppointmentsByPatientId(id: number) {
-    this.patientService.getAllById(id, "patient").subscribe((response: any) => {
+    this.appointmentsService.getAllById(id, "patient").subscribe((response: any) => {
       this.appointments = response.results.find((appointment: any) => appointment.id === id);
       this.dataSource = new MatTableDataSource<Appointment>(response.appointments);
     });

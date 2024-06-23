@@ -4,7 +4,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {MatTableDataSource} from "@angular/material/table";
 import {ActivatedRoute, Router} from "@angular/router";
-import {DoctorService} from "../../services/doctor.service";
+import {AppointmentsService} from "../../services/appointments.service";
 
 @Component({
   selector: 'app-appointments',
@@ -12,23 +12,23 @@ import {DoctorService} from "../../services/doctor.service";
   styleUrl: './doctor-appointments.component.css'
 })
 export class DoctorAppointmentsComponent implements OnInit{
-  displayedColumns = ["appointmentId", "patientName", "appointmentDay", "appointmentHour", "moreInfo"];
+  displayedColumns = ["appointmentId", "patientName", "appointmentDate", "moreInfo"];
   dataSource!: MatTableDataSource<Appointment>;
   appointments!: Appointment[];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private doctorService: DoctorService, private router: Router, private route: ActivatedRoute) {
+  constructor(private appointmentsService: AppointmentsService, private router: Router, private route: ActivatedRoute) {
   }
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.getAppointmentsByDoctorId(Number(id));
   }
   getAppointmentsByDoctorId(id: number) {
-    this.doctorService.getAllById(id, "doctor").subscribe((response: any) => {
+    this.appointmentsService.getAllById(id, "doctor").subscribe((response: any) => {
       this.appointments = response.results.find((appointment: any) => appointment.id === id);
-      console.log(response);
+      console.log(response.results);
       this.dataSource = new MatTableDataSource<Appointment>(response.appointments);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
