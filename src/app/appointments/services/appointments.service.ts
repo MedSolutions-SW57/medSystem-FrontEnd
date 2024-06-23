@@ -7,7 +7,7 @@ import {BaseService} from "../../shared/services/base.service";
 @Injectable({
   providedIn: 'root'
 })
-export class PatientService extends BaseService<Appointment>{
+export class AppointmentsService extends BaseService<Appointment>{
   constructor(http:HttpClient) {
     super(http);
     this.resourceEndpoint = '/appointments';
