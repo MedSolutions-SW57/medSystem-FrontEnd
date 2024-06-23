@@ -3,7 +3,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
 import {Results} from "../../request-results/model/results.entity";
 import {Appointment} from "../../appointments/model/appointment.entity";
-import {environment} from "../../../environments/environment.developement";
+import {environment} from "../../../environments/environment";
 import {Treatment} from "../../treatments/model/treatment.entity";
 
 @Injectable({
@@ -35,7 +35,11 @@ export class BaseService<T> {
   }
 
   create(item: any): Observable<T> {
-    return this.http.post<T>(this.resourcePath(), JSON.stringify(item), this.httpOptions)
+    console.log('CREATING SOMETHING');
+    console.log('Item to be created:', item);
+    console.log('Resource Path:', this.resourcePath());
+    console.log('HTTP Options:', this.httpOptions);
+    return this.http.post<T>(this.resourcePath(), item, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
