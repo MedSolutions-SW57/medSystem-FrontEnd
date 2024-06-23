@@ -5,7 +5,11 @@
       <mat-card-subtitle>Please enter the required fields to sign up.</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <form [formGroup]="form" (submit)="onSubmit()">
+      <form [formGroup]="form" (submit)="onSubmit();">
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle (click)="doctorSelected()" value="bold">DOCTOR</mat-button-toggle>
+          <mat-button-toggle (click)="patientSelected()" value="bold">PATIENT</mat-button-toggle>
+        </mat-button-toggle-group>
         <mat-form-field>
           <input matInput placeholder="Username" id="username" name="username" required formControlName="username">
           <mat-error *ngIf="isInvalidControl(form, 'username')">{{ errorMessagesForControl(form, 'username')}}</mat-error>
@@ -15,9 +19,58 @@
           <mat-error *ngIf="isInvalidControl(form, 'password')">{{ errorMessagesForControl(form, 'password')}}</mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Role" id="role" name="role" required formControlName="role">
-          <mat-error *ngIf="isInvalidControl(form, 'role')">{{ errorMessagesForControl(form, 'role')}}</mat-error>
+          <input matInput placeholder="First Name" id="firstName" name="firstName" required formControlName="firstName">
+          <mat-error *ngIf="isInvalidControl(form, 'firstName')">{{ errorMessagesForControl(form, 'firstName')}}</mat-error>
         </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Last Name" id="lastName" name="lastName" required formControlName="lastName">
+          <mat-error *ngIf="isInvalidControl(form, 'lastName')">{{ errorMessagesForControl(form, 'lastName')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email" id="email" name="email" required formControlName="email" type="email">
+          <mat-error *ngIf="isInvalidControl(form, 'email')">{{ errorMessagesForControl(form, 'email')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Phone Number" id="phone" name="phoneNumber" required formControlName="phoneNumber">
+
+        </mat-form-field>
+        <div *ngIf="getRole() === 1">
+          <form [formGroup]="formDoctor">
+            <mat-form-field>
+              <input matInput placeholder="Specialty" id="specialty" name="specialty" required formControlName="specialty">
+
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="License Number" id="licenseNumber" name="licenseNumber" required formControlName="licenseNumber">
+
+            </mat-form-field>
+          </form>
+        </div>
+        <div *ngIf="getRole() === 2">
+          <form [formGroup]="formPatient">
+            <mat-form-field>
+              <input matInput placeholder="Street" id="street" name="street" required formControlName="street">
+
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Number" id="number" name="number" required formControlName="number">
+
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="City" id="city" name="city" required formControlName="city">
+
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Postal Code" id="postalCode" name="postalCode" required formControlName="postalCode">
+
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Country" id="country" name="country" required formControlName="country">
+
+            </mat-form-field>
+          </form>
+        </div>
+
         <button mat-raised-button color="primary" type="submit">Sign Up</button>
       </form>
     </mat-card-content>
