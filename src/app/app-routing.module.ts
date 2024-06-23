@@ -10,26 +10,27 @@ import {PacientTreatmentsComponent} from "./treatments/pages/pacient/pacient-tre
 import {PatientExamResultsComponent} from "./request-results/pages/patient/patient-request-results/patient-exam-results.component";
 import {PatientAppointmentsComponent} from "./appointments/pages/patient/patient-appointments.component";
 import {NewAppointmentComponent} from "./appointments/components/new-appointment/new-appointment.component";
-import {Register} from "./public/pages/register-page/register";
-import {LoginPageComponent} from "./public/pages/login-page/login-page.component";
 import {PatientRequestHistoryComponent} from "./request-history/pages/patient/patient-request-history.component";
+import {authenticationGuard} from "./iam/services/authentication.guard";
+import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
+import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
 
 
 const routes: Routes = [
-  {path: 'doctor/:id/appointments',component: DoctorAppointmentsComponent},
-  {path: 'doctor/:id/treatments-patient',component: DoctorTreatmentsComponent},
-  {path: 'doctor/:id/request-history', component: DoctorRequestHistoryComponent},
-  {path: 'doctor/:id/request-results',component: DoctorRequestResultsComponent},
-  {path:'appointments/:id', component: ReviewAppointmentComponent},
-  {path: 'patients/:id/request-results',component: PatientExamResultsComponent},
-  {path: 'patients/:id/appointments', component: PatientAppointmentsComponent},
-  {path: 'patients/:id/new-appointment', component: NewAppointmentComponent},
-  {path: 'patients/:id/request-history', component: PatientRequestHistoryComponent},
-  {path: 'patients/:id/treatments-patient', component: PacientTreatmentsComponent},
-  {path: 'patients/:id/new-appointment', component: NewAppointmentComponent},
-  {path: 'register', component: Register},
-  {path: 'login', component: LoginPageComponent},
-  {path: '', redirectTo: '/login',pathMatch: 'full'},
+  {path: 'doctor/appointments',component: DoctorAppointmentsComponent, canActivate: [authenticationGuard]},
+  {path: 'doctor/treatments-patient',component: DoctorTreatmentsComponent, canActivate: [authenticationGuard]},
+  {path: 'doctor/request-history', component: DoctorRequestHistoryComponent, canActivate: [authenticationGuard]},
+  {path: 'doctor/request-results',component: DoctorRequestResultsComponent, canActivate: [authenticationGuard]},
+  {path:'appointments', component: ReviewAppointmentComponent, canActivate: [authenticationGuard]},
+  {path: 'patients/request-results',component: PatientExamResultsComponent, canActivate: [authenticationGuard]},
+  {path: 'patients/appointments', component: PatientAppointmentsComponent, canActivate: [authenticationGuard]},
+  {path: 'patients/new-appointment', component: NewAppointmentComponent, canActivate: [authenticationGuard]},
+  {path: 'patients/request-history', component: PatientRequestHistoryComponent, canActivate: [authenticationGuard]},
+  {path: 'patients/treatments-patient', component: PacientTreatmentsComponent, canActivate: [authenticationGuard]},
+  {path: 'patients/new-appointment', component: NewAppointmentComponent, canActivate: [authenticationGuard]},
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'sign-up', component: SignUpComponent },
+  {path: '', redirectTo: 'doctor/appointments',pathMatch: 'full'},
 ];
 
 @NgModule({

@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-
-import {PacientTreatmentsComponent} from "./treatments/pages/pacient/pacient-treatments.component";
-import { UserService } from './public/services/user.service';
+import {Component, ViewChild} from '@angular/core';
+import {AuthenticationService} from "./iam/services/authentication.service";
+import {MatSidenav} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-root',
@@ -10,39 +9,36 @@ import { UserService } from './public/services/user.service';
 })
 export class AppComponent {
   title = 'medSystem-FrontEnd';
+  options = [
+    { path: '/doctor/appointments', title: 'Appointments', icon:'calendar_today'},
+    { path: '/chat', title: 'Chat', icon:'chat'},
+    { path: '/doctor/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
+    { path: '/doctor/request-history', title: 'Request History', icon:'history'},
+    { path: '/doctor/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
+    { path: '/patients/appointments', title: 'Appointments', icon:'calendar_today'},
+    { path: '/chat', title: 'Chat', icon:'chat'},
+    { path: '/patients/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
+    { path: '/patients/request-history', title: 'Request History', icon:'history'},
+    { path: '/patients/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
+  ]
+  isSignedIn: boolean = false;
+  username: string = "";
+  userId: number = -1;
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+  constructor(private authenticationService: AuthenticationService) {}
 
-
-
-  constructor(protected userService: UserService) { }
-
-  getOptions() {
-    const id = this.userService.getUserId();
-    console.log('id', id);
-    const userType = this.userService.getUserType();
-    const options = userType === 'doctor' ? this.getDoctorOptions() : this.getPatientOptions();
-    return options.map(option => ({
-      ...option,
-      path: option.path.replace(':id', id)
-    }));
+  ngOnInit() {
+    this.authenticationService.isSignedIn.subscribe(isSignedIn => this.isSignedIn = isSignedIn);
+    if (this.isSignedIn) {
+      this.sidenav.open();
+    }
   }
-
-  getDoctorOptions() {
-    return [
-      { path: '/doctor/:id/appointments', title: 'Appointments', icon:'calendar_today'},
-      { path: '/chat', title: 'Chat', icon:'chat'},
-      { path: '/doctor/:id/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
-      { path: '/doctor/:id/request-history', title: 'Request History', icon:'history'},
-      { path: '/doctor/:id/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
-    ];
+  getName(){
+    this.authenticationService.currentUsername.subscribe(username => this.username = username);
+    console.log(this.username);
   }
-
-  getPatientOptions() {
-    return [
-      { path: '/patients/:id/appointments', title: 'Appointments', icon:'calendar_today'},
-      { path: '/chat', title: 'Chat', icon:'chat'},
-      { path: '/patients/:id/treatments-patient', title: 'Treatments for patients', icon:'assignment'},
-      { path: '/patients/:id/request-history', title: 'Request History', icon:'history'},
-      { path: '/patients/:id/request-results', title: 'Request Results', icon: 'swap_vertical_circle'},
-    ];
+  getId(){
+    this.authenticationService.currentUserId.subscribe(id => this.userId = id);
+    console.log(this.userId);
   }
 }
