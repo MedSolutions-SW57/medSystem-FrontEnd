@@ -25,6 +25,7 @@ export class AuthenticationService {
   private signedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private signedInUserId: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   private signedInUsername: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  private signedInRole: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   constructor(private router: Router, private http: HttpClient) {
   }
@@ -38,6 +39,9 @@ export class AuthenticationService {
   }
   get currentUsername() {
     return this.signedInUsername.asObservable();
+  }
+  get currentRole(){
+    return this.signedInRole.asObservable();
   }
 
   /**
@@ -70,26 +74,29 @@ export class AuthenticationService {
    * This method sends a POST request to the server to sign in the user.
    * @param signInRequest - Sign In Request containing the username and password
    */
-  signIn(signInRequest: SignInRequest) {
-    return this.http.post<SignInResponse>(`${this.basePath}/authentication/sign-in`, signInRequest, this.httpOptions)
-      .subscribe({
-        next: (response) => {
-          this.signedIn.next(true);
-          this.signedInUserId.next(response.id);
-          this.signedInUsername.next(response.username);
-          localStorage.setItem('token', response.token);
-          console.log(`Signed In as ${response.username} with token: ${response.token}`);
-          this.router.navigate(['/']).then();
-        },
-        error: (error) => {
-          this.signedIn.next(false);
-          this.signedInUserId.next(0);
-          this.signedInUsername.next('');
-          localStorage.removeItem('token');
-          console.error(`Error while signing in: ${error.message}`);
-          this.router.navigate(['/sign-in']).then();
-        }
-      });
+  signIn(signInRequest: SignInRequest) : Promise<void> {
+    return new Promise((resolve, reject) => {
+      this.http.post<SignInResponse>(`${this.basePath}/authentication/sign-in`, signInRequest, this.httpOptions)
+        .subscribe({
+          next: (response) => {
+            this.signedIn.next(true);
+            this.signedInUserId.next(response.id);
+            this.signedInRole.next(response.role);
+            this.signedInUsername.next(response.username);
+            localStorage.setItem('token', response.token);
+            console.log(`Signed In as ${response.username} with token: ${response.token}`);
+            this.router.navigate(['/']).then(() => resolve());
+          },
+          error: (error) => {
+            this.signedIn.next(false);
+            this.signedInUserId.next(0);
+            this.signedInUsername.next('');
+            localStorage.removeItem('token');
+            console.error(`Error while signing in: ${error.message}`);
+            this.router.navigate(['/sign-in']).then(() => reject(error));
+          }
+        });
+    });
   }
 
   /**

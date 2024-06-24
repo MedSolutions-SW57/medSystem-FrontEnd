@@ -69,9 +69,9 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
   createProfile(){
     //CREATE PROFILE
     let firstName = this.form.value.firstName;
-    let lastName = this.form.value.firstName;
-    let email = this.form.value.firstName;
-    let phoneNumber = this.form.value.firstName;
+    let lastName = this.form.value.lastName;
+    let email = this.form.value.email;
+    let phoneNumber = this.form.value.phoneNumber;
     if (this.getRole() === 1) {
       let specialty = this.formDoctor.value.specialty;
       let licenseNumber = this.formDoctor.value.licenseNumber;

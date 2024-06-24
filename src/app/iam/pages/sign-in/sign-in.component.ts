@@ -3,6 +3,7 @@ import {BaseFormComponent} from "../../../shared/components/base-form.component"
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthenticationService} from "../../services/authentication.service";
 import {SignInRequest} from "../../model/sign-in.request";
+import {OptionsService} from "../../../public/services/options.service";
 
 @Component({
   selector: 'app-sign-in',
@@ -13,7 +14,7 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
   form!: FormGroup;
   submitted = false;
 
-  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService) {
+  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService, private optionsService : OptionsService) {
     super();
   }
 
@@ -29,8 +30,13 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
     let username = this.form.value.username;
     let password = this.form.value.password;
     const signInRequest = new SignInRequest(username, password);
-    this.authenticationService.signIn(signInRequest);
     this.submitted = true;
+    this.authenticationService.signIn(signInRequest)
+      .then(()=>{
+        this.optionsService.requestUpdateOptions();
+      })
+      .catch(error => {
+        console.error('Sign-in failed:', error);
+      });
   }
-
 }
