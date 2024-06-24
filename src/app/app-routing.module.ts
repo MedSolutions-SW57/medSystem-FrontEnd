@@ -16,6 +16,8 @@ import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
 import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
 import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found.component";
 import {HomeComponent} from "./public/pages/home/home.component";
+import {NewAnalysisComponent} from "./analysis/components/new-analysis/new-analysis.component";
+import {LaboratoryAnalysisComponent} from "./analysis/pages/laboratory/laboratory-analysis.component";
 
 
 const routes: Routes = [
@@ -31,6 +33,8 @@ const routes: Routes = [
   { path: 'patients/:id/request-history', component: PatientRequestHistoryComponent, canActivate: [authenticationGuard]},
   { path: 'patients/:id/treatments-patient', component: PacientTreatmentsComponent, canActivate: [authenticationGuard]},
   { path: 'patients/:id/new-appointment', component: NewAppointmentComponent, canActivate: [authenticationGuard]},
+  { path: 'laboratory/analysis', component: LaboratoryAnalysisComponent},
+  { path: 'laboratory/new-analysis', component: NewAnalysisComponent},
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: '', redirectTo: 'home',pathMatch: 'full'},

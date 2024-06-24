@@ -41,6 +41,8 @@ import {authenticationInterceptor} from "./iam/services/authentication.intercept
 import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found.component";
 import {MatButtonToggle, MatButtonToggleGroup} from "@angular/material/button-toggle";
 import {HomeComponent} from "./public/pages/home/home.component";
+import { NewAnalysisComponent } from './analysis/components/new-analysis/new-analysis.component';
+import { LaboratoryAnalysisComponent } from './analysis/pages/laboratory/laboratory-analysis.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import {HomeComponent} from "./public/pages/home/home.component";
     SignUpComponent,
     AuthenticationSectionComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NewAnalysisComponent,
+    LaboratoryAnalysisComponent
   ],
   imports: [
     BrowserModule,
