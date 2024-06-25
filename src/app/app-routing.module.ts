@@ -6,7 +6,7 @@ import {ReviewAppointmentComponent} from "./appointments/components/review-appoi
 import {DoctorRequestHistoryComponent} from "./request-history/pages/doctor/doctor-request-history.component";
 import {DoctorRequestResultsComponent} from "./request-results/pages/doctor/doctor-request-results.component";
 
-import {PatientTreatmentsComponent} from "./treatments/pages/patient/patient-treatments.component";
+import {PatientTreatmentsComponent} from "./treatments/pages/patient/";
 import {PatientExamResultsComponent} from "./request-results/pages/patient/patient-request-results/patient-exam-results.component";
 import {PatientAppointmentsComponent} from "./appointments/pages/patient/patient-appointments.component";
 import {NewAppointmentComponent} from "./appointments/components/new-appointment/new-appointment.component";

@@ -10,7 +10,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatRadioModule} from "@angular/material/radio";
-import {MatInputModule} from "@angular/material/input";
+import {MatFormField, MatInputModule} from "@angular/material/input";
 import {DoctorRequestResultsComponent} from "./request-results/pages/doctor/doctor-request-results.component";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
@@ -97,7 +97,8 @@ import { LaboratoryAnalysisComponent } from './analysis/pages/laboratory/laborat
     MatToolbar,
     MatDialogModule,
     MatButtonToggleGroup,
-    MatButtonToggle
+    MatButtonToggle,
+    MatFormField
   ],
   providers: [
     BaseService,provideAnimationsAsync(), provideHttpClient(withInterceptors([authenticationInterceptor]))
