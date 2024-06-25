@@ -38,7 +38,11 @@ export class BaseService<T> {
     return this.http.post<T>(this.resourcePath(), item, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-  getById(id: number, idType: string): Observable<T> {
+  getByUniqueId(id: number): Observable<T> {
+    return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  getByOtherId(id: number, idType: string): Observable<T> {
     return this.http.get<T>(`${this.resourcePath()}/${idType}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }

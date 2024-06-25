@@ -22,7 +22,7 @@ export class PatientAppointmentsComponent {
   }
 
   getAppointmentsByPatientId(id: number) {
-    this.appointmentsService.getAllById(id, "patient").subscribe((response: any) => {
+    this.appointmentsService.getAllById(id, "patientId").subscribe((response: any) => {
       this.appointments = response.results.find((appointment: any) => appointment.id === id);
       this.dataSource = new MatTableDataSource<Appointment>(response.appointments);
     });

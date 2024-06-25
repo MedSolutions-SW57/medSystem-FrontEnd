@@ -2,17 +2,17 @@
   <h2>APPOINTMENT REVIEW</h2>
   <mat-form-field appearance="fill">
     <mat-label>Name of the patient</mat-label>
-    <input matInput placeholder="Name of the patient" readonly value="{{appointment?.patientName}}">
+    <input matInput placeholder="Name of the patient" readonly value="{{appointment?.patientId}}">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Date of the appointment</mat-label>
-    <input matInput type="date" placeholder="Date of the appointment" readonly value="{{appointment?.appointmentDate}}">
+    <input matInput type="date" placeholder="Date of the appointment" readonly value="{{appointment?.date}}">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Hour</mat-label>
-    <input matInput type="time" placeholder="Hour" readonly value="{{appointment?.appointmentDate}}">
+    <input matInput type="time" placeholder="Hour" readonly value="{{appointment?.date}}">
   </mat-form-field>
 
 
