@@ -35,14 +35,17 @@ export class BaseService<T> {
   }
 
   create(item: any): Observable<T> {
-    console.log('CREATING SOMETHING');
-    console.log('Item to be created:', item);
-    console.log('Resource Path:', this.resourcePath());
-    console.log('HTTP Options:', this.httpOptions);
     return this.http.post<T>(this.resourcePath(), item, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-
+  getByUniqueId(id: number): Observable<T> {
+    return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  getByOtherId(id: number, idType: string): Observable<T> {
+    return this.http.get<T>(`${this.resourcePath()}/${idType}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
   getAll(): Observable<T> {
     return this.http.get<T>(`${this.resourcePath()}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));

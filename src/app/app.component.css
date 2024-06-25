@@ -45,3 +45,10 @@ mat-toolbar {
 .img-logo{
   padding: 0 14px;
 }
+.toolbar-row{
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+.spacer{
+  flex:1;
+}

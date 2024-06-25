@@ -7,19 +7,14 @@
 
     <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-      <ng-container matColumnDef="appointmentId">
+      <ng-container matColumnDef="id">
         <th mat-sort-header mat-header-cell *matHeaderCellDef>ID</th>
         <td mat-cell *matCellDef="let element">{{ element.id }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="appointmentDay">
+      <ng-container matColumnDef="date">
         <th mat-sort-header mat-header-cell *matHeaderCellDef>Day</th>
-        <td mat-cell *matCellDef="let element">{{ element.appointmentDay }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="appointmentHour">
-        <th mat-sort-header mat-header-cell *matHeaderCellDef>Hour</th>
-        <td mat-cell *matCellDef="let element">{{ element.appointmentHour }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.date }}</td>
       </ng-container>
 
       <ng-container matColumnDef="moreInfo">

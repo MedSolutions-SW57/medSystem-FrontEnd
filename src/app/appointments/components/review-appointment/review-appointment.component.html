@@ -2,25 +2,19 @@
   <h2>APPOINTMENT REVIEW</h2>
   <mat-form-field appearance="fill">
     <mat-label>Name of the patient</mat-label>
-    <input matInput placeholder="Name of the patient" readonly value="{{appointment?.patientName}}">
+    <input matInput placeholder="Name of the patient" readonly value="{{patientName}}">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Date of the appointment</mat-label>
-    <input matInput type="date" placeholder="Date of the appointment" readonly value="{{appointment?.appointmentDate}}">
+    <input matInput placeholder="Date of the appointment" readonly value="{{appointment?.date}}">
   </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Hour</mat-label>
-    <input matInput type="time" placeholder="Hour" readonly value="{{appointment?.appointmentDate}}">
-  </mat-form-field>
-
 
   <mat-form-field appearance="fill">
     <mat-label>Notes of the appointment</mat-label>
-    <textarea matInput placeholder="{{appointment?.reason}}" [(ngModel)]="note"></textarea>
+    <textarea matInput placeholder="Reason of the appointment" [(ngModel)]="note"></textarea>
   </mat-form-field>
 
   <button mat-raised-button color="primary" (click)="navigateBack()">Back</button>
-  <button mat-raised-button color="primary" >Add Note</button>
+  <button mat-raised-button color="primary" (click)="addNote()">Add Note</button>
 </div>
