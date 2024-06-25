@@ -1,7 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
-// @ts-ignore
-import {Treatment} from "../../../medSystem/model/treatment.entity";
 import {BaseService} from "../../../shared/services/base.service";
+import {Treatment} from "../../model/treatment.entity";
 
 @Component({
   selector: 'app-pacient',

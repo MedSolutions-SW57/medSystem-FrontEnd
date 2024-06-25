@@ -9,6 +9,7 @@
         <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
           <mat-button-toggle (click)="doctorSelected()" value="bold">DOCTOR</mat-button-toggle>
           <mat-button-toggle (click)="patientSelected()" value="bold">PATIENT</mat-button-toggle>
+          <mat-button-toggle (click)="consultantSelected()" value="bold">CONSULTANT</mat-button-toggle>
         </mat-button-toggle-group>
         <mat-form-field>
           <input matInput placeholder="Username" id="username" name="username" required formControlName="username">
@@ -70,7 +71,14 @@
             </mat-form-field>
           </form>
         </div>
+        <div *ngIf="getRole() === 3">
+          <form [formGroup]="formConsultant">
+            <mat-form-field>
+              <input matInput placeholder="License Number" id="licenseNumberC" name="licenseNumberC" required formControlName="licenseNumberC">
 
+            </mat-form-field>
+          </form>
+        </div>
         <button mat-raised-button color="primary" type="submit">Sign Up</button>
       </form>
     </mat-card-content>

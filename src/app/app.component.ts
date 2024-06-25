@@ -4,6 +4,7 @@ import {MatSidenav} from "@angular/material/sidenav";
 import {OptionsService} from "./public/services/options.service";
 import {PatientService} from "./profiles/services/patient.service";
 import {DoctorService} from "./profiles/services/doctor.service";
+import {ConsultantService} from "./profiles/services/consultant.service";
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,7 @@ export class AppComponent {
   userRole: string = '';
   @ViewChild('sidenav') sidenav!: MatSidenav;
   constructor(private authenticationService: AuthenticationService, private optionsService: OptionsService,
-              private patientService: PatientService, private doctorService: DoctorService) {}
+              private patientService: PatientService, private doctorService: DoctorService, private consultantService: ConsultantService) {}
 
   ngOnInit() {
     this.optionsService.updateOptions$.subscribe(() => {
@@ -59,7 +60,7 @@ export class AppComponent {
         ];
       })
     }
-    else {
+    else if (this.userRole == 'PATIENT') {
       this.patientService.getByOtherId(this.userId, "userId").subscribe((data:any)=>{
         const patient = data;
         userIdForPath = patient.id;
@@ -70,7 +71,16 @@ export class AppComponent {
           { path: '/patients/:id/request-results'.replace(':id', userIdForPath.toString()), title: 'Request Results', icon: 'swap_vertical_circle'},
         ]
       })
-
+    }
+    else {
+      this.consultantService.getByOtherId(this.userId, "userId").subscribe((data:any)=>{
+        const consultant =data;
+        userIdForPath = consultant.id;
+        this.options = [
+          { path: '/home', title: 'Home', icon: 'home'},
+          { path: '/consultant/:id/analysis'.replace(':id', userIdForPath.toString()), title: 'Analysis', icon: 'science'},
+        ]
+      })
     }
   }
   updateOptions() {

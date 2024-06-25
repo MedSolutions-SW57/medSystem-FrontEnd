@@ -7,6 +7,8 @@ import {DoctorService} from "../../../profiles/services/doctor.service";
 import {Doctor} from "../../../profiles/model/doctor.entity";
 import {Patient} from "../../../profiles/model/patient.entity";
 import {PatientService} from "../../../profiles/services/patient.service";
+import {Consultant} from "../../../profiles/model/consultant.entity";
+import {ConsultantService} from "../../../profiles/services/consultant.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -17,11 +19,13 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
   form!: FormGroup;
   formDoctor!: FormGroup;
   formPatient!: FormGroup;
+  formConsultant!: FormGroup;
   userId : number = -1;
 
   submitted = false;
   roleSelected : string = '';
-  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService, private doctorService:DoctorService, private patientService: PatientService) {
+  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService,
+              private doctorService:DoctorService, private patientService: PatientService, private consultantService: ConsultantService) {
     super();
 
   }
@@ -46,6 +50,9 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
       postalCode: ['', Validators.required],
       country: ['', Validators.required],
     })
+    this.formConsultant = this.builder.group({
+      licenseNumberC : ['', Validators.required],
+    })
   }
 
   onSubmit() {
@@ -53,6 +60,8 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
     if (this.form.invalid || this.roleSelected === '') return;
     if (this.formDoctor.invalid && this.roleSelected === 'DOCTOR') return;
     if (this.formPatient.invalid && this.roleSelected === 'PATIENT') return;
+    if (this.formConsultant.invalid && this.roleSelected === 'CONSULTANT') return;
+
     let username = this.form.value.username;
     let password = this.form.value.password;
     const signUpRequest = new SignUpRequest(username, password, this.roleSelected);
@@ -78,7 +87,7 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
       this.createDoctor(new Doctor(firstName, lastName, email, phoneNumber, specialty, licenseNumber,
         this.userId));
     }
-    else {
+    else if (this.getRole() === 2) {
       let street = this.formPatient.value.street;
       let number = this.formPatient.value.number;
       let city = this.formPatient.value.city;
@@ -87,6 +96,11 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
       this.createPatient(new Patient(firstName, lastName, email, phoneNumber, street, number, city, postalCode, country,
         this.userId));
     }
+    else {
+      let licenseNumber = this.formConsultant.value.licenseNumberC;
+      this.createConsultant(new Consultant(firstName, lastName, email, phoneNumber, licenseNumber, this.userId));
+    }
+
   }
   doctorSelected(){
     this.roleSelected = 'DOCTOR';
@@ -96,22 +110,33 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
     this.roleSelected = 'PATIENT';
     console.log("PATIENT SELECTED")
   }
+  consultantSelected(){
+    this.roleSelected = 'CONSULTANT';
+    console.log("CONSULTANT SELECTED");
+  }
   createDoctor(doctor : Doctor){
     this.doctorService.create(doctor).subscribe(
       response => console.log('Item created successfully:', response),
       error => console.error('Error creating item:', error)
     );
   }
-  createPatient(patient: Patient){
+  createPatient(patient: Patient) {
     this.patientService.create(patient).subscribe(
       response => console.log('Item created successfully:', response),
       error => console.error('Error creating item:', error)
     );
-
   }
-  getRole() {
+    createConsultant(consultant: Consultant) {
+      this.consultantService.create(consultant).subscribe(
+        response => console.log('Item created successfully:', response),
+        error => console.error('Error creating item:', error)
+      );
+    }
+
+  getRole() : number {
     if (this.roleSelected === 'DOCTOR') return 1;
     else if (this.roleSelected === 'PATIENT') return 2;
+    else if (this.roleSelected === 'CONSULTANT') return 3;
     else return 0;
   }
 }
