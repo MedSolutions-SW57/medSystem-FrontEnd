@@ -5,16 +5,15 @@
       <mat-card-title>Current treatments</mat-card-title>
       <br>
       <div class="slider">
-        <mat-card-content >
-          <div class="card-container-horizontal"  >
+        <mat-card-content>
+          <div class="card-container-horizontal">
             <mat-card *ngFor="let treatment of treatments">
-              <mat-card-title class="titles">{{treatment.name}}</mat-card-title>
+              <mat-card-title class="titles">{{treatment.treatmentName}}</mat-card-title>
               <mat-card-content>
-                <p><b>Patient's name: </b> {{treatment.patientName}}</p>
-                <p><b>Dose: </b> {{treatment.dose}}</p>
-                <p><b>Duration: </b> {{treatment.duration}}</p>
-                <p><b>Frequency: </b> {{treatment.frequency}}</p>
-                <p><b>Notes: </b> {{treatment.notes}}</p>
+                <p><b>Patient's name: </b> {{treatment.id}}</p>
+                <p><b>Description: </b> {{treatment.description}}</p>
+                <p><b>Star date: </b> {{treatment.startDate}}</p>
+                <p><b>End date: </b> {{treatment.endDate}}</p>
               </mat-card-content>
             </mat-card>
           </div>
@@ -30,26 +29,26 @@
         <mat-card-title>Add treatments</mat-card-title>
         <mat-card-content>
           <mat-label>DNI of patient:
-            <input type="text" [(ngModel)]="newTreatment.patientName">
+            <input type="text">
           </mat-label>
 
           <mat-label>Name of treatment:
-            <input type="text" [(ngModel)]="newTreatment.name">
+            <input type="text">
           </mat-label>
           <mat-label>Dose:
-            <input type="text" [(ngModel)]="newTreatment.dose">
+            <input type="text">
           </mat-label>
           <mat-label>Frequency:
-            <input type="text" [(ngModel)]="newTreatment.frequency">
+            <input type="text">
           </mat-label>
           <mat-label>Duration:
-            <input type="text" [(ngModel)]="newTreatment.duration">
+            <input type="text">
           </mat-label>
 
           <mat-label>Notes: </mat-label>
-          <input class="notes" type="text" [(ngModel)]="newTreatment.notes">
+          <input class="notes" type="text" >
           <div class="button_add">
-            <button mat-raised-button color="warn" (click)="addTreatment()">Add</button>
+            <button mat-raised-button color="warn">Add</button>
           </div>
         </mat-card-content>
       </mat-card>
@@ -66,13 +65,12 @@
               <mat-label>
                 Treatment list:
               </mat-label>
-              <select class="select-to-remove-treatment" [(ngModel)]="selectedTreatment">
+              <select class="select-to-remove-treatment" [(ngModel)]="">
                 <option value="" disabled selected hidden>Select an option</option>
-                <option *ngFor="let treatment of treatments" [value]="treatment.name">{{treatment.name}}</option>
+                <option *ngFor="let treatment of treatments" >{{treatment}}</option>
               </select>
               <div class="button_remove">
-                <button mat-raised-button color="warn" (click)="removeTreatment()">Remove</button>
-                <button mat-raised-button color="warn" (click)="finishTreatment()">Finish Treatment</button>
+                <button mat-raised-button color="warn">Remove</button>
               </div>
             </mat-card-content>
           </mat-card-title>
@@ -88,10 +86,10 @@
             <mat-card-content *ngFor="let treatment of treatments" >
               <mat-card class="card-container-lower-container">
                 <mat-card-content>
-                  <p><b>Patient's name: </b> {{treatment.patientName}}</p>
-                  <p><b>Dose: </b> {{treatment.dose}}</p>
-                  <p><b>Duration: </b> {{treatment.duration}}</p>
-                  <p><b>Frequency: </b> {{treatment.frequency}}</p>
+                  <p><b>Patient's name: </b> {{treatment.patientId}}</p>
+                  <p><b>Description: </b> {{treatment.description}}</p>
+                  <p><b>Start date: </b> {{treatment.startDate}}</p>
+                  <p><b>End date: </b> {{treatment.endDate}}</p>
 
                 </mat-card-content>
 
