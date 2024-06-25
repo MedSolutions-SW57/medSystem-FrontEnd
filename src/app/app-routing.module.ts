@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'doctor/:id/treatments-patient',component: DoctorTreatmentsComponent, canActivate: [authenticationGuard]},
   { path: 'doctor/:id/request-history', component: DoctorRequestHistoryComponent, canActivate: [authenticationGuard]},
   { path: 'doctor/:id/request-results',component: DoctorRequestResultsComponent, canActivate: [authenticationGuard]},
-  { path:'appointments', component: ReviewAppointmentComponent, canActivate: [authenticationGuard]},
+  { path:'appointments/:id', component: ReviewAppointmentComponent, canActivate: [authenticationGuard]},
   { path: 'patients/:id/request-results',component: PatientExamResultsComponent, canActivate: [authenticationGuard]},
   { path: 'patients/:id/appointments', component: PatientAppointmentsComponent, canActivate: [authenticationGuard]},
   { path: 'patients/:id/new-appointment', component: NewAppointmentComponent, canActivate: [authenticationGuard]},

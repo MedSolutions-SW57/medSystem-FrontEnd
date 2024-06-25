@@ -21,7 +21,8 @@ export class DoctorAppointmentsComponent implements OnInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private appointmentsService: AppointmentsService, private router: Router, private route: ActivatedRoute, private patientService: PatientService) {
+  constructor(private appointmentsService: AppointmentsService, private router: Router, private route: ActivatedRoute,
+              private patientService: PatientService) {
   }
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
