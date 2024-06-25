@@ -46,6 +46,7 @@ export class NewAppointmentComponent implements OnInit {
     };
     this.http.post('https://663440e79bb0df2359a10772.mockapi.io/appointments', appointment).subscribe(response =>{
       console.log(response);
+      alert('Appointment created successfully')
     },error => {
       console.error(error);
     });

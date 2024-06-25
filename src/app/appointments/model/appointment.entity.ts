@@ -1,9 +1,7 @@
 export interface Appointment{
-  id: string;
-  patientName: string;
-  appointmentDay: string;
-  appointmentHour: string;
-  inTreatment: boolean;
-  moreInfo: string;
-  requestHistory: Array<any>;
+  id: string
+  patientId: number
+  doctorId: number
+  date: string
+  reason: string
 }

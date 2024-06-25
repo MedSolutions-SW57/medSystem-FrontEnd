@@ -31,16 +31,27 @@ export class BaseService<T> {
   }
 
   private resourcePath() {
-    return `https://663440e79bb0df2359a10772.mockapi.io${this.resourceEndpoint}`;
+    return `${this.basePath}${this.resourceEndpoint}`;
   }
 
   create(item: any): Observable<T> {
-    return this.http.post<T>(this.resourcePath(), JSON.stringify(item), this.httpOptions)
+    return this.http.post<T>(this.resourcePath(), item, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-
+  getByUniqueId(id: number): Observable<T> {
+    return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  getByOtherId(id: number, idType: string): Observable<T> {
+    return this.http.get<T>(`${this.resourcePath()}/${idType}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
   getAll(): Observable<T> {
     return this.http.get<T>(`${this.resourcePath()}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  getAllById(id: number, idType: string): Observable<T[]> {
+    return this.http.get<T[]>(`${this.resourcePath()}/${idType}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
@@ -48,6 +59,15 @@ export class BaseService<T> {
     return this.http.delete<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+
+  update(id: any, item: any) {
+    return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+
+
+
 
 
   getResults():Observable<Results[]>{

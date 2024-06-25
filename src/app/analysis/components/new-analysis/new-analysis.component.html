@@ -1,0 +1,32 @@
+<form [formGroup]="firstFormGroup" (ngSubmit)="submitAnalysis()">
+  <mat-form-field appearance="fill">
+    <mat-label>Exam Type</mat-label>
+    <input matInput formControlName="examType" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Sample ID</mat-label>
+    <input matInput formControlName="sampleId" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Patient DNI</mat-label>
+    <input matInput formControlName="patientDni" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Analysis Date</mat-label>
+    <input matInput formControlName="analysisDate" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="status">
+      <mat-option value="PENDING">PENDING</mat-option>
+      <mat-option value="COMPLETED">COMPLETED</mat-option>
+      <mat-option value="IN_PROGRESS">IN_PROGRESS</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

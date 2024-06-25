@@ -1,8 +1,0 @@
-<div>
-  <button mat-button (click)="selectComponent('patient')">Patient</button>
-  <button mat-button (click)="selectComponent('doctor')">Doctor</button>
-  <button mat-button (click)="selectComponent('consultancy')">Consultancy</button>
-</div>
-<app-patient-register-form *ngIf="selectedComponent === 'patient'"></app-patient-register-form>
-<app-doctor-register-form *ngIf="selectedComponent === 'doctor'"></app-doctor-register-form>
-<app-consultancy-register-form *ngIf="selectedComponent === 'consultancy'"></app-consultancy-register-form>

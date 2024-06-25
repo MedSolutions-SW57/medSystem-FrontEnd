@@ -1,31 +1,32 @@
-<div *ngIf="!userService.isLoggedIn()"><router-outlet/></div>
-<div *ngIf="userService.isLoggedIn()">
+<div><router-outlet/></div>
+<div>
 <mat-toolbar color="primary" >
-  <mat-toolbar-row>
-    <button mat-icon-button (click)="sidenav.toggle();">
-      <mat-icon >menu</mat-icon>
+  <mat-toolbar-row class="toolbar-row">
+    <button mat-icon-button *ngIf="isSignedIn" (click)="sidenav.toggle();">
+      <mat-icon>menu</mat-icon>
     </button>
-    <img class="img-logo" width="30"  src="favicon.ico">
+    <img class="img-logo" width="30" src="favicon.ico">
     <h1>MedSystem</h1>
+    <span class="spacer"></span> <!-- This spacer will push the auth section to the right -->
+    <app-authentication-section></app-authentication-section>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" opened="true">
-
+  <mat-sidenav #sidenav mode="side" [opened]="isSignedIn" >
     <div class="sidenav-header">
       <img width="100" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
       <div class="header-text">
-        <h2>Username</h2>
-        <p>DNI</p>
+        <h2>{{username}}</h2>
       </div>
     </div>
     <mat-nav-list>
-      <a mat-list-item class="menu-item" *ngFor="let option of getOptions()" [routerLink]="option.path">
+      <a mat-list-item class="menu-item" *ngFor="let option of options" [routerLink]="option.path">
         <mat-icon matListItemIcon>{{ option.icon }}</mat-icon>
         <span>{{ option.title }}</span>
       </a>
     </mat-nav-list>
+
   </mat-sidenav>
   <mat-sidenav-content class="content">
     <router-outlet/>

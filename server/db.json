@@ -515,5 +515,55 @@
       "frequency": "3 hour per session",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed leo odio, molestie vitae tincidunt vel, rutrum et mi. Praesent eros urna, pharetra at interdum quis, porttitor a urna. Vivamus egestas felis semper, hendrerit ligula quis, sollicitudin nulla. Curabitur posuere quis est in ornare. Nunc nec orci nisi. Nunc quam ipsum, placerat et congue mattis, molestie eget risus. Pellentesque augue augue, accumsan quis metus a, blandit scelerisque nunc. In elementum sem nisi, eget maximus sem dignissim ac. Pellentesque non eleifend eros, ac egestas lorem. Sed sed mollis orci, et tristique tortor."
     }
+  ],
+  "treatments": [
+    {
+      "name": "Physiotherapy",
+      "patientName": "Pepito Suarez",
+      "dose": "2 sessions per week",
+      "duration": "5 weeks",
+      "frequency": "2 hours per session",
+      "notes": "si"
+    },
+    {
+      "name": "Immobilization",
+      "patientName": "Pedro Vertiz",
+      "dose": "4 sessions per week",
+      "duration": "2 weeks",
+      "frequency": "1 hours per session",
+      "notes": "si"
+    },
+    {
+      "name": "Traction",
+      "patientName": "Jorge Guimaraes",
+      "dose": "3 sessions per week",
+      "duration": "6 weeks",
+      "frequency": "3 hours per session",
+      "notes": "si"
+    },
+    {
+      "name": "Occupational Therapy",
+      "patientName": "Carlos Altamirano",
+      "dose": "1 sessions per week",
+      "duration": "2 weeks",
+      "frequency": "1 hour per session",
+      "notes": "si"
+    },
+    {
+      "name": "Ultrasound",
+      "patientName": "Michael Jackson",
+      "dose": "3 sessions per week",
+      "duration": "5 weeks",
+      "frequency": "2 hour per session",
+      "notes": "si"
+    },
+    {
+      "name": "Laser Therapy",
+      "patientName": "Michael Jordan",
+      "dose": "5 sessions per week",
+      "duration": "3 weeks",
+      "frequency": "3 hour per session",
+      "notes": "si"
+    }
   ]
 }
