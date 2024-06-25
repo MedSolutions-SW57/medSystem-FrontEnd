@@ -1,0 +1,48 @@
+.principal_card{
+  position: marker;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #16213E;
+  width: 1000px;
+  height: 900px;
+  margin: 2%;
+}
+
+.card-container-vertical{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.principal-title{
+  color: white;
+  text-align: center;
+  padding-top: 15%;
+}
+
+.dates{
+  align-items: center;
+  color: white;
+  width: 870px;
+  height: 300px;
+  background-color: #EDF2FA;
+}
+
+.treatments-details{
+  align-items: center;
+  color: white;
+  width: 870px;
+  height: 300px;
+  background-color: #EDF2FA;
+}
+
+.data-separation{
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+
+.treatments-details-title{
+  color: black;
+  font-size: 15px;
+}

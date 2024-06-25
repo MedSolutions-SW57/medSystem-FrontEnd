@@ -76,7 +76,4 @@ export class BaseService<T> {
   getAppointmentsWithHistory():Observable<Appointment[]>{
     return this.http.get<Appointment[]>('https://663440e79bb0df2359a10772.mockapi.io/appointments');
   }
-  getTreatments():Observable<Treatment[]>{
-    return this.http.get<Treatment[]>('https://663440e79bb0df2359a10772.mockapi.io/treatements');
-  }
 }

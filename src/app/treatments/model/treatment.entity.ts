@@ -1,12 +1,9 @@
 export interface Treatment{
   id:string;
-  name: string;
-  patientName: string;
-  dose: string;
-  duration: string;
-  frequency: string;
-  notes: string;
-  doctorId: string;
-  patientId: string;
-  inTreatment: boolean,
+  treatmentName: string;
+  description: string;
+  startDate: string;
+  endDate: string;
+  patientId: number;
+  doctorId: number;
 }

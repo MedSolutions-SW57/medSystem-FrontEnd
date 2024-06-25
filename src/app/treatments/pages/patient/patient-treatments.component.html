@@ -1,0 +1,37 @@
+<mat-card class="principal_card">
+<mat-card-title class="principal-title">
+  Treatments
+</mat-card-title>
+<div class="card-container-vertical">
+  <div class="treatments-details-separation">
+    <mat-card class="treatments-details">
+      <mat-card-content>
+        <mat-card-title class="treatments-details-title">
+          TREATMENTS DETAILS
+          <div class="divisor_ct">
+            <mat-card class="current_treatments">
+              <mat-card-title>Current treatments</mat-card-title>
+              <br>
+              <div class="slider">
+                <mat-card-content >
+                  <div class="card-container-horizontal"  >
+                    <mat-card *ngFor="let treatment of treatments">
+                      <mat-card-title class="titles">{{treatment.treatmentName}}</mat-card-title>
+                      <mat-card-content>
+                        <p><b>Description: </b> {{treatment.description}}</p>
+                        <p><b>Start Date: </b> {{treatment.startDate}}</p>
+                        <p><b>End date: </b> {{treatment.endDate}}</p>
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+                </mat-card-content>
+              </div>
+
+            </mat-card>
+          </div>
+        </mat-card-title>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+</mat-card>
