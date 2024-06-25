@@ -1,8 +1,10 @@
-import {Component,} from '@angular/core';
+import {Component, ViewChild,} from '@angular/core';
 import {Appointment} from "../../model/appointment.entity";
 import {MatTableDataSource} from "@angular/material/table";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AppointmentsService} from "../../services/appointments.service";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSort} from "@angular/material/sort";
 
 @Component({
   selector: 'app-patient',
@@ -10,9 +12,10 @@ import {AppointmentsService} from "../../services/appointments.service";
   styleUrl: './patient-appointments.component.css'
 })
 export class PatientAppointmentsComponent {
-  displayedColumns = ["appointmentId", "appointmentDay", "appointmentHour", "moreInfo"];
+  displayedColumns = ["id", "date", "moreInfo"];
   dataSource!: MatTableDataSource<Appointment>;
   appointments!: Appointment[];
+
 
   constructor(private appointmentsService: AppointmentsService, private router: Router, private route: ActivatedRoute) {
   }
@@ -22,16 +25,11 @@ export class PatientAppointmentsComponent {
   }
 
   getAppointmentsByPatientId(id: number) {
-    this.appointmentsService.getAllById(id, "patientId").subscribe((response: any) => {
-      this.appointments = response.results.find((appointment: any) => appointment.id === id);
-      this.dataSource = new MatTableDataSource<Appointment>(response.appointments);
+    this.appointmentsService.getAllById(id, "patientId").subscribe((data: any) => {
+      this.appointments = data;
+      this.dataSource = new MatTableDataSource<Appointment>(this.appointments);
+
     });
-  }
-
-
-  Filterchange(event: Event): void {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   navigateToReviewAppointment(id: any): void {

@@ -10,7 +10,6 @@ import {PacientTreatmentsComponent} from "./treatments/pages/pacient/pacient-tre
 import {PatientExamResultsComponent} from "./request-results/pages/patient/patient-request-results/patient-exam-results.component";
 import {PatientAppointmentsComponent} from "./appointments/pages/patient/patient-appointments.component";
 import {NewAppointmentComponent} from "./appointments/components/new-appointment/new-appointment.component";
-import {PatientRequestHistoryComponent} from "./request-history/pages/patient/patient-request-history.component";
 import {authenticationGuard} from "./iam/services/authentication.guard";
 import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
 import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
@@ -30,7 +29,6 @@ const routes: Routes = [
   { path: 'patients/:id/request-results',component: PatientExamResultsComponent, canActivate: [authenticationGuard]},
   { path: 'patients/:id/appointments', component: PatientAppointmentsComponent, canActivate: [authenticationGuard]},
   { path: 'patients/:id/new-appointment', component: NewAppointmentComponent, canActivate: [authenticationGuard]},
-  { path: 'patients/:id/request-history', component: PatientRequestHistoryComponent, canActivate: [authenticationGuard]},
   { path: 'patients/:id/treatments-patient', component: PacientTreatmentsComponent, canActivate: [authenticationGuard]},
   { path: 'patients/:id/new-appointment', component: NewAppointmentComponent, canActivate: [authenticationGuard]},
   { path: 'laboratory/analysis', component: LaboratoryAnalysisComponent},

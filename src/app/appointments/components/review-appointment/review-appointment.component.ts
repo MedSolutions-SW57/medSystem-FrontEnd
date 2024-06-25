@@ -51,6 +51,7 @@ export class ReviewAppointmentComponent implements OnInit {
       this.appointmentsService.update(this.appointment?.id, reasonUpdated).subscribe({
         next: (response) => {
           console.log('Appointment updated:', response);
+          alert("Appointment updated successfully");
         },
         error: (error) => {
           console.error('Error updating appointment:', error);
