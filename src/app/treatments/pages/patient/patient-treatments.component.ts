@@ -1,13 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-// @ts-ignore
+import {Component, OnInit} from '@angular/core';
 import {Treatment} from "../../model/treatment.entity";
-import {BaseService} from "../../../shared/services/base.service";
-import {MatTableDataSource} from "@angular/material/table";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Appointment} from "../../../appointments/model/appointment.entity";
-import {PatientService} from "../../../profiles/services/patient.service";
-import {MatPaginator} from "@angular/material/paginator";
-import {MatSort} from "@angular/material/sort";
 import {TreatmentsService} from "../../services/treatments.service";
 
 @Component({
@@ -16,11 +9,7 @@ import {TreatmentsService} from "../../services/treatments.service";
   styleUrl: './patient-treatments.component.css'
 })
 export class PatientTreatmentsComponent implements OnInit{
-  dataSource!: MatTableDataSource<Treatment>;
   treatments!: Treatment[];
-
-
-
   constructor(private treatmentsService: TreatmentsService, private route: ActivatedRoute) {
   }
 
@@ -32,10 +21,8 @@ export class PatientTreatmentsComponent implements OnInit{
   getTreatmentsByPatientId(id: number) {
     this.treatmentsService.getAllById(id, "patientId").subscribe((data: any) => {
       this.treatments = data;
-      this.dataSource = new MatTableDataSource<Treatment>(this.treatments);
-
+      console.log(this.treatments);
     });
   }
-
 }
 
