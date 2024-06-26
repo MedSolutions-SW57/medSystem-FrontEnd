@@ -26,7 +26,7 @@ export class ReviewAppointmentComponent implements OnInit {
     this.authenticationService.currentUserId.subscribe(currentUserId => {
       this.doctorId = currentUserId;
     });
-    this.router.navigate([`/patient/${this.patientId}/appointments`]);
+    this.router.navigate([`/doctor/${this.patientId}/appointments`]);
   }
 
   ngOnInit() {
