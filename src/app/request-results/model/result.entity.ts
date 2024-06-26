@@ -2,9 +2,9 @@ export interface Result {
   id: string;
   patientId: string;
   doctorId: string;
-  date: string;
-  examType : string;
-  result: string;
+  ResultDateTime: string;
+  typeOfExam : string;
+  result: boolean;
 }
 
 

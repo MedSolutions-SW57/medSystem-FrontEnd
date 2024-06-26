@@ -1,20 +1,9 @@
-
-
 <mat-card>
 
   <mat-card-title>
     <mat-toolbar color="primary">
       <span>Exam results</span>
       <span class="example-spacer"></span>
-      <button [matMenuTriggerFor]="lvl1profile" mat-icon-button><mat-icon>person</mat-icon></button>
-      <mat-menu #lvl1profile="matMenu">
-        <button mat-menu-item routerLink="">My profile</button>
-        <button mat-menu-item routerLink="">Logout</button>
-      </mat-menu>
-      <button class="button-appointment" routerLink="" mat-raised-button>
-        <mat-icon>calendar_month</mat-icon>
-        Schedule an appointment
-      </button>
     </mat-toolbar>
   </mat-card-title>
   <mat-card-header>
@@ -31,29 +20,30 @@
         <td mat-cell *matCellDef="let element">{{ element.id}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="doctorName">
+      <ng-container matColumnDef="doctorId">
         <th mat-sort-header mat-header-cell *matHeaderCellDef>Doctor</th>
-        <td mat-cell *matCellDef="let element">{{ element.doctorName}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.doctorId}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="date">
-        <th mat-sort-header mat-header-cell *matHeaderCellDef>Date</th>
-        <td mat-cell *matCellDef="let element">{{ element.date}}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="examType">
+      <ng-container matColumnDef="typeOfExam">
         <th mat-sort-header mat-header-cell *matHeaderCellDef>Type of exam</th>
-        <td mat-cell *matCellDef="let element">{{ element.examType}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.typeOfExam}}</td>
       </ng-container>
 
       <ng-container matColumnDef="result">
         <th mat-sort-header mat-header-cell *matHeaderCellDef>Result</th>
         <td mat-cell *matCellDef="let element">{{ element.result}}</td>
       </ng-container>
+
+      <ng-container matColumnDef="ResultDateTime">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let element">{{ element.ResultDateTime}}</td>
+      </ng-container>
+
       <ng-container matColumnDef="action">
         <th mat-sort-header mat-header-cell *matHeaderCellDef>Action</th>
         <td mat-cell *matCellDef="let element">
-          <button mat-raised-button color="primary" [disabled]="!isResultAvailable(element.result)">Show more</button>
+          <button mat-raised-button color="primary" [disabled]="!isResultAvailable(element.result)" (click)="openDetailsDialog(element)">Show more</button>
         </td>
       </ng-container>
 

@@ -16,7 +16,7 @@ import {ResultsService} from "../../services/results.service";
 export class DoctorRequestResultsComponent {
   resultsList !:Result[];
   dataSource !:MatTableDataSource<Result>;
-  displayedColumns = ["id","patientId","typeOfExam","result","resultDateTime", "action"];
+  displayedColumns = ["id","patientId","typeOfExam","result","ResultDateTime", "action"];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
 
