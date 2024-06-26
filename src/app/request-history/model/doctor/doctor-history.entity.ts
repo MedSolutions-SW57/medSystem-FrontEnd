@@ -1,6 +1,7 @@
 export interface DoctorHistory {
-  historyId: string;
+  id: number;
+  reason: string;
+  date: string;
+  patientId: number;
   doctorName: string;
-  historyReason: string;
-  historyDate: string;
 }
