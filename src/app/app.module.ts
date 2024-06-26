@@ -46,6 +46,7 @@ import { LaboratoryAnalysisComponent } from './analysis/pages/laboratory/laborat
 import { NewSampleComponent } from './samples/components/new-sample/new-sample.component';
 import { LaboratorySampleComponent } from './samples/pages/laboratory/laboratory-sample.component';
 import {MatDatepicker} from "@angular/material/datepicker";
+import { NewResultComponent } from './request-results/components/new-result/new-result.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import {MatDatepicker} from "@angular/material/datepicker";
     LaboratoryAnalysisComponent,
     NewSampleComponent,
     LaboratorySampleComponent,
+    NewResultComponent,
   ],
   imports: [
     BrowserModule,
