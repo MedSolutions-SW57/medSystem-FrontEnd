@@ -84,7 +84,7 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
     if (this.getRole() === 1) {
       let specialty = this.formDoctor.value.specialty;
       let licenseNumber = this.formDoctor.value.licenseNumber;
-      this.createDoctor(new Doctor(firstName, lastName, email, phoneNumber, specialty, licenseNumber,
+      this.createDoctor(new Doctor(firstName + " " + lastName, email, phoneNumber, specialty, licenseNumber,
         this.userId));
     }
     else if (this.getRole() === 2) {
@@ -115,7 +115,16 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
     console.log("CONSULTANT SELECTED");
   }
   createDoctor(doctor : Doctor){
-    this.doctorService.create(doctor).subscribe(
+
+    const newDoctor = {
+      firstName : doctor.fullName.split(" ")[0],
+      lastName : doctor.fullName.split(" ")[1],
+      email: doctor.email,
+      phone : doctor.phone,
+      specialty: doctor.specialty,
+      licenseNumber: doctor.licenceNumber
+    }
+    this.doctorService.create(newDoctor).subscribe(
       response => console.log('Item created successfully:', response),
       error => console.error('Error creating item:', error)
     );

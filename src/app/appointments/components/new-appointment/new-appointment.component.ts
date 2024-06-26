@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
+import {Doctor} from "../../../profiles/model/doctor.entity";
+import {AppointmentsService} from "../../services/appointments.service";
+import {DoctorService} from "../../../profiles/services/doctor.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-appointment',
@@ -8,83 +12,58 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./new-appointment.component.css']
 })
 export class NewAppointmentComponent implements OnInit {
-  firstFormGroup = this._formBuilder.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    moreInfo: ['', Validators.required],
-    doctor: ['', Validators.required],
+  formGroup = this._formBuilder.group({
+    doctorName: ['', Validators.required],
     date: ['', Validators.required],
-    hour: ['', Validators.required],
+    reason: ['', Validators.required],
   });
-  isLinear = false;
+  isLinear : boolean = false;
   doctors: any[] = [];
-
-  constructor(private _formBuilder: FormBuilder, private http: HttpClient) {}
+  patientId = -1;
+  doctorId = -1;
+  constructor(private _formBuilder: FormBuilder, private http: HttpClient, private appointmentsService: AppointmentsService,
+              private doctorService: DoctorService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.patientId = Number(this.route.snapshot.paramMap.get('id'));
     this.getDoctors();
   }
 
   getDoctors() {
-    this.http.get('https://663440e79bb0df2359a10772.mockapi.io/doctors').subscribe((data: any) => {
+    this.doctorService.getAll().subscribe((data: any) => {
       this.doctors = data;
+      console.log(this.doctors);
     }, error => {
       console.error(error);
     });
   }
 
   submitAppointment(){
-    const appointment={
-      patientName:`${this.firstFormGroup.value.firstName} ${this.firstFormGroup.value.lastName}`,
-      appointmentDay: this.secondFormGroup.value.date,
-      appointmentHour: this.secondFormGroup.value.hour,
-      inTreatment: false,
-      moreInfo: this.secondFormGroup.value.moreInfo,
-      requestHistory:[],
-    };
-    this.http.post('https://663440e79bb0df2359a10772.mockapi.io/appointments', appointment).subscribe(response =>{
-      console.log(response);
-      alert('Appointment created successfully')
-    },error => {
-      console.error(error);
-    });
-    this.http.get(`https://663440e79bb0df2359a10772.mockapi.io/patients?lastName=${this.firstFormGroup.value.lastName}`).subscribe((data: any) => {
-      if (data.length > 0) {
-        const patient = data[0];
-        // Agregar la cita al array de citas del paciente
-        patient.appointments.push(appointment);
-        // Actualizar el paciente con la nueva cita
-        this.http.put(`https://663440e79bb0df2359a10772.mockapi.io/patients/${patient.id}`, patient).subscribe(response => {
-          console.log(response);
-        }, error => {
-          console.error(error);
-        });
-      } else {
-        console.log('No se encontró el paciente');
+    for (let doctorToSelect of this.doctors){
+      if (doctorToSelect.fullName === this.formGroup.value.doctorName) {
+        this.doctorService.getByUniqueId(doctorToSelect.id).subscribe({
+          next: (response:any) => {
+            this.doctorId = response.id;
+            const appointment={
+              date: this.formGroup.value.date,
+              reason: this.formGroup.value.reason,
+              doctorId: this.doctorId,
+              patientId: this.patientId,
+            };
+            this.appointmentsService.create(appointment).subscribe(response =>{
+              console.log(response);
+              alert('Appointment created successfully');
+              this.router.navigate([`patient/${this.patientId}/appointments`]);
+            },error => {
+              console.error(error);
+            });
+          },
+          error: (error) =>{
+            console.error(error);
+          }
+        })
       }
-    }, error => {
-      console.error(error);
-    });
-    // Buscar el doctor por apellido
-    this.http.get(`https://663440e79bb0df2359a10772.mockapi.io/doctors?lastName=${this.secondFormGroup.value.doctor}`).subscribe((data: any) => {
-      if (data.length > 0) {
-        const doctor = data[0];
-        // Agregar la cita al array de citas del doctor
-        doctor.appointments.push(appointment);
-        // Actualizar el doctor con la nueva cita
-        this.http.put(`https://663440e79bb0df2359a10772.mockapi.io/doctors/${doctor.id}`, doctor).subscribe(response => {
-          console.log(response);
-        }, error => {
-          console.error(error);
-        });
-      } else {
-        console.log('No se encontró el doctor');
-      }
-    }, error => {
-      console.error(error);
-    });
+    }
 
   }
 }

@@ -45,6 +45,7 @@ import { NewAnalysisComponent } from './analysis/components/new-analysis/new-ana
 import { LaboratoryAnalysisComponent } from './analysis/pages/laboratory/laboratory-analysis.component';
 import { NewSampleComponent } from './samples/components/new-sample/new-sample.component';
 import { LaboratorySampleComponent } from './samples/pages/laboratory/laboratory-sample.component';
+import {MatDatepicker} from "@angular/material/datepicker";
 
 @NgModule({
   declarations: [
@@ -102,7 +103,8 @@ import { LaboratorySampleComponent } from './samples/pages/laboratory/laboratory
     MatDialogModule,
     MatButtonToggleGroup,
     MatButtonToggle,
-    MatFormField
+    MatFormField,
+    MatDatepicker
   ],
   providers: [
     BaseService,provideAnimationsAsync(), provideHttpClient(withInterceptors([authenticationInterceptor]))

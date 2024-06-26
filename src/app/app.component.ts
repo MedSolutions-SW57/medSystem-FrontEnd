@@ -67,9 +67,9 @@ export class AppComponent {
         userIdForPath = patient.id;
         this.options = [
           { path: '/home', title: 'Home', icon: 'home'},
-          { path: '/patients/:id/appointments'.replace(':id', userIdForPath.toString()), title: 'Appointments', icon:'calendar_today'},
-          { path: '/patients/:id/treatments-patient'.replace(':id', userIdForPath.toString()), title: 'Treatments for patients', icon:'assignment'},
-          { path: '/patients/:id/request-results'.replace(':id', userIdForPath.toString()), title: 'Request Results', icon: 'swap_vertical_circle'},
+          { path: '/patient/:id/appointments'.replace(':id', userIdForPath.toString()), title: 'Appointments', icon:'calendar_today'},
+          { path: '/patient/:id/treatments-patient'.replace(':id', userIdForPath.toString()), title: 'Treatments for patients', icon:'assignment'},
+          { path: '/patient/:id/request-results'.replace(':id', userIdForPath.toString()), title: 'Request Results', icon: 'swap_vertical_circle'},
         ]
       })
 

@@ -12,16 +12,16 @@ import {MatSort} from "@angular/material/sort";
   styleUrl: './patient-appointments.component.css'
 })
 export class PatientAppointmentsComponent {
-  displayedColumns = ["id", "date", "moreInfo"];
+  displayedColumns = ["id", "date", "reason"];
   dataSource!: MatTableDataSource<Appointment>;
   appointments!: Appointment[];
-
+  patientId = -1;
 
   constructor(private appointmentsService: AppointmentsService, private router: Router, private route: ActivatedRoute) {
   }
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.getAppointmentsByPatientId(Number(id));
+    this.patientId = Number(this.route.snapshot.paramMap.get('id'));
+    this.getAppointmentsByPatientId( this.patientId);
   }
 
   getAppointmentsByPatientId(id: number) {
@@ -31,12 +31,7 @@ export class PatientAppointmentsComponent {
 
     });
   }
-
-  navigateToReviewAppointment(id: any): void {
-    this.router.navigate(['/appointments', id]);
-  }
-
   navigateToNew(): void {
-    this.router.navigate(['patients/:id/new-appointment']);
+    this.router.navigate([`patient/${this.patientId}/new-appointment`]);
   }
 }

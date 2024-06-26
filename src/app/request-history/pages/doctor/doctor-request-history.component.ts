@@ -18,12 +18,9 @@ export class DoctorRequestHistoryComponent {
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   constructor(private service:BaseService<DoctorHistory>) {
-    this.service.getAppointmentsWithHistory().subscribe(res => {
-      //this.historyList = res.flatMap(appointment => appointment.requestHistory);
-      this.dataSource = new MatTableDataSource<DoctorHistory>(this.historyList);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-    })
+  }
+  onInit(){
+
   }
   Filterchange(data:any){
     const value=(data.target as HTMLInputElement).value;
