@@ -18,6 +18,7 @@ import {NewAnalysisComponent} from "./analysis/components/new-analysis/new-analy
 import {LaboratoryAnalysisComponent} from "./analysis/pages/laboratory/laboratory-analysis.component";
 import {LaboratorySampleComponent} from "./samples/pages/laboratory/laboratory-sample.component";
 import {NewSampleComponent} from "./samples/components/new-sample/new-sample.component";
+import {NewResultComponent} from "./request-results/components/new-result/new-result.component";
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'consultant/:id/new-sample',component: NewSampleComponent, canActivate: [authenticationGuard]},
   { path: 'consultant/:id/analysis', component: LaboratoryAnalysisComponent, canActivate: [authenticationGuard]},
   { path: 'consultant/:id/new-analysis', component: NewAnalysisComponent, canActivate: [authenticationGuard]},
+  { path: 'consultant/:id/new-result', component: NewResultComponent, canActivate:[authenticationGuard]},
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: '', redirectTo: 'home',pathMatch: 'full'},

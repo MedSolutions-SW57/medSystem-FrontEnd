@@ -11,9 +11,8 @@ export class NewResultComponent implements OnInit {
   firstFormGroup = this._formBuilder.group({
     patientId: ['', Validators.required],
     doctorId: ['', Validators.required],
-    date: ['', Validators.required],
-    examType: ['', Validators.required],
-    result: ['', Validators.required],
+    ResultDateTime: ['', Validators.required],
+    typeOfExam: ['', Validators.required],
   });
 
   constructor(private _formBuilder: FormBuilder, private resultService: ResultsService) {
@@ -25,9 +24,9 @@ export class NewResultComponent implements OnInit {
     const result = {
       patientId: this.firstFormGroup.value.patientId,
       doctorId: this.firstFormGroup.value.doctorId,
-      date: this.firstFormGroup.value.date,
-      examType: this.firstFormGroup.value.examType,
-      result: this.firstFormGroup.value.result,
+      resultDateTime: this.firstFormGroup.value.ResultDateTime,
+      typeOfExam: this.firstFormGroup.value.typeOfExam,
+      result: true,
     };
     this.resultService.create(result).subscribe(response => {
       console.log(response);

@@ -82,6 +82,7 @@ export class AppComponent {
           { path: '/home', title: 'Home', icon: 'home'},
           { path: '/consultant/:id/samples'.replace(':id', userIdForPath.toString()), title: 'Samples', icon: 'labs' },
           { path: '/consultant/:id/analysis'.replace(':id', userIdForPath.toString()), title: 'Analysis', icon: 'science'},
+          { path: 'consultant/:id/new-result'.replace(':id', userIdForPath.toString()), title: 'Results', icon: "experiment" }
 
         ]
       })
