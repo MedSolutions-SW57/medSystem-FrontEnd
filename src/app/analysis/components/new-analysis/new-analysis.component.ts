@@ -11,7 +11,7 @@ export class NewAnalysisComponent implements OnInit{
   firstFormGroup = this._formBuilder.group({
     analysisType: ['', Validators.required],
     sampleId: ['', Validators.required],
-    patientDni: ['', Validators.required],
+    patientId: ['', Validators.required],
     date: ['', Validators.required],
     status: ['', Validators.required],
   });
@@ -25,7 +25,7 @@ export class NewAnalysisComponent implements OnInit{
     const analysis = {
       analysisType: this.firstFormGroup.value.analysisType,
       sampleId: this.firstFormGroup.value.sampleId,
-      patientDni: this.firstFormGroup.value.patientDni,
+      patientId: this.firstFormGroup.value.patientId,
       date: this.firstFormGroup.value.date,
       status: this.firstFormGroup.value.status,
     };

@@ -2,7 +2,7 @@ export interface Analysis {
   id: string;
   sampleId: string;
   examType: string;
-  patientDni: string;
+  patientId: number;
   analysisDate: string;
   status: string;
 }

@@ -12,7 +12,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrl: './laboratory-analysis.component.css'
 })
 export class LaboratoryAnalysisComponent implements OnInit{
-  displayedColumns = ["analysisId","examType","sampleId", "patientDni", "analysisDate", "status"];
+  displayedColumns = ["analysisId","examType","sampleId", "patientId", "analysisDate", "status"];
   dataSource!: MatTableDataSource<Analysis>;
   analysis!: Analysis[];
   consultantId = -1;
@@ -43,6 +43,6 @@ export class LaboratoryAnalysisComponent implements OnInit{
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   navigateToCreateAnalysis(): void {
-    this.router.navigate([`/consultants/${this.consultantId}/new-analysis`]);
+    this.router.navigate([`/consultant/${this.consultantId}/new-analysis`]);
   }
 }

@@ -11,7 +11,7 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Patient DNI</mat-label>
-    <input matInput formControlName="patientDni" required>
+    <input matInput formControlName="patientId" required>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -22,9 +22,9 @@
   <mat-form-field appearance="fill">
     <mat-label>Status</mat-label>
     <mat-select formControlName="status">
-      <mat-option value="1">PENDING</mat-option>
-      <mat-option value="2">COMPLETED</mat-option>
-      <mat-option value="3">IN_PROGRESS</mat-option>
+      <mat-option value="PENDING">PENDING</mat-option>
+      <mat-option value="COMPLETED">COMPLETED</mat-option>
+      <mat-option value="IN_PROGRESS">IN_PROGRESS</mat-option>
     </mat-select>
   </mat-form-field>
 
