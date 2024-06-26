@@ -93,7 +93,7 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
       let city = this.formPatient.value.city;
       let postalCode = this.formPatient.value.postalCode;
       let country = this.formPatient.value.country;
-      this.createPatient(new Patient(firstName, lastName, email, phoneNumber, street, number, city, postalCode, country,
+      this.createPatient(new Patient(firstName + " " + lastName, email, phoneNumber, street, number, city, postalCode, country,
         this.userId));
     }
     else {
@@ -122,7 +122,8 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
       email: doctor.email,
       phone : doctor.phone,
       specialty: doctor.specialty,
-      licenseNumber: doctor.licenceNumber
+      licenseNumber: doctor.licenceNumber,
+      userId: doctor.userId
     }
     this.doctorService.create(newDoctor).subscribe(
       response => console.log('Item created successfully:', response),
@@ -130,7 +131,19 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
     );
   }
   createPatient(patient: Patient) {
-    this.patientService.create(patient).subscribe(
+    const newPatient ={
+      firstName : patient.fullName.split(" ")[0],
+      lastName : patient.fullName.split(" ")[1],
+      email: patient.email,
+      phone : patient.phone,
+      street: patient.street,
+      number: patient.number,
+      city: patient.city,
+      postalCode: patient.postalCode,
+      country: patient.country,
+      userId: patient.userId
+    }
+    this.patientService.create(newPatient).subscribe(
       response => console.log('Item created successfully:', response),
       error => console.error('Error creating item:', error)
     );

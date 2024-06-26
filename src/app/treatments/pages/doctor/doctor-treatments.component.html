@@ -10,7 +10,7 @@
             <mat-card *ngFor="let treatment of treatments">
               <mat-card-title class="titles">{{treatment.treatmentName}}</mat-card-title>
               <mat-card-content>
-                <p><b>Patient's name: </b> {{treatment.id}}</p>
+                <p><b>Patient's name: </b> {{ treatment.patientId }}</p>
                 <p><b>Description: </b> {{treatment.description}}</p>
                 <p><b>Star date: </b> {{treatment.startDate}}</p>
                 <p><b>End date: </b> {{treatment.endDate}}</p>

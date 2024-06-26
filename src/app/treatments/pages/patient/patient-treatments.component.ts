@@ -8,6 +8,7 @@ import {Appointment} from "../../../appointments/model/appointment.entity";
 import {PatientService} from "../../../profiles/services/patient.service";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
+import {TreatmentsService} from "../../services/treatments.service";
 
 @Component({
   selector: 'app-patient',
@@ -20,7 +21,7 @@ export class PatientTreatmentsComponent implements OnInit{
 
 
 
-  constructor(private treatmentsService: BaseService<Treatment>, private route: ActivatedRoute) {
+  constructor(private treatmentsService: TreatmentsService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
