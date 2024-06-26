@@ -1,0 +1,28 @@
+<form [formGroup]="firstFormGroup" (ngSubmit)="submitResult()">
+  <mat-form-field appearance="fill">
+    <mat-label>Patient ID</mat-label>
+    <input matInput formControlName="patientId" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Doctor ID</mat-label>
+    <input matInput formControlName="doctorId" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input matInput formControlName="date" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Exam Type</mat-label>
+    <input matInput formControlName="examType" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Result</mat-label>
+    <input matInput formControlName="result" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Send</button>
+</form>
