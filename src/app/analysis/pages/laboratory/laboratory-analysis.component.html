@@ -35,7 +35,7 @@
 
       <ng-container matColumnDef="examType">
         <th mat-sort-header mat-header-cell *matHeaderCellDef>Exam Type</th>
-        <td mat-cell *matCellDef="let element">{{ element.examType}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.analysisType}}</td>
       </ng-container>
 
       <ng-container matColumnDef="sampleId">
@@ -50,7 +50,12 @@
 
       <ng-container matColumnDef="analysisDate">
         <th mat-sort-header mat-header-cell *matHeaderCellDef>Analysis Date</th>
-        <td mat-cell *matCellDef="let element">{{ element.analysisDate}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.date}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Sample ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.status}}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

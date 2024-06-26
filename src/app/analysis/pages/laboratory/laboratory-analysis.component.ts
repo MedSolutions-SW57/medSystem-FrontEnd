@@ -30,9 +30,9 @@ export class LaboratoryAnalysisComponent implements OnInit{
 
   getAllAnalysis() {
     this.analysisService.getAll().subscribe((response: any) => {
-      this.analysis = response.results;
-      console.log(response.results);
-      this.dataSource = new MatTableDataSource<Analysis>(response.analysis);
+      this.analysis = response;
+      console.log(response);
+      this.dataSource = new MatTableDataSource<Analysis>(this.analysis);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
