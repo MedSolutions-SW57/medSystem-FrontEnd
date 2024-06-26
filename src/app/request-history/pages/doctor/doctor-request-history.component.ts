@@ -17,6 +17,7 @@ export class DoctorRequestHistoryComponent {
   displayedColumns = ["patientId", "date", "reason"];
   dataSource!: MatTableDataSource<Appointment>;
   reports!: any[];
+  doctorId = -1;
   patientNamesMap: Map<number, string> = new Map<number, string>();
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -24,7 +25,7 @@ export class DoctorRequestHistoryComponent {
               private patientService: PatientService) {
   }
   ngOnInit(){
-    const id = this.route.snapshot.paramMap.get('id');
+    this.doctorId = Number(this.route.snapshot.paramMap.get('id'));
     this.getAllReports();
   }
 
@@ -37,6 +38,9 @@ export class DoctorRequestHistoryComponent {
       this.dataSource.sort = this.sort;
     })
 
+  }
+  navigateToCreateReport(): void {
+    this.router.navigate([`/doctor/${this.doctorId}/new-report`]);
   }
 
 

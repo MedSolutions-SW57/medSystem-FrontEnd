@@ -19,6 +19,7 @@ import {LaboratoryAnalysisComponent} from "./analysis/pages/laboratory/laborator
 import {LaboratorySampleComponent} from "./samples/pages/laboratory/laboratory-sample.component";
 import {NewSampleComponent} from "./samples/components/new-sample/new-sample.component";
 import {NewResultComponent} from "./request-results/components/new-result/new-result.component";
+import {NewReportComponent} from "./request-history/components/new-report/new-report.component";
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'doctor/:id/request-history', component: DoctorRequestHistoryComponent, canActivate: [authenticationGuard]},
   { path: 'doctor/:id/request-results',component: DoctorRequestResultsComponent, canActivate: [authenticationGuard]},
   { path:'appointments/:id', component: ReviewAppointmentComponent, canActivate: [authenticationGuard]},
+  { path: 'doctor/:id/new-report', component: NewReportComponent, canActivate: [authenticationGuard]},
   { path: 'patient/:id/request-results',component: PatientExamResultsComponent, canActivate: [authenticationGuard]},
   { path: 'patient/:id/appointments', component: PatientAppointmentsComponent, canActivate: [authenticationGuard]},
   { path: 'patient/:id/new-appointment', component: NewAppointmentComponent, canActivate: [authenticationGuard]},

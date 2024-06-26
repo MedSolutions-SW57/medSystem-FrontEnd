@@ -1,0 +1,18 @@
+<form [formGroup]="firstFormGroup" (ngSubmit)="submitReport()">
+  <mat-form-field appearance="fill">
+    <mat-label>Report Reason:</mat-label>
+    <input matInput formControlName="reason" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Date:</mat-label>
+    <input matInput formControlName="date" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Patient:</mat-label>
+    <input matInput formControlName="patientId" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
