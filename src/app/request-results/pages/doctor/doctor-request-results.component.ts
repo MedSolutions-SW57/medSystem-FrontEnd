@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
-import {Results} from "../../model/results.entity";
+import {Result} from "../../model/result.entity";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {MatDialog} from "@angular/material/dialog";
@@ -14,8 +14,8 @@ import {ResultsService} from "../../services/results.service";
   styleUrl: './doctor-request-results.component.css'
 })
 export class DoctorRequestResultsComponent {
-  resultsList !:Results[];
-  dataSource !:MatTableDataSource<Results>;
+  resultsList !:Result[];
+  dataSource !:MatTableDataSource<Result>;
   displayedColumns = ["id","patientId","typeOfExam","result","resultDateTime", "action"];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
@@ -32,7 +32,7 @@ export class DoctorRequestResultsComponent {
   getAllResultsByDoctorId(id: number) {
     this.resultsService.getAllById(id, "doctorId").subscribe((data: any) => {
       this.resultsList = data;
-      this.dataSource = new MatTableDataSource<Results>(this.resultsList);
+      this.dataSource = new MatTableDataSource<Result>(this.resultsList);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
@@ -47,7 +47,7 @@ export class DoctorRequestResultsComponent {
     return result;
   }
 
-  openDetailsDialog(result: Results): void {
+  openDetailsDialog(result: Result): void {
     this.dialog.open(DetailResultComponent, {
       data: result,
     });

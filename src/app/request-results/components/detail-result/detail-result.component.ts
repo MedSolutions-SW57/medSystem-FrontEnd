@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
-import {Results} from "../../model/results.entity";
+import {Result} from "../../model/result.entity";
 
 @Component({
   selector: 'app-detail-result',
@@ -8,5 +8,5 @@ import {Results} from "../../model/results.entity";
   styleUrl: './detail-result.component.css'
 })
 export class DetailResultComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Results) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Result) {}
 }

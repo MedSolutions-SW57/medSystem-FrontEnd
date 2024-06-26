@@ -1,7 +1,7 @@
-export interface Results {
+export interface Result {
   id: string;
-  patientName: string;
-  doctorName: string;
+  patientId: string;
+  doctorId: string;
   date: string;
   examType : string;
   result: string;
