@@ -12,8 +12,7 @@
               <mat-card-content>
                 <p><b>Patient's name: </b> {{ treatment.patientId }}</p>
                 <p><b>Description: </b> {{treatment.description}}</p>
-                <p><b>Star date: </b> {{treatment.startDate}}</p>
-                <p><b>End date: </b> {{treatment.endDate}}</p>
+                <p><b>Period: </b> {{treatment.period}}</p>
               </mat-card-content>
             </mat-card>
           </div>
@@ -28,27 +27,22 @@
       <mat-card class="add_treatments">
         <mat-card-title>Add treatments</mat-card-title>
         <mat-card-content>
-          <mat-label>DNI of patient:
-            <input type="text">
-          </mat-label>
-
           <mat-label>Name of treatment:
-            <input type="text">
+            <input type="text" [(ngModel)] = treatmentName>
           </mat-label>
-          <mat-label>Dose:
-            <input type="text">
+          <mat-label>Start date:
+            <input type="text" [(ngModel)] = startDate>
           </mat-label>
-          <mat-label>Frequency:
-            <input type="text">
+          <mat-label>End date:
+            <input type="text" [(ngModel)] = endDate>
           </mat-label>
-          <mat-label>Duration:
-            <input type="text">
+          <mat-label>Patient:
+            <input type="text" [(ngModel)] = patientId>
           </mat-label>
-
           <mat-label>Notes: </mat-label>
-          <input class="notes" type="text" >
+          <input class="notes" type="text" [(ngModel)] = description>
           <div class="button_add">
-            <button mat-raised-button color="warn">Add</button>
+            <button mat-raised-button color="warn" (click)="submitTreatment()">Add</button>
           </div>
         </mat-card-content>
       </mat-card>
@@ -65,12 +59,12 @@
               <mat-label>
                 Treatment list:
               </mat-label>
-              <select class="select-to-remove-treatment">
+              <select class="select-to-remove-treatment" [(ngModel)]="selectedTreatmentToDelete">
                 <option value="" disabled selected hidden>Select an option</option>
-                <option *ngFor="let treatment of treatments" >{{treatment}}</option>
+                <option *ngFor="let treatment of treatments" [value]="treatment.treatmentName">{{treatment.treatmentName}}</option>
               </select>
               <div class="button_remove">
-                <button mat-raised-button color="warn">Remove</button>
+                <button mat-raised-button color="warn" (click)="deleteTreatment()">Remove</button>
               </div>
             </mat-card-content>
           </mat-card-title>
@@ -88,8 +82,7 @@
                 <mat-card-content>
                   <p><b>Patient's name: </b> {{treatment.patientId}}</p>
                   <p><b>Description: </b> {{treatment.description}}</p>
-                  <p><b>Start date: </b> {{treatment.startDate}}</p>
-                  <p><b>End date: </b> {{treatment.endDate}}</p>
+                  <p><b>Period: </b> {{treatment.period}}</p>
 
                 </mat-card-content>
 

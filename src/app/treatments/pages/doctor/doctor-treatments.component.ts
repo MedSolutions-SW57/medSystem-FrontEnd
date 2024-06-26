@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import { forkJoin, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {Treatment} from "../../model/treatment.entity";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
@@ -15,28 +15,54 @@ import {TreatmentsService} from "../../services/treatments.service";
   styleUrls: ['./doctor-treatments.component.css']
 })
 export class DoctorTreatmentsComponent implements OnInit {
-  dataSource!: MatTableDataSource<Treatment>;
   treatments!: Treatment[];
-  patientNamesMap: Map<number, string> = new Map<number, string>();
-
-
+  treatmentName = '';
+  description = '';
+  startDate = '';
+  endDate = '';
+  patientId !:number
+  doctorId = -1;
+  selectedTreatmentToDelete !: any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private treatmentsService: TreatmentsService , private route: ActivatedRoute, private patientService: PatientService) {
+  constructor(private treatmentsService: TreatmentsService , private route: ActivatedRoute, private router: Router, private patientService: PatientService) {
   }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.getTreatmentsByDoctorId(Number(id));
+    this.doctorId = Number(this.route.snapshot.paramMap.get('id'));
+    this.getAllTreatments();
 
   }
 
-  getTreatmentsByDoctorId(id: number) {
+  getAllTreatments() {
     this.treatmentsService.getAll().subscribe((data: any) => {
       this.treatments = data;
-      this.dataSource = new MatTableDataSource<Treatment>(this.treatments);
     });
   }
 
+  submitTreatment(){
+    const treatment = {
+      treatmentName: this.treatmentName,
+      description: this.description,
+      startDate: this.startDate,
+      endDate: this.endDate,
+      patientId: this.patientId
+    }
+    this.treatmentsService.create(treatment).subscribe(response=>{
+      console.log(treatment);
+      alert("Treatment created successfully")
+    }, error => {
+      console.error(error);
+    })
+  }
+
+  deleteTreatment() {
+    this.treatmentsService.deleteByAttribute(this.selectedTreatmentToDelete, "treatmentName").subscribe(response => {
+      alert("Treatment deleted correctly");
+    }, error => {
+      console.error(error);
+    })
+    alert("Treatment deleted correctly");
+  }
 }

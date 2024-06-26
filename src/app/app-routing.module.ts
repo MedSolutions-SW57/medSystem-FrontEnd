@@ -23,7 +23,7 @@ import {NewSampleComponent} from "./samples/components/new-sample/new-sample.com
 const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [authenticationGuard]},
   { path: 'doctor/:id/appointments',component: DoctorAppointmentsComponent, canActivate: [authenticationGuard]},
-  { path: 'doctor/:id/treatments-patient',component: DoctorTreatmentsComponent, canActivate: [authenticationGuard]},
+  { path: 'doctor/:id/treatments-doctor',component: DoctorTreatmentsComponent, canActivate: [authenticationGuard]},
   { path: 'doctor/:id/request-history', component: DoctorRequestHistoryComponent, canActivate: [authenticationGuard]},
   { path: 'doctor/:id/request-results',component: DoctorRequestResultsComponent, canActivate: [authenticationGuard]},
   { path:'appointments/:id', component: ReviewAppointmentComponent, canActivate: [authenticationGuard]},

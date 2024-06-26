@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
-import {Doctor} from "../../../profiles/model/doctor.entity";
 import {AppointmentsService} from "../../services/appointments.service";
 import {DoctorService} from "../../../profiles/services/doctor.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -17,7 +16,6 @@ export class NewAppointmentComponent implements OnInit {
     date: ['', Validators.required],
     reason: ['', Validators.required],
   });
-  isLinear : boolean = false;
   doctors: any[] = [];
   patientId = -1;
   doctorId = -1;
