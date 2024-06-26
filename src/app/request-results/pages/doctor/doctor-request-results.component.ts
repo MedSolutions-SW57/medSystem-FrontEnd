@@ -1,11 +1,12 @@
 import {Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
-import {BaseService} from "../../../shared/services/base.service";
 import {Results} from "../../model/results.entity";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {MatDialog} from "@angular/material/dialog";
 import {DetailResultComponent} from "../../components/detail-result/detail-result.component";
+import {ActivatedRoute} from "@angular/router";
+import {ResultsService} from "../../services/results.service";
 
 @Component({
   selector: 'app-request-results',
@@ -14,21 +15,36 @@ import {DetailResultComponent} from "../../components/detail-result/detail-resul
 })
 export class DoctorRequestResultsComponent {
   resultsList !:Results[];
-  dataSource:any;
-  displayedColumns = ["id","patientName","date","examType","result", "action"];
+  dataSource !:MatTableDataSource<Results>;
+  displayedColumns = ["id","patientId","typeOfExam","result","resultDateTime", "action"];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
-  constructor(private service:BaseService<Results>, private dialog: MatDialog) {
+
+  constructor(private resultsService:ResultsService, private dialog: MatDialog,private route: ActivatedRoute) {
 
   }
 
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.getAllResultsByDoctorId(Number(id));
+  }
 
-  Filterchange(data:any){
+  getAllResultsByDoctorId(id: number) {
+    this.resultsService.getAllById(id, "doctorId").subscribe((data: any) => {
+      this.resultsList = data;
+      this.dataSource = new MatTableDataSource<Results>(this.resultsList);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
+  }
+
+
+  FilterChange(data:any){
     const value=(data.target as HTMLInputElement).value;
     this.dataSource.filter=value;
   }
-  isResultAvailable(result: string): boolean {
-    return result.toLowerCase() === 'available';
+  isResultAvailable(result: boolean): boolean {
+    return result;
   }
 
   openDetailsDialog(result: Results): void {

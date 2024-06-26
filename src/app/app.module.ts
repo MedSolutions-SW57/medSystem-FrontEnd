@@ -69,7 +69,7 @@ import {MatDatepicker} from "@angular/material/datepicker";
     NewAnalysisComponent,
     LaboratoryAnalysisComponent,
     NewSampleComponent,
-    LaboratorySampleComponent
+    LaboratorySampleComponent,
   ],
   imports: [
     BrowserModule,

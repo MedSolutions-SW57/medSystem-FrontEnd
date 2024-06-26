@@ -1,7 +1,6 @@
 export interface Treatment{
   treatmentName: string;
   description: string;
-  startDate: string;
-  endDate: string;
+  period: string;
   patientId: number;
 }

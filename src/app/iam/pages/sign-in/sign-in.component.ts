@@ -36,6 +36,7 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
         this.optionsService.requestUpdateOptions();
       })
       .catch(error => {
+        alert("Invalid username or password")
         console.error('Sign-in failed:', error);
       });
   }
