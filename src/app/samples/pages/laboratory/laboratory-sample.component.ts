@@ -12,7 +12,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrl: './laboratory-sample.component.css'
 })
 export class LaboratorySampleComponent implements OnInit  {
-  displayColumns = ["sampleId", "sampleType","sampleCode", "patientId", "doctorId", "sampleDate"];
+  displayedColumns = ["sampleId", "sampleType","sampleCode", "patientId", "doctorId", "sampleDate"];
   dataSource!: MatTableDataSource<Sample>;
   samples!: Sample[];
 
