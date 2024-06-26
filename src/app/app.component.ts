@@ -80,7 +80,9 @@ export class AppComponent {
         userIdForPath = consultant.id;
         this.options = [
           { path: '/home', title: 'Home', icon: 'home'},
+          { path: '/consultant/:id/samples'.replace(':id', userIdForPath.toString()), title: 'Samples', icon: 'labs' },
           { path: '/consultant/:id/analysis'.replace(':id', userIdForPath.toString()), title: 'Analysis', icon: 'science'},
+
         ]
       })
 

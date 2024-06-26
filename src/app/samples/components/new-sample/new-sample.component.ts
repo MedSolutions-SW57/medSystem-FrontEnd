@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
+import {SampleService} from "../../services/sample.service";
 
 @Component({
   selector: 'app-new-sample',
@@ -9,29 +9,27 @@ import {HttpClient} from "@angular/common/http";
 })
 export class NewSampleComponent implements OnInit{
   firstFormGroup = this._formBuilder.group({
-    sampleType: ['', Validators.required],
-    sampleCode: ['', Validators.required],
+    type: ['', Validators.required],
+    code: ['', Validators.required],
     patientId: ['', Validators.required],
     doctorId: ['', Validators.required],
-    sampleDate: ['', Validators.required],
+    date: ['', Validators.required],
   })
 
-  samples: any[] = [];
-
-  constructor(private _formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private _formBuilder: FormBuilder, private sampleService: SampleService) {
   }
   ngOnInit(): void {
   }
 
   submitSample(){
     const sample = {
-      sampleType: this.firstFormGroup.value.sampleType,
-      sampleCode: this.firstFormGroup.value.sampleCode,
+      type: this.firstFormGroup.value.type,
+      code: this.firstFormGroup.value.code,
       patientId: this.firstFormGroup.value.patientId,
       doctorId: this.firstFormGroup.value.doctorId,
-      sampleDate: this.firstFormGroup.value.sampleDate,
+      date: this.firstFormGroup.value.date,
     };
-    this.http.post('link del backend', sample).subscribe(response => {
+    this.sampleService.create(sample).subscribe(response => {
       console.log(response);
       alert("Analysis created successfully")
     }, error => {

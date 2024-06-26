@@ -1,8 +1,8 @@
 export interface Sample {
   id: number;
-  sampleType: string;
-  sampleCode: string;
+  type: string;
+  code: string;
   patientId: number;
   doctorId: number;
-  sampleDate: string;
+  date: string;
 }

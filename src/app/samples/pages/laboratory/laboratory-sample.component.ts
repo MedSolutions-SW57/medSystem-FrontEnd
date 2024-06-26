@@ -12,9 +12,10 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrl: './laboratory-sample.component.css'
 })
 export class LaboratorySampleComponent implements OnInit  {
-  displayedColumns = ["sampleId", "sampleType","sampleCode", "patientId", "doctorId", "sampleDate"];
+  displayedColumns = ["type","code", "patientId", "doctorId", "date"];
   dataSource!: MatTableDataSource<Sample>;
   samples!: Sample[];
+  consultantId = -1;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -22,14 +23,15 @@ export class LaboratorySampleComponent implements OnInit  {
   constructor(private sampleService: SampleService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.consultantId = Number(this.route.snapshot.paramMap.get('id'));
     this.getAllSamples()
   }
 
   getAllSamples(){
     this.sampleService.getAll().subscribe((response: any) => {
-      this.samples = response.results;
+      this.samples = response;
       console.log(response.results);
-      this.dataSource = new MatTableDataSource<Sample>(response.samples);
+      this.dataSource = new MatTableDataSource<Sample>(this.samples);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
@@ -39,7 +41,7 @@ export class LaboratorySampleComponent implements OnInit  {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-
-
+  navigateToCreateSample(): void {
+    this.router.navigate([`/consultant/${this.consultantId}/new-sample`]);
+  }
 }

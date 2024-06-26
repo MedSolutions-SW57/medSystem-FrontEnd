@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
 import {AnalysisService} from "../../services/analysis.service";
 
 @Component({
@@ -17,9 +16,7 @@ export class NewAnalysisComponent implements OnInit{
     status: ['', Validators.required],
   });
 
-  analysis: any[] = [];
-
-  constructor(private _formBuilder: FormBuilder,private http: HttpClient, private analysisService: AnalysisService) {
+  constructor(private _formBuilder: FormBuilder, private analysisService: AnalysisService) {
   }
   ngOnInit() {
   }

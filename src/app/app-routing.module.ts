@@ -16,6 +16,8 @@ import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-foun
 import {HomeComponent} from "./public/pages/home/home.component";
 import {NewAnalysisComponent} from "./analysis/components/new-analysis/new-analysis.component";
 import {LaboratoryAnalysisComponent} from "./analysis/pages/laboratory/laboratory-analysis.component";
+import {LaboratorySampleComponent} from "./samples/pages/laboratory/laboratory-sample.component";
+import {NewSampleComponent} from "./samples/components/new-sample/new-sample.component";
 
 
 const routes: Routes = [
@@ -30,8 +32,10 @@ const routes: Routes = [
   { path: 'patients/:id/new-appointment', component: NewAppointmentComponent, canActivate: [authenticationGuard]},
   { path: 'patients/:id/treatments-patient', component: PatientTreatmentsComponent, canActivate: [authenticationGuard]},
   { path: 'patients/:id/new-appointment', component: NewAppointmentComponent, canActivate: [authenticationGuard]},
+  { path: 'consultant/:id/samples', component: LaboratorySampleComponent, canActivate: [authenticationGuard]},
+  { path: 'consultant/:id/new-sample',component: NewSampleComponent, canActivate: [authenticationGuard]},
   { path: 'consultant/:id/analysis', component: LaboratoryAnalysisComponent, canActivate: [authenticationGuard]},
-  { path: 'consultants/:id/new-analysis', component: NewAnalysisComponent, canActivate: [authenticationGuard]},
+  { path: 'consultant/:id/new-analysis', component: NewAnalysisComponent, canActivate: [authenticationGuard]},
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: '', redirectTo: 'home',pathMatch: 'full'},

@@ -1,12 +1,12 @@
 <form [formGroup]="firstFormGroup" (ngSubmit)="submitSample()">
   <mat-form-field appearance="fill">
     <mat-label>Sample Code:</mat-label>
-    <input matInput formControlName="sampleCode" required>
+    <input matInput formControlName="code" required>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Sample Type:</mat-label>
-    <input matInput formControlName="sampleType" required>
+    <input matInput formControlName="type" required>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -21,7 +21,7 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Date:</mat-label>
-    <input matInput formControlName="sampleDate" required>
+    <input matInput formControlName="date" required>
   </mat-form-field>
 
   <button mat-raised-button color="primary" type="submit">Submit</button>

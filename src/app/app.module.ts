@@ -43,10 +43,7 @@ import {MatButtonToggle, MatButtonToggleGroup} from "@angular/material/button-to
 import {HomeComponent} from "./public/pages/home/home.component";
 import { NewAnalysisComponent } from './analysis/components/new-analysis/new-analysis.component';
 import { LaboratoryAnalysisComponent } from './analysis/pages/laboratory/laboratory-analysis.component';
-import { NewSampleComponentComponent } from './samples/components/new-sample.component/new-sample.component.component';
-import { LaboratorySamplesComponentComponent } from './samples/laboratory/laboratory-samples.component/laboratory-samples.component.component';
 import { NewSampleComponent } from './samples/components/new-sample/new-sample.component';
-import { LaboratoryComponent } from './samples/pages/laboratory/laboratory.component';
 import { LaboratorySampleComponent } from './samples/pages/laboratory/laboratory-sample.component';
 
 @NgModule({
@@ -70,10 +67,7 @@ import { LaboratorySampleComponent } from './samples/pages/laboratory/laboratory
     PageNotFoundComponent,
     NewAnalysisComponent,
     LaboratoryAnalysisComponent,
-    NewSampleComponentComponent,
-    LaboratorySamplesComponentComponent,
     NewSampleComponent,
-    LaboratoryComponent,
     LaboratorySampleComponent
   ],
   imports: [
