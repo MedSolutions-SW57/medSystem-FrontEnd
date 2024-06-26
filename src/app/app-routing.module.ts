@@ -5,8 +5,7 @@ import {DoctorTreatmentsComponent} from "./treatments/pages/doctor/doctor-treatm
 import {ReviewAppointmentComponent} from "./appointments/components/review-appointment/review-appointment.component";
 import {DoctorRequestHistoryComponent} from "./request-history/pages/doctor/doctor-request-history.component";
 import {DoctorRequestResultsComponent} from "./request-results/pages/doctor/doctor-request-results.component";
-
-import {PatientTreatmentsComponent} from "./treatments/pages/patient/";
+import {PatientTreatmentsComponent} from "./treatments/pages/patient/patient-treatments.component";
 import {PatientExamResultsComponent} from "./request-results/pages/patient/patient-request-results/patient-exam-results.component";
 import {PatientAppointmentsComponent} from "./appointments/pages/patient/patient-appointments.component";
 import {NewAppointmentComponent} from "./appointments/components/new-appointment/new-appointment.component";
@@ -32,7 +31,7 @@ const routes: Routes = [
   { path: 'patients/:id/treatments-patient', component: PatientTreatmentsComponent, canActivate: [authenticationGuard]},
   { path: 'patients/:id/new-appointment', component: NewAppointmentComponent, canActivate: [authenticationGuard]},
   { path: 'consultant/:id/analysis', component: LaboratoryAnalysisComponent, canActivate: [authenticationGuard]},
-  { path: 'new-analysis/:id', component: NewAnalysisComponent, canActivate: [authenticationGuard]},
+  { path: 'consultants/:id/new-analysis', component: NewAnalysisComponent, canActivate: [authenticationGuard]},
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: '', redirectTo: 'home',pathMatch: 'full'},

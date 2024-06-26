@@ -1,7 +1,7 @@
 <form [formGroup]="firstFormGroup" (ngSubmit)="submitAnalysis()">
   <mat-form-field appearance="fill">
     <mat-label>Exam Type</mat-label>
-    <input matInput formControlName="examType" required>
+    <input matInput formControlName="analysisType" required>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -16,15 +16,15 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Analysis Date</mat-label>
-    <input matInput formControlName="analysisDate" required>
+    <input matInput formControlName="date" required>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Status</mat-label>
     <mat-select formControlName="status">
-      <mat-option value="PENDING">PENDING</mat-option>
-      <mat-option value="COMPLETED">COMPLETED</mat-option>
-      <mat-option value="IN_PROGRESS">IN_PROGRESS</mat-option>
+      <mat-option value="1">PENDING</mat-option>
+      <mat-option value="2">COMPLETED</mat-option>
+      <mat-option value="3">IN_PROGRESS</mat-option>
     </mat-select>
   </mat-form-field>
 

@@ -59,6 +59,7 @@ export class AppComponent {
           { path: '/doctor/:id/request-results'.replace(':id', userIdForPath.toString()), title: 'Request Results', icon: 'swap_vertical_circle'},
         ];
       })
+
     }
     else if (this.userRole == 'PATIENT') {
       this.patientService.getByOtherId(this.userId, "userId").subscribe((data:any)=>{
@@ -71,6 +72,7 @@ export class AppComponent {
           { path: '/patients/:id/request-results'.replace(':id', userIdForPath.toString()), title: 'Request Results', icon: 'swap_vertical_circle'},
         ]
       })
+
     }
     else {
       this.consultantService.getByOtherId(this.userId, "userId").subscribe((data:any)=>{
@@ -81,6 +83,7 @@ export class AppComponent {
           { path: '/consultant/:id/analysis'.replace(':id', userIdForPath.toString()), title: 'Analysis', icon: 'science'},
         ]
       })
+
     }
   }
   updateOptions() {

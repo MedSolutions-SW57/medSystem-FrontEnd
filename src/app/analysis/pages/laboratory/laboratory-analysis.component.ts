@@ -15,6 +15,7 @@ export class LaboratoryAnalysisComponent implements OnInit{
   displayedColumns = ["analysisId","examType","sampleId", "patientDni", "analysisDate", "status"];
   dataSource!: MatTableDataSource<Analysis>;
   analysis!: Analysis[];
+  consultantId = -1;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -23,6 +24,7 @@ export class LaboratoryAnalysisComponent implements OnInit{
   }
 
   ngOnInit() {
+    this.consultantId = Number(this.route.snapshot.paramMap.get('id'));
     this.getAllAnalysis()
   }
 
@@ -39,5 +41,8 @@ export class LaboratoryAnalysisComponent implements OnInit{
   Filterchange(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  navigateToCreateAnalysis(): void {
+    this.router.navigate([`/consultants/${this.consultantId}/new-analysis`]);
   }
 }

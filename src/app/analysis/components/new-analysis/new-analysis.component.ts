@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
+import {AnalysisService} from "../../services/analysis.service";
 
 @Component({
   selector: 'app-new-analysis',
@@ -9,29 +10,29 @@ import {HttpClient} from "@angular/common/http";
 })
 export class NewAnalysisComponent implements OnInit{
   firstFormGroup = this._formBuilder.group({
-    examType: ['', Validators.required],
+    analysisType: ['', Validators.required],
     sampleId: ['', Validators.required],
     patientDni: ['', Validators.required],
-    analysisDate: ['', Validators.required],
+    date: ['', Validators.required],
     status: ['', Validators.required],
   });
 
   analysis: any[] = [];
 
-  constructor(private _formBuilder: FormBuilder,private http: HttpClient) {
+  constructor(private _formBuilder: FormBuilder,private http: HttpClient, private analysisService: AnalysisService) {
   }
   ngOnInit() {
   }
 
   submitAnalysis(){
     const analysis = {
-      examType: this.firstFormGroup.value.examType,
+      analysisType: this.firstFormGroup.value.analysisType,
       sampleId: this.firstFormGroup.value.sampleId,
       patientDni: this.firstFormGroup.value.patientDni,
-      analysisDate: this.firstFormGroup.value.analysisDate,
+      date: this.firstFormGroup.value.date,
       status: this.firstFormGroup.value.status,
     };
-    this.http.post('link del backend', analysis).subscribe(response => {
+    this.analysisService.create(analysis).subscribe(response => {
       console.log(response);
       alert("Analysis created successfully")
     }, error => {
